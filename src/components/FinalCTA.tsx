@@ -87,7 +87,7 @@ const FinalCTA = () => {
                                         </div>
                                         <div>
                                             <p className="text-[10px] font-bold text-slate-900 leading-tight uppercase tracking-tight">
-                                                #24, 100 Feet Rd, HRBR Layout,<br />
+                                                #24, 100 Feet Rd, HRBR Layout 1st Block,<br />
                                                 Banaswadi, Bengaluru, India 560043
                                             </p>
                                         </div>
@@ -96,7 +96,7 @@ const FinalCTA = () => {
                                         <div className="w-8 h-8 rounded-lg bg-[#1B2C6B] flex items-center justify-center shrink-0">
                                             <FaPhoneAlt className="text-white text-xs" />
                                         </div>
-                                        <p className="text-[10px] font-bold text-slate-900">+91 99645 46464</p>
+                                        <p className="text-[10px] font-bold text-slate-900">099645 46464</p>
                                     </li>
                                     <li className="flex items-center gap-3">
                                         <div className="w-8 h-8 rounded-lg bg-[#1B2C6B] flex items-center justify-center shrink-0">
@@ -111,8 +111,7 @@ const FinalCTA = () => {
                                 <h4 className="text-[9px] font-black text-[#1B2C6B] uppercase tracking-[0.2em] mb-6">Operational Hours</h4>
                                 <div className="space-y-3">
                                     {[
-                                        { day: "Mon - Fri", hours: "09:00 - 18:00" },
-                                        { day: "Saturday", hours: "10:00 - 14:00" },
+                                        { day: "Mon - Sat", hours: "09:00 - 19:00" },
                                         { day: "Sunday", hours: "CLOSED", color: "text-red-500" },
                                     ].map((item, idx) => (
                                         <div key={idx} className="flex justify-between items-center text-[9px] font-bold border-b border-slate-100 pb-1.5">
@@ -120,6 +119,9 @@ const FinalCTA = () => {
                                             <span className={item.color || "text-[#1B2C6B]"}>{item.hours}</span>
                                         </div>
                                     ))}
+                                    <p className="text-[8px] font-bold text-slate-400 italic mt-1">
+                                        * Hours might differ during holidays
+                                    </p>
                                 </div>
                             </div>
 
