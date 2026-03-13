@@ -86,9 +86,9 @@ const FinalCTA = () => {
                                             <FaMapMarkerAlt className="text-white text-xs" />
                                         </div>
                                         <div>
-                                            <p className="text-[10px] font-bold text-slate-900 leading-tight">
-                                                123 Business Avenue, Tech Plaza,<br />
-                                                San Francisco, CA 94107
+                                            <p className="text-[10px] font-bold text-slate-900 leading-tight uppercase tracking-tight">
+                                                #24, 100 Feet Rd, HRBR Layout,<br />
+                                                Banaswadi, Bengaluru, India 560043
                                             </p>
                                         </div>
                                     </li>
@@ -96,7 +96,7 @@ const FinalCTA = () => {
                                         <div className="w-8 h-8 rounded-lg bg-[#1B2C6B] flex items-center justify-center shrink-0">
                                             <FaPhoneAlt className="text-white text-xs" />
                                         </div>
-                                        <p className="text-[10px] font-bold text-slate-900">+1 (555) 123-4567</p>
+                                        <p className="text-[10px] font-bold text-slate-900">+91 99645 46464</p>
                                     </li>
                                     <li className="flex items-center gap-3">
                                         <div className="w-8 h-8 rounded-lg bg-[#1B2C6B] flex items-center justify-center shrink-0">
@@ -123,15 +123,21 @@ const FinalCTA = () => {
                                 </div>
                             </div>
 
-                            <div className="relative rounded-xl overflow-hidden h-32 bg-slate-200 border border-slate-100">
+                            <a 
+                                href="https://www.google.com/maps/dir//Terait+Technologies+Pvt+Ltd,+%2324,+100+Feet+Rd,+HRBR+Layout+1st+Block,+Balaji+Layout,+Subbaiahnapalya,+Banaswadi,+Bengaluru,+Karnataka+560043/@13.0138636,77.6485393,17z"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block relative rounded-xl overflow-hidden h-32 bg-slate-200 border border-slate-100 group/map"
+                            >
                                 {/* Map Placeholder/Visual */}
-                                <div className="absolute inset-0 bg-[url('https://api.placeholder.com/400/200')] bg-cover bg-center grayscale opacity-50" />
+                                <div className="absolute inset-0 bg-[url('https://api.placeholder.com/400/200?text=View+on+Google+Maps')] bg-cover bg-center grayscale opacity-50 group-hover/map:scale-110 transition-transform duration-700" />
+                                <div className="absolute inset-0 bg-red-600/0 group-hover/map:bg-red-600/10 transition-colors" />
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center shadow-lg animate-bounce">
-                                        <FaMapMarkerAlt className="text-white text-[10px]" />
+                                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center shadow-lg animate-bounce group-hover/map:scale-125 transition-transform">
+                                        <FaMapMarkerAlt className="text-white text-xs" />
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </ScrollReveal>
