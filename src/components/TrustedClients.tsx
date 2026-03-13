@@ -11,37 +11,36 @@ const logos = [
 
 export default function TrustedClients() {
     return (
-        <section className="py-20 bg-white overflow-hidden">
+        <section className="py-12 bg-white overflow-hidden border-b border-slate-50">
             <div className="max-w-7xl mx-auto px-6">
 
-                <h2 className="text-center text-3xl font-bold text-slate-900 mb-12">
-                    Trusted By Businesses
-                </h2>
+                <div className="text-center mb-8">
+                    <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">
+                        Global Enterprise Partners
+                    </span>
+                </div>
 
                 <div className="relative w-full overflow-hidden">
-
                     {/* Gradient fade */}
                     <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
                     <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
 
                     {/* Scrolling container */}
                     <div className="flex animate-marquee gap-16 items-center">
-
                         {[...logos, ...logos].map((logo, index) => (
                             <div
                                 key={index}
-                                className="flex items-center justify-center min-w-[160px] opacity-70 hover:opacity-100 transition"
+                                className="flex items-center justify-center min-w-[120px] opacity-40 hover:opacity-100 transition duration-500"
                             >
                                 <img
                                     src={logo}
-                                    alt="Client Logo"
-                                    width={140}
-                                    height={60}
-                                    className="object-contain grayscale hover:grayscale-0 transition duration-300"
+                                    alt="Partner Logo"
+                                    width={100}
+                                    height={40}
+                                    className="object-contain grayscale"
                                 />
                             </div>
                         ))}
-
                     </div>
                 </div>
             </div>
