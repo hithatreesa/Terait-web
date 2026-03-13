@@ -43,13 +43,16 @@ export default function CareersSection() {
                                     Send us your details and we will contact you when opportunities are available.
                                 </p>
 
-                                <motion.button 
+                                <motion.a 
+                                    href="https://wa.me/919964546464?text=Hello%20Terait%20Technologies%2C%20I%20am%20interested%20in%20career%20opportunities.%20Please%20share%20available%20openings."
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     whileHover={{ scale: 1.05, translateY: -2 }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="relative z-10 bg-primary hover:bg-primary-dark text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-[0_10px_20px_-5px_rgba(15,118,110,0.3)] hover:shadow-[0_20px_40px_-10px_rgba(15,118,110,0.4)]"
+                                    className="inline-block relative z-10 bg-primary hover:bg-primary-dark text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-[0_10px_20px_-5px_rgba(15,118,110,0.3)] hover:shadow-[0_20px_40px_-10px_rgba(15,118,110,0.4)]"
                                 >
                                     Contact Us
-                                </motion.button>
+                                </motion.a>
                             </div>
                         </div>
                     </div>
