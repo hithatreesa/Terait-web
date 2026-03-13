@@ -27,17 +27,21 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="fixed w-full top-4 z-50 px-4 flex justify-center pointer-events-none">
-      <nav
-        className={`pointer-events-auto transition-all duration-500 rounded-full px-8 py-3 backdrop-blur-md border flex items-center justify-between gap-12
-        ${scrolled
-            ? "bg-black/80 border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.25)]"
-            : "bg-black/50 border-white/10"
-          }`}
+    <div className={`fixed z-50 transition-all duration-300 w-full 
+      ${scrolled ? "top-0" : "top-0 md:top-4"} 
+      flex justify-center`}
+    >
+      <nav className={`transition-all duration-500 flex items-center justify-between
+        ${scrolled 
+          ? "w-full bg-white px-6 py-4 shadow-md border-b border-slate-100" 
+          : "w-full bg-white px-6 py-4 border-b border-slate-100 md:w-auto md:bg-black/80 md:backdrop-blur-md md:rounded-full md:px-8 md:py-3 md:border-white/10"
+        }`}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center group">
-          <span className="text-2xl font-black tracking-tighter text-white uppercase group-hover:opacity-80 transition-opacity">
+        <Link href="/" className="flex items-center group shrink-0">
+          <span className={`text-xl md:text-2xl font-black tracking-tighter uppercase transition-colors duration-300
+            ${scrolled ? "text-slate-900" : "text-slate-900 md:text-white"}`}
+          >
             Terait<span className="text-red-500">.</span>
           </span>
         </Link>
@@ -48,29 +52,25 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="font-semibold text-white/90 hover:text-white transition-all duration-300 text-sm tracking-wide relative group"
+              className={`font-bold transition-all duration-300 text-sm tracking-wide relative group
+                ${scrolled ? "text-slate-600 hover:text-slate-900" : "text-white/80 hover:text-white"}`}
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </div>
 
         {/* Right Section */}
         <div className="flex items-center gap-4">
-          <a
-            href="#contact"
-            className="hidden md:inline-flex bg-red-600 hover:bg-red-700 text-white font-medium px-6 py-2.5 rounded-full transition"
-          >
-            Contact Us
-          </a>
-
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white p-2"
+            className={`md:hidden p-1 flex items-center justify-center outline-none transition-colors
+              ${scrolled ? "text-slate-900" : "text-slate-900 md:text-white"}`}
+            aria-label="Toggle Menu"
           >
-            {isOpen ? <HiX size={24} /> : <HiMenuAlt3 size={24} />}
+            {isOpen ? <HiX size={28} /> : <HiMenuAlt3 size={28} />}
           </button>
         </div>
 
@@ -78,22 +78,29 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              className="absolute top-16 left-0 right-0 bg-white rounded-3xl shadow-2xl border border-slate-100 md:hidden"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 md:hidden overflow-hidden shadow-xl"
             >
-              <div className="p-6 space-y-4">
+              <div className="p-8 space-y-6 flex flex-col items-center">
                 {navLinks.map((link) => (
-                  <Link
+                  <a
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block px-4 py-2 text-sm font-bold text-slate-700 hover:text-red-500 hover:bg-slate-50 rounded-xl transition"
+                    className="text-sm font-bold text-slate-700 uppercase tracking-widest hover:text-red-500 transition"
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 ))}
+                <a
+                  href="#contact"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full text-center bg-slate-900 text-white font-bold uppercase tracking-widest py-3 rounded-md shadow-lg text-xs"
+                >
+                  Get Started
+                </a>
               </div>
             </motion.div>
           )}
