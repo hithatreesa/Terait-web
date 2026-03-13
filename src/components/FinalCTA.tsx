@@ -9,23 +9,16 @@ const FinalCTA = () => {
     return (
         <section id="contact" className="py-16 bg-white overflow-hidden">
             <div className="max-w-5xl mx-auto px-6">
-                
+
                 {/* Header Section */}
                 <div className="text-center mb-12">
                     <ScrollReveal direction="up">
-                        <div className="inline-block px-4 py-1.5 border border-red-500/30 rounded-full mb-6">
-                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-red-600">
-                                New: Enterprise AI Integration
-                            </span>
-                        </div>
-                        
-                        <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] mb-6">
-                            <span className="text-[#1B2C6B] block">LET'S START A</span>
-                            <span className="text-[#E63946] block">CONVERSATION</span>
+                        <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-[0.9] mb-6">
+                            <span className="text-[#1B2C6B] block">LET'S START A <span className="text-primary tracking-tight">CONVERSATION</span></span>
                         </h2>
-                        
+
                         <p className="max-w-lg mx-auto text-slate-500 text-xs font-medium leading-relaxed">
-                            We provide high-level enterprise solutions. Connect with our experts today 
+                            We provide high-level enterprise solutions. Connect with our experts today
                             to scale your infrastructure and secure your digital assets.
                         </p>
                     </ScrollReveal>
@@ -34,49 +27,49 @@ const FinalCTA = () => {
                 {/* Contact Card */}
                 <ScrollReveal direction="up" delay={0.2}>
                     <div className="bg-white border border-slate-100 rounded-[1.5rem] shadow-[0_24px_48px_-12px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col lg:flex-row">
-                        
+
                         {/* Left Column: Form */}
                         <div className="lg:w-7/12 p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-slate-100">
                             <h3 className="text-lg font-black text-slate-900 mb-8 tracking-tight uppercase">
                                 Send Us A Message
                             </h3>
-                            
+
                             <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
                                 <div className="grid md:grid-cols-2 gap-5">
                                     <div className="space-y-1.5">
                                         <label className="text-[9px] font-bold text-slate-400 uppercase tracking-widest ml-1">Full Name</label>
-                                        <input 
-                                            type="text" 
-                                            placeholder="John Doe" 
+                                        <input
+                                            type="text"
+                                            placeholder="John Doe"
                                             className="w-full px-4 py-3 bg-slate-50 border border-slate-100 rounded-lg focus:ring-2 focus:ring-red-500/10 focus:border-red-500 outline-none transition text-xs font-medium"
                                         />
                                     </div>
                                     <div className="space-y-1.5">
                                         <label className="text-[9px] font-bold text-slate-400 uppercase tracking-widest ml-1">Email Address</label>
-                                        <input 
-                                            type="email" 
-                                            placeholder="john@company.com" 
+                                        <input
+                                            type="email"
+                                            placeholder="john@company.com"
                                             className="w-full px-4 py-3 bg-slate-50 border border-slate-100 rounded-lg focus:ring-2 focus:ring-red-500/10 focus:border-red-500 outline-none transition text-xs font-medium"
                                         />
                                     </div>
                                 </div>
                                 <div className="space-y-1.5">
                                     <label className="text-[9px] font-bold text-slate-400 uppercase tracking-widest ml-1">Phone Number</label>
-                                    <input 
-                                        type="tel" 
-                                        placeholder="+1 (555) 000-0000" 
+                                    <input
+                                        type="tel"
+                                        placeholder="+1 (555) 000-0000"
                                         className="w-full px-4 py-3 bg-slate-50 border border-slate-100 rounded-lg focus:ring-2 focus:ring-red-500/10 focus:border-red-500 outline-none transition text-xs font-medium"
                                     />
                                 </div>
                                 <div className="space-y-1.5">
                                     <label className="text-[9px] font-bold text-slate-400 uppercase tracking-widest ml-1">Message</label>
-                                    <textarea 
+                                    <textarea
                                         rows={3}
-                                        placeholder="How can we assist your enterprise?" 
+                                        placeholder="How can we assist your enterprise?"
                                         className="w-full px-4 py-3 bg-slate-50 border border-slate-100 rounded-lg focus:ring-2 focus:ring-red-500/10 focus:border-red-500 outline-none transition text-xs font-medium resize-none"
                                     ></textarea>
                                 </div>
-                                
+
                                 <button className="inline-flex items-center justify-center gap-2 bg-[#E63946] hover:bg-red-700 text-white font-bold text-[10px] uppercase tracking-widest px-6 py-3.5 rounded-lg shadow-lg shadow-red-500/10 transition-all active:scale-95">
                                     Submit Request →
                                 </button>
