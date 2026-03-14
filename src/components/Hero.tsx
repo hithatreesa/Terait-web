@@ -17,7 +17,7 @@ const Hero = () => {
   if (!mounted) return null;
 
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-32 overflow-hidden text-white">
+    <section className="relative min-h-[85vh] flex items-center pt-24 overflow-hidden text-white">
 
       {/* Background Image */}
       <motion.div style={{ y: y1 }} className="absolute inset-0 z-0">

@@ -31,7 +31,7 @@ const testimonials = [
 
 const Testimonials = () => {
     return (
-        <section className="py-20 relative overflow-hidden bg-[#243C8F] text-white">
+        <section className="py-16 relative overflow-hidden bg-[#243C8F] text-white">
             {/* Texture Overlay */}
             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] [background-size:20px_20px]"></div>
 

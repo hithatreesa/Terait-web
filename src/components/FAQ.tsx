@@ -27,7 +27,7 @@ const FAQ = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="py-20 bg-[#F4F6F8]">
+        <section className="py-16 bg-[#F4F6F8]">
             <div className="max-w-4xl mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl font-bold text-center text-slate-900 mb-6 uppercase">
@@ -70,20 +70,5 @@ const FAQ = () => {
     );
 };
 
-export const LocalSEO = () => {
-    return (
-        <section className="py-20 bg-transparent">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 className="text-2xl font-bold text-slate-900 mb-6 uppercase tracking-widest text-sm">IT Infrastructure Services in Bangalore</h2>
-                <p className="text-slate-500 max-w-4xl mx-auto leading-relaxed font-medium">
-                    Terait Technologies, located in Bangalore, specializes in delivering comprehensive IT infrastructure solutions.
-                    Our services include robust IT networking, professional CCTV installation, expert server setup,
-                    and high-quality hardware supply. We cater to businesses of all sizes across Bangalore,
-                    ensuring secure, scalable, and reliable technology systems.
-                </p>
-            </div>
-        </section>
-    );
-};
 
 export default FAQ;

@@ -14,7 +14,7 @@ const reasons = [
 
 const WhyChooseUs = () => {
     return (
-        <section id="about" className="py-20 bg-white">
+        <section id="about" className="py-16 bg-white">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="max-w-4xl mx-auto text-center mb-16">
                     <ScrollReveal>

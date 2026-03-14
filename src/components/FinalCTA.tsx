@@ -2,12 +2,12 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import ScrollReveal from './ScrollReveal';
 
 const FinalCTA = () => {
     return (
-        <section id="contact" className="py-16 bg-white overflow-hidden">
+        <section id="contact" className="py-16 bg-white overflow-hidden scroll-mt-20">
             <div className="max-w-5xl mx-auto px-6">
 
                 {/* Header Section */}
@@ -125,21 +125,18 @@ const FinalCTA = () => {
                                 </div>
                             </div>
 
-                            <a 
-                                href="https://www.google.com/maps/dir//Terait+Technologies+Pvt+Ltd,+%2324,+100+Feet+Rd,+HRBR+Layout+1st+Block,+Balaji+Layout,+Subbaiahnapalya,+Banaswadi,+Bengaluru,+Karnataka+560043/@13.0138636,77.6485393,17z"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="block relative rounded-xl overflow-hidden h-32 bg-slate-200 border border-slate-100 group/map"
-                            >
-                                {/* Map Placeholder/Visual */}
-                                <div className="absolute inset-0 bg-[url('https://api.placeholder.com/400/200?text=View+on+Google+Maps')] bg-cover bg-center grayscale opacity-50 group-hover/map:scale-110 transition-transform duration-700" />
-                                <div className="absolute inset-0 bg-red-600/0 group-hover/map:bg-red-600/10 transition-colors" />
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center shadow-lg animate-bounce group-hover/map:scale-125 transition-transform">
-                                        <FaMapMarkerAlt className="text-white text-xs" />
-                                    </div>
-                                </div>
-                            </a>
+                            <div className="relative rounded-xl overflow-hidden h-32 bg-slate-200 border border-slate-100 group/map shadow-inner">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.265538356942!2d77.646350675844!3d13.018712314546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16dc92d6e7df%3A0x1d5877665b6f3c4c!2sTerait%20Technologies%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1710412000000!5m2!1sen!2sin"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    className="grayscale hover:grayscale-0 transition-all duration-700 contrast-125"
+                                ></iframe>
+                            </div>
                         </div>
                     </div>
                 </ScrollReveal>

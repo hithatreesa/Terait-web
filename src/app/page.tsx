@@ -1,4 +1,13 @@
+import { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
+
+export const metadata: Metadata = {
+  title: "Terait Technologies | Expert IT Infrastructure Services in Bangalore",
+  description: "Terait Technologies is Bangalore's leading provider for IT networking, professional CCTV installation, expert server setup, and managed cloud services. Reliable enterprise solutions for modern businesses.",
+  alternates: {
+    canonical: '/',
+  },
+};
 import Hero from '@/components/Hero';
 import TrustedClients from '@/components/TrustedClients';
 import Services from '@/components/Services';
@@ -17,12 +26,12 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <div className="h-px bg-primary/10 my-16 max-w-7xl mx-auto px-6" />
+      <div className="h-px bg-primary/10 my-12 max-w-7xl mx-auto px-6" />
       <Services />
       <WhyChooseUs />
       <Process />
       <Testimonials />
-      <div className="h-px bg-slate-200 my-16 max-w-7xl mx-auto px-6" />
+      <div className="h-px bg-slate-200 my-12 max-w-7xl mx-auto px-6" />
       <FAQ />
       <TrustedClients />
       <Career />

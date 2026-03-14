@@ -29,12 +29,12 @@ const steps = [
 
 const Process = () => {
     return (
-        <section className="py-20 md:py-24 relative overflow-hidden bg-[#F4F6F8]">
+        <section className="py-16 md:py-20 relative overflow-hidden bg-[#F4F6F8]">
             {/* Texture Overlay */}
             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] [background-size:20px_20px]"></div>
             
             <div className="relative max-w-7xl mx-auto px-6">
-                <div className="text-center mb-20">
+                <div className="text-center mb-12">
                     <ScrollReveal>
                         <h2 className="text-4xl font-bold text-center text-slate-900 mb-6 uppercase">
                             Our <span className="text-gradient">Professional Process</span>

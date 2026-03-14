@@ -5,13 +5,13 @@ import ScrollReveal from './ScrollReveal';
 
 export default function CareersSection() {
     return (
-        <section id="careers" className="py-24 relative overflow-hidden bg-white">
+        <section id="careers" className="py-16 relative overflow-hidden bg-white scroll-mt-20">
             {/* Background Decorations */}
             <div className="absolute top-0 right-0 w-1/3 h-full bg-teal-50/50 skew-x-[-15deg] translate-x-1/2 z-0" />
             <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-primary-light/5 blur-[100px] rounded-full z-0" />
 
             <div className="relative max-w-7xl mx-auto px-6 z-10">
-                <div className="text-center mb-16">
+                <div className="text-center mb-12">
                     <ScrollReveal>
                         <div className="space-y-4">
                             <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight uppercase">

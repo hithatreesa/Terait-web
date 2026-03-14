@@ -5,7 +5,7 @@ import ScrollReveal from './ScrollReveal';
 
 const About = () => {
   return (
-    <section id="about" className="py-20 relative overflow-hidden bg-white">
+    <section id="about" className="py-16 relative overflow-hidden bg-white scroll-mt-20">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-[0.02] pointer-events-none z-0 bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')]" />
 

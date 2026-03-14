@@ -1,12 +1,12 @@
 "use client";
 
 const logos = [
-    "/clients/client1.png",
-    "/clients/client2.png",
-    "/clients/client3.png",
-    "/clients/client4.png",
-    "/clients/client5.png",
-    "/clients/client6.png",
+    { src: "/clients/client1.png", name: "Enterprise Partner 1" },
+    { src: "/clients/client2.png", name: "Enterprise Partner 2" },
+    { src: "/clients/client3.png", name: "Enterprise Partner 3" },
+    { src: "/clients/client4.png", name: "Enterprise Partner 4" },
+    { src: "/clients/client5.png", name: "Enterprise Partner 5" },
+    { src: "/clients/client6.png", name: "Enterprise Partner 6" },
 ];
 
 export default function TrustedClients() {
@@ -33,8 +33,8 @@ export default function TrustedClients() {
                                 className="flex items-center justify-center min-w-[120px] opacity-40 hover:opacity-100 transition duration-500"
                             >
                                 <img
-                                    src={logo}
-                                    alt="Partner Logo"
+                                    src={logo.src}
+                                    alt={`${logo.name} - Terait Technologies Partner`}
                                     width={100}
                                     height={40}
                                     className="object-contain grayscale"

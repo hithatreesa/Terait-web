@@ -11,13 +11,13 @@ interface ButtonProps {
 }
 
 export const Button = ({ children, href, onClick, variant = 'primary', className = '' }: ButtonProps) => {
-    const baseStyles = "px-8 py-3.5 rounded-full font-semibold transition-all duration-300 flex items-center justify-center text-sm md:text-base";
+    const baseStyles = "px-8 py-3.5 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center text-sm md:text-base";
 
     const variants = {
-        primary: "bg-primary hover:bg-primary-dark text-white hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 rounded-lg",
-        secondary: "bg-secondary text-white hover:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5 rounded-lg",
-        outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white hover:-translate-y-0.5 rounded-lg",
-        glass: "glass text-slate-900 hover:bg-white/40 hover:-translate-y-0.5 rounded-lg",
+        primary: "bg-primary hover:bg-primary-dark text-white hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5",
+        secondary: "bg-secondary text-white hover:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5",
+        outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white hover:-translate-y-0.5",
+        glass: "glass text-slate-900 hover:bg-white/40 hover:-translate-y-0.5",
     };
 
     const content = (
