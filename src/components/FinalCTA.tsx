@@ -102,7 +102,7 @@ const FinalCTA = () => {
                                         <div className="w-8 h-8 rounded-lg bg-[#1B2C6B] flex items-center justify-center shrink-0">
                                             <FaEnvelope className="text-white text-xs" />
                                         </div>
-                                        <p className="text-[10px] font-bold text-slate-900">contact@terait.com</p>
+                                        <p className="text-[10px] font-bold text-slate-900">terait.sales@gmail.com</p>
                                     </li>
                                 </ul>
                             </div>
@@ -134,7 +134,7 @@ const FinalCTA = () => {
                                     allowFullScreen
                                     loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"
-                                    className="grayscale hover:grayscale-0 transition-all duration-700 contrast-125"
+                                    className="transition-all duration-700 contrast-125"
                                 ></iframe>
                             </div>
                         </div>

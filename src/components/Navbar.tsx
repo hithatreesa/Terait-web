@@ -40,15 +40,15 @@ const Navbar = () => {
         </Link>
         <div className="hidden md:flex items-center space-x-8 px-8">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className={`text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 relative group ${scrolled ? "text-slate-500 hover:text-red-500" : "text-white/70 hover:text-white"}`}>
+            <Link key={link.name} href={link.href} className={`text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 relative group ${scrolled ? "text-slate-500 hover:text-red-500" : "text-white/70 hover:text-white"}`}>
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-600 transition-all duration-500 group-hover:w-full" />
-            </a>
+            </Link>
           ))}
         </div>
         <div className="flex items-center gap-4">
-          <a href="#contact" className={`hidden md:inline-flex text-[10px] font-black uppercase tracking-[0.2em] px-8 py-3 rounded-full transition-all duration-500 shadow-lg ${scrolled ? "bg-slate-900 text-white hover:bg-black hover:shadow-xl active:scale-95" : "bg-red-600 text-white hover:bg-red-700 hover:shadow-red-500/20 active:scale-95"}`}>Get Started</a>
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-1 flex items-center justify-center outline-none transition-colors text-slate-900" aria-label="Toggle Menu" aria-expanded={isOpen}>
+          <Link href="/#contact" className={`hidden md:inline-flex text-[10px] font-black uppercase tracking-[0.2em] px-8 py-3 rounded-full transition-all duration-500 shadow-lg ${scrolled ? "bg-slate-900 text-white hover:bg-black hover:shadow-xl active:scale-95" : "bg-red-600 text-white hover:bg-red-700 hover:shadow-red-500/20 active:scale-95"}`}>Get Started</Link>
+          <button onClick={() => setIsOpen(!isOpen)} className={`md:hidden p-2 flex items-center justify-center outline-none transition-colors ${scrolled || isOpen ? "text-slate-900" : "text-white"}`} aria-label="Toggle Menu" aria-expanded={isOpen}>
             {isOpen ? <HiX size={28} /> : <HiMenuAlt3 size={28} />}
           </button>
         </div>
@@ -57,9 +57,9 @@ const Navbar = () => {
             <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="absolute top-[calc(100%+12px)] left-0 right-0 bg-white border border-slate-100 md:hidden overflow-hidden shadow-2xl rounded-2xl z-[100]">
               <div className="p-8 space-y-6 flex flex-col items-center">
                 {navLinks.map((link) => (
-                  <a key={link.name} href={link.href} onClick={() => setIsOpen(false)} className="text-xs font-black text-slate-900 uppercase tracking-[0.3em] hover:text-red-500 transition-all">{link.name}</a>
+                  <Link key={link.name} href={link.href} onClick={() => setIsOpen(false)} className="w-full text-center py-2 text-xs font-black text-slate-900 uppercase tracking-[0.3em] hover:text-red-500 transition-all">{link.name}</Link>
                 ))}
-                <a href="#contact" onClick={() => setIsOpen(false)} className="w-full text-center bg-red-600 text-white font-black uppercase tracking-[0.3em] py-4 rounded-xl shadow-lg text-[10px] active:scale-95 transition-transform">Contact Us</a>
+                <Link href="/#contact" onClick={() => setIsOpen(false)} className="w-full text-center bg-red-600 text-white font-black uppercase tracking-[0.3em] py-4 rounded-xl shadow-lg text-[10px] active:scale-95 transition-transform">Contact Us</Link>
               </div>
             </motion.div>
           )}
