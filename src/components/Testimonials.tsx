@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FaStar, FaQuoteRight } from 'react-icons/fa';
 
@@ -29,6 +29,29 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (window.innerWidth < 768 && scrollRef.current) {
+                const nextIndex = (currentIndex + 1) % testimonials.length;
+                setCurrentIndex(nextIndex);
+                
+                const container = scrollRef.current;
+                const slide = container.children[nextIndex] as HTMLElement;
+                if (slide) {
+                    container.scrollTo({
+                        left: slide.offsetLeft - (container.offsetWidth - slide.offsetWidth) / 2,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }, 4000);
+
+        return () => clearInterval(interval);
+    }, [currentIndex]);
+
     return (
         <section className="py-16 relative overflow-hidden bg-[#243C8F] text-white">
             {/* Texture Overlay */}
@@ -50,7 +73,10 @@ const Testimonials = () => {
                     </motion.div>
                 </div>
 
-                <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scrollbar md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 justify-center">
+                <div 
+                    ref={scrollRef}
+                    className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scrollbar md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 justify-center"
+                >
                     {testimonials.map((testimonial, index) => (
                         <motion.div
                             key={index}
