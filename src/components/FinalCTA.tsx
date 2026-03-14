@@ -35,7 +35,7 @@ const FinalCTA = () => {
                 <div className="text-center mb-12">
                     <ScrollReveal direction="up">
                         <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-[0.9] mb-6">
-                            <span className="text-[#1B2C6B] block">LET'S START A <span className="text-primary tracking-tight">CONVERSATION</span></span>
+                            <span className="text-[#1B2C6B] block">LET&apos;S START A <span className="text-primary tracking-tight">CONVERSATION</span></span>
                         </h2>
                         <p className="max-w-lg mx-auto text-slate-500 text-xs font-medium leading-relaxed">
                             We provide high-level enterprise solutions. Connect with our experts today to scale your infrastructure and secure your digital assets.

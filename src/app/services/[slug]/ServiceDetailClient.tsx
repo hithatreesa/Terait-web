@@ -1,6 +1,5 @@
 "use client";
 import React from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -9,7 +8,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import ServiceCTA from '@/components/ServiceCTA';
 import { FaArrowLeft, FaCheckCircle, FaIndustry, FaRocket } from 'react-icons/fa';
 import Image from 'next/image';
-import { ServiceDetail, servicesData } from '@/data/servicesData';
+import { servicesData } from '@/data/servicesData';
 
 interface ServiceDetailClientProps {
     slug: string;
@@ -17,7 +16,6 @@ interface ServiceDetailClientProps {
 
 const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
     const service = servicesData[slug];
-    const router = useRouter();
     if (!service) return null; // Should be handled by server, but safety first
     const Icon = service.icon;
 
@@ -108,7 +106,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
                                     <div className="flex flex-wrap gap-3">
                                         {service.industries.map((ind: string, idx: number) => <span key={idx} className="px-4 py-2 bg-white/10 backdrop-blur rounded-lg text-sm font-medium border border-white/10">{ind}</span>)}
                                     </div>
-                                    <div className="mt-12 p-6 bg-white/5 rounded-2xl border border-white/5 italic text-slate-300">"Our mission is to deliver enterprise-grade {service.title.toLowerCase()} that empowers organizations to scale efficiently and securely."</div>
+                                    <div className="mt-12 p-6 bg-white/5 rounded-2xl border border-white/5 italic text-slate-300">&quot;Our mission is to deliver enterprise-grade {service.title.toLowerCase()} that empowers organizations to scale efficiently and securely.&quot;</div>
                                 </div>
                             </Card>
                         </ScrollReveal>
