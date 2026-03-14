@@ -36,10 +36,6 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
                             <div className="w-16 h-16 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mb-6 shadow-sm"><Icon size={32} /></div>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-4 leading-tight uppercase tracking-tight">{service.title}</h1>
                             <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mb-6">{service.description}</p>
-                            <div className="flex flex-wrap gap-4">
-                                <Button href="#contact" variant="primary">Get a Quote</Button>
-                                <Button href="#features" variant="outline">Learn More</Button>
-                            </div>
                         </ScrollReveal>
                         <ScrollReveal delay={0.2}>
                             <div className="relative">

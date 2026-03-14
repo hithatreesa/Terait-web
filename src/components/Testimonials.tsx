@@ -50,10 +50,11 @@ const Testimonials = () => {
                     </motion.div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scrollbar md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 justify-center">
                     {testimonials.map((testimonial, index) => (
                         <motion.div
                             key={index}
+                            className="min-w-[85vw] sm:min-w-[450px] md:min-w-0 snap-center"
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ delay: index * 0.1 }}
