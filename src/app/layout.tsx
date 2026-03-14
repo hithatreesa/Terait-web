@@ -58,6 +58,11 @@ export default function RootLayout({
       >
         <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-slate-100">
           {children}
+          {/* 
+            Production Analytics:
+            Add Google Analytics or other scripts here using next/script 
+            example: <Script src="..." strategy="afterInteractive" />
+          */}
           <WhatsAppButton />
         </div>
       </body>

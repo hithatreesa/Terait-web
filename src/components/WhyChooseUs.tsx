@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from 'framer-motion';
 import { FaCheckCircle } from 'react-icons/fa';
 import ScrollReveal from './ScrollReveal';
 
@@ -38,7 +37,7 @@ const WhyChooseUs = () => {
                                 <div className="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center mb-6 group-hover:border-primary group-hover:bg-primary transition duration-300 ease-in-out shadow-sm">
                                     <FaCheckCircle className="text-primary group-hover:text-white text-2xl transition duration-300 ease-in-out" />
                                 </div>
-                                <h4 className="font-bold text-slate-900 mb-3 uppercase tracking-widest text-xs italic">{reason.title}</h4>
+                                <h3 className="font-bold text-slate-900 mb-3 uppercase tracking-widest text-xs italic">{reason.title}</h3>
                                 <p className="text-sm text-slate-500 font-medium leading-relaxed">{reason.description}</p>
                             </div>
                         </ScrollReveal>

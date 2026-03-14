@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Card } from './UI';
 import { FaStar, FaQuoteRight } from 'react-icons/fa';
 
 const testimonials = [
@@ -68,14 +67,14 @@ const Testimonials = () => {
                                     ))}
                                 </div>
                                 <p className="text-white/90 italic mb-8 relative z-10 leading-relaxed font-medium text-center">
-                                    "{testimonial.text}"
+                                    &quot;{testimonial.text}&quot;
                                 </p>
                                 <div className="flex flex-col items-center gap-4 border-t border-slate-100 pt-6 mt-auto text-center">
                                     <div className="w-12 h-12 rounded-full bg-[#243C8F] border-2 border-white flex items-center justify-center text-white font-bold text-lg shadow-sm">
                                         {testimonial.name[0]}
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-white uppercase tracking-wider text-sm">{testimonial.name}</h4>
+                                        <h3 className="font-bold text-white uppercase tracking-wider text-sm">{testimonial.name}</h3>
                                         <p className="text-xs text-white/70 font-semibold uppercase tracking-wide">{testimonial.role} — {testimonial.location}</p>
                                     </div>
                                 </div>

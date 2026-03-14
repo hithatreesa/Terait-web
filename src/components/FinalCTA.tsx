@@ -143,7 +143,7 @@ const FinalCTA = () => {
                         {/* Right Column: Info */}
                         <div className="lg:w-5/12 bg-slate-50/50 p-8 md:p-10 space-y-8">
                             <div>
-                                <h4 className="text-[9px] font-black text-[#1B2C6B] uppercase tracking-[0.2em] mb-6">Contact Information</h4>
+                                <h3 className="text-[9px] font-black text-[#1B2C6B] uppercase tracking-[0.2em] mb-6">Contact Information</h3>
                                 <ul className="space-y-4">
                                     <li className="flex items-start gap-3">
                                         <div className="w-8 h-8 rounded-lg bg-[#1B2C6B] flex items-center justify-center shrink-0">
@@ -172,7 +172,7 @@ const FinalCTA = () => {
                             </div>
 
                             <div>
-                                <h4 className="text-[9px] font-black text-[#1B2C6B] uppercase tracking-[0.2em] mb-6">Operational Hours</h4>
+                                <h3 className="text-[9px] font-black text-[#1B2C6B] uppercase tracking-[0.2em] mb-6">Operational Hours</h3>
                                 <div className="space-y-3">
                                     {[
                                         { day: "Mon - Sat", hours: "09:00 - 19:00" },

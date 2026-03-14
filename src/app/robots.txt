@@ -1,10 +1,5 @@
-export default function robots() {
-  return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: '/private/',
-    },
-    sitemap: 'https://terait.com/sitemap.xml',
-  }
-}
+User-agent: *
+Allow: /
+Disallow: /private/
+
+Sitemap: https://terait.com/sitemap.xml

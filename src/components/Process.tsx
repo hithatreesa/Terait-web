@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from 'framer-motion';
 import { FaSearch, FaDrawPolygon, FaTools, FaShieldAlt } from 'react-icons/fa';
 import ScrollReveal from './ScrollReveal';
 

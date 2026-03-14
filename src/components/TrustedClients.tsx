@@ -1,4 +1,4 @@
-"use client";
+import Image from "next/image";
 
 const logos = [
     { src: "/clients/client1.png", name: "Enterprise Partner 1" },
@@ -32,7 +32,7 @@ export default function TrustedClients() {
                                 key={index}
                                 className="flex items-center justify-center min-w-[120px] opacity-40 hover:opacity-100 transition duration-500"
                             >
-                                <img
+                                <Image
                                     src={logo.src}
                                     alt={`${logo.name} - Terait Technologies Partner`}
                                     width={100}

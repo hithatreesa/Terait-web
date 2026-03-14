@@ -1,20 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const Hero = () => {
-  const [mounted, setMounted] = useState(false);
   const { scrollY } = useScroll();
-
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
 
   return (
     <section className="relative min-h-[85vh] flex items-center pt-24 overflow-hidden text-white">

@@ -10,6 +10,13 @@ export interface ServiceDetail {
     slug: string; title: string; icon: IconType; description: string;
     features: string[]; benefits: string[]; industries: string[]; image?: string;
 }
+export interface ServiceCategory {
+    title: string;
+    icon: IconType;
+    color: string;
+    description: string;
+    items: string[];
+}
 
 export const servicesData: Record<string, ServiceDetail> = {
     "av-enabled-board-rooms": {

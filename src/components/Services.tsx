@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Card, Button } from "./UI";
 import { HiX } from "react-icons/hi";
 import ScrollReveal from "./ScrollReveal";
-import { servicesData, servicesCategories } from "@/data/servicesData";
+import { servicesData, servicesCategories, ServiceCategory } from "@/data/servicesData";
 
 const Services = () => {
-    const [selectedCategory, setSelectedCategory] = useState<any>(null);
+    const [selectedCategory, setSelectedCategory] = useState<ServiceCategory | null>(null);
     const closeModal = () => setSelectedCategory(null);
     return (
         <section id="services" className="py-16 bg-white scroll-mt-20">
@@ -48,7 +48,7 @@ const Services = () => {
                                         <Link key={index} href={`/services/${item.slug}`} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] min-w-[250px]">
                                             <Card className="h-full flex flex-col items-center text-center border-slate-200 hover:border-primary transition-all duration-300 group">
                                                 <div className="w-12 h-12 rounded-lg bg-orange-50 text-orange-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><item.icon size={22} /></div>
-                                                <h4 className="text-lg font-bold text-slate-900 mb-3 uppercase tracking-tight">{item.title}</h4>
+                                                <h3 className="text-lg font-bold text-slate-900 mb-3 uppercase tracking-tight">{item.title}</h3>
                                                 <p className="text-sm text-slate-500 leading-relaxed mb-5">{(item.description.length > 80) ? (item.description.substring(0, 80) + "...") : (item.description)}</p>
                                             </Card>
                                         </Link>
