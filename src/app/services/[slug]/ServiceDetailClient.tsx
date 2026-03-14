@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Button, Card } from '@/components/UI';
+import { Card } from '@/components/UI';
 import ScrollReveal from '@/components/ScrollReveal';
 import ServiceCTA from '@/components/ServiceCTA';
 import { FaArrowLeft, FaCheckCircle, FaIndustry, FaRocket } from 'react-icons/fa';
