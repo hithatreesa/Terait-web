@@ -33,26 +33,39 @@ export default function CareersSection() {
                             <div className="bg-white/80 backdrop-blur-xl border border-white/50 shadow-2xl rounded-[1.4rem] p-8 md:p-12 text-center group relative overflow-hidden">
                                 {/* Inner Glow */}
                                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1/2 bg-primary/5 blur-[60px] rounded-full pointer-events-none group-hover:bg-primary/10 transition-colors duration-500" />
-                                
+
                                 <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 relative z-10 transition-colors duration-300 italic tracking-tight">
                                     Interested in joining our team?
                                 </h3>
 
                                 <p className="text-slate-600 mb-10 text-lg relative z-10 max-w-xl mx-auto leading-relaxed font-medium">
-                                    We&apos;re always looking for talented engineers, IT specialists, and innovators. 
+                                    We&apos;re always looking for talented engineers, IT specialists, and innovators.
                                     Send us your details and we will contact you when opportunities are available.
                                 </p>
 
-                                <motion.a 
-                                    href="https://wa.me/919964546464?text=Hello%20Terait%20Technologies%2C%20I%20am%20interested%20in%20career%20opportunities.%20Please%20share%20available%20openings."
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    whileHover={{ scale: 1.05, translateY: -2 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    className="inline-block relative z-10 bg-primary hover:bg-primary-dark text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-[0_10px_20px_-5px_rgba(15,118,110,0.3)] hover:shadow-[0_20px_40px_-10px_rgba(15,118,110,0.4)]"
-                                >
-                                    Contact Us
-                                </motion.a>
+                                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 relative z-10">
+                                    <motion.a
+                                        href="https://wa.me/919964546464?text=Hi%20Terait%20Technologies,%0A%0AI%20would%20like%20to%20apply%20for%20a%20job.%0A%0AHere%20are%20my%20details:%0A%0AName:%0AJob%20Role%20Interested:%0AEmail:%0AContact%20Number:%0A%0AThank%20you."
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        whileHover={{ scale: 1.05, translateY: -2 }}
+                                        whileTap={{ scale: 0.98 }}
+                                        className="w-full sm:w-auto inline-block bg-primary hover:bg-primary-dark text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-[0_10px_20px_-5px_rgba(15,118,110,0.3)] hover:shadow-[0_20px_40px_-10px_rgba(15,118,110,0.4)]"
+                                    >
+                                        Contact Us
+                                    </motion.a>
+
+                                    <motion.a
+                                        href="https://mail.google.com/mail/?view=cm&fs=1&to=hr@teraittech.com&su=Job%20Application%20-%20Terait%20Technologies&body=Hi,%0A%0AI%20am%20interested%20in%20applying%20for%20a%20position%20at%20Terait%20Technologies.%0A%0APlease%20find%20my%20details%20below:%0A%0AName:%0AJob%20Role:%0AEmail:%0AContact%20Number:%0A%0AThank%20you."
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        whileHover={{ scale: 1.05, translateY: -2 }}
+                                        whileTap={{ scale: 0.98 }}
+                                        className="w-full sm:w-auto cursor-pointer inline-block bg-white border-2 border-primary text-primary hover:bg-primary/5 px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-sm"
+                                    >
+                                        Apply via Email
+                                    </motion.a>
+                                </div>
                             </div>
                         </div>
                     </div>

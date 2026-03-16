@@ -12,6 +12,7 @@ const Footer = () => {
 
                         <a
                             href="#"
+                            aria-label="Follow us on Facebook"
                             className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:bg-blue-600 hover:text-white transition"
                         >
                             <FaFacebookF size={16} />
@@ -19,6 +20,7 @@ const Footer = () => {
 
                         <a
                             href="#"
+                            aria-label="Follow us on Twitter"
                             className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:bg-sky-500 hover:text-white transition"
                         >
                             <FaTwitter size={16} />
@@ -26,6 +28,7 @@ const Footer = () => {
 
                         <a
                             href="#"
+                            aria-label="Follow us on LinkedIn"
                             className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:bg-blue-700 hover:text-white transition"
                         >
                             <FaLinkedinIn size={16} />
@@ -33,6 +36,7 @@ const Footer = () => {
 
                         <a
                             href="#"
+                            aria-label="Follow us on Instagram"
                             className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:bg-pink-500 hover:text-white transition"
                         >
                             <FaInstagram size={16} />
@@ -49,13 +53,13 @@ const Footer = () => {
                     </p>
 
                     <div className="flex space-x-4 mt-2 font-medium">
-                        <a href="#" className="hover:text-white transition-colors">
+                        <a href="#" aria-label="Privacy Policy" className="hover:text-white transition-colors">
                             Privacy
                         </a>
-                        <a href="#" className="hover:text-white transition-colors">
+                        <a href="#" aria-label="Terms of Service" className="hover:text-white transition-colors">
                             Terms
                         </a>
-                        <a href="#" className="hover:text-white transition-colors">
+                        <a href="#" aria-label="Cookie Policy" className="hover:text-white transition-colors">
                             Cookies
                         </a>
                     </div>

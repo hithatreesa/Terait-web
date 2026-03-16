@@ -58,6 +58,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
         variants={getVariants()}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
+        className={className.includes('h-full') ? 'h-full' : ''}
       >
         {children}
       </motion.div>

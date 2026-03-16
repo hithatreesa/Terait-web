@@ -23,6 +23,50 @@ import About from '@/components/About';
 export default function Home() {
   return (
     <main className="min-h-screen bg-transparent">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Terait Technologies",
+            "image": "https://terait.com/images/hero_bg.png",
+            "@id": "https://terait.com",
+            "url": "https://terait.com",
+            "telephone": "+919964546464",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "#24, 100 Feet Rd, HRBR Layout 1st Block, Balaji Layout, Subbaiahnapalya, Banaswadi",
+              "addressLocality": "Bengaluru",
+              "addressRegion": "Karnataka",
+              "postalCode": "560043",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 13.013989,
+              "longitude": 77.648571
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ],
+              "opens": "09:00",
+              "closes": "18:00"
+            },
+            "sameAs": [
+              "https://www.facebook.com/TeraitTechnologies/",
+              "https://www.linkedin.com/company/terait-technologies"
+            ]
+          })
+        }}
+      />
       <Navbar />
       <Hero />
       <About />

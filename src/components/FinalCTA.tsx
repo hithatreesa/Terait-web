@@ -152,7 +152,7 @@ const FinalCTA = () => {
                                         <div>
                                             <p className="text-[10px] font-bold text-slate-900 leading-tight uppercase tracking-tight">
                                                 #24, 100 Feet Rd, HRBR Layout 1st Block,<br />
-                                                Banaswadi, Bengaluru, India 560043
+                                                Balaji Layout, Subbaiahnapalya, Banaswadi, Bengaluru, Karnataka 560043
                                             </p>
                                         </div>
                                     </li>
@@ -191,7 +191,7 @@ const FinalCTA = () => {
 
                             <div className="relative rounded-xl overflow-hidden h-32 bg-slate-200 border border-slate-100 group/map shadow-inner">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.265538356942!2d77.646350675844!3d13.018712314546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16dc92d6e7df%3A0x1d5877665b6f3c4c!2sTerait%20Technologies%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1710412000000!5m2!1sen!2sin"
+                                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3887.3402877137105!2d77.64857099999999!3d13.013988999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDAwJzUwLjQiTiA3N8KwMzgnNTQuOSJF!5e0!3m2!1sen!2sin!4v1773643348674!5m2!1sen!2sin"
                                     width="100%"
                                     height="100%"
                                     style={{ border: 0 }}

@@ -55,6 +55,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body
         className="antialiased"
+        suppressHydrationWarning
       >
         <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-slate-100">
           {children}

@@ -30,9 +30,20 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
   return (
     <div className={`fixed z-50 transition-all duration-500 w-full ${scrolled ? "top-2 md:top-3" : "top-0 md:top-4"} flex justify-center px-3 md:px-4`}>
-      <nav ref={navRef} className={`transition-all duration-500 flex items-center justify-between ${scrolled ? "w-full md:w-auto bg-white/95 backdrop-blur-md px-6 py-3 shadow-xl rounded-2xl md:rounded-full border border-slate-100" : "w-full md:w-auto bg-white md:bg-black/80 md:backdrop-blur-xl px-6 py-3 rounded-full border md:border-white/10 border-slate-100"}`}>
+      <nav ref={navRef} className={`transition-all duration-500 flex items-center justify-between w-full max-w-5xl mx-auto ${scrolled ? "bg-white/95 backdrop-blur-md px-6 py-1.5 shadow-xl rounded-2xl md:rounded-full border border-slate-100" : "bg-white md:bg-black/80 md:backdrop-blur-xl px-6 py-1.5 rounded-full border md:border-white/10 border-slate-100"}`}>
         <Link href="/" className="flex items-center group shrink-0">
           <span className={`text-xl md:text-2xl font-black tracking-tighter uppercase transition-colors duration-500 ${scrolled ? "text-slate-900" : "text-slate-900 md:text-white"}`}>
             Terait<span className="text-red-500">.</span>
@@ -47,17 +58,17 @@ const Navbar = () => {
           ))}
         </div>
         <div className="flex items-center gap-4">
-          <Link href="/#contact" className={`hidden md:inline-flex text-[10px] font-black uppercase tracking-[0.2em] px-8 py-3 rounded-full transition-all duration-500 shadow-lg ${scrolled ? "bg-slate-900 text-white hover:bg-black hover:shadow-xl active:scale-95" : "bg-red-600 text-white hover:bg-red-700 hover:shadow-red-500/20 active:scale-95"}`}>Get Started</Link>
-          <button onClick={() => setIsOpen(!isOpen)} className={`md:hidden p-2 flex items-center justify-center outline-none transition-colors ${scrolled || isOpen ? "text-slate-900" : "text-white"}`} aria-label="Toggle Menu" aria-expanded={isOpen}>
+          <Link href="/#contact" className={`hidden md:inline-flex text-[10px] font-black uppercase tracking-[0.2em] px-8 py-1.5 rounded-full transition-all duration-500 shadow-lg ${scrolled ? "bg-slate-900 text-white hover:bg-black hover:shadow-xl active:scale-95" : "bg-red-600 text-white hover:bg-red-700 hover:shadow-red-500/20 active:scale-95"}`}>Get Started</Link>
+          <button onClick={() => setIsOpen(!isOpen)} className={`md:hidden p-2 flex items-center justify-center outline-none transition-colors ${scrolled ? "text-slate-900" : "text-slate-900 md:text-white"}`} aria-label="Toggle Menu" aria-expanded={isOpen}>
             {isOpen ? <HiX size={28} /> : <HiMenuAlt3 size={28} />}
           </button>
         </div>
         <AnimatePresence>
           {isOpen && (
-            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="absolute top-[calc(100%+12px)] left-0 right-0 bg-white border border-slate-100 md:hidden overflow-hidden shadow-2xl rounded-2xl z-[100]">
+            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="absolute top-full mt-3 left-0 right-0 bg-white border border-slate-100 md:hidden overflow-hidden shadow-2xl rounded-2xl z-[100]">
               <div className="p-8 space-y-6 flex flex-col items-center">
                 {navLinks.map((link) => (
-                  <Link key={link.name} href={link.href} onClick={() => setIsOpen(false)} className="w-full text-center py-2 text-xs font-black text-slate-900 uppercase tracking-[0.3em] hover:text-red-500 transition-all">{link.name}</Link>
+                  <Link key={link.name} href={link.href} onClick={() => setIsOpen(false)} className="w-full text-center py-4 text-xs font-black text-slate-900 uppercase tracking-[0.3em] hover:text-red-500 transition-all">{link.name}</Link>
                 ))}
                 <Link href="/#contact" onClick={() => setIsOpen(false)} className="w-full text-center bg-red-600 text-white font-black uppercase tracking-[0.3em] py-4 rounded-xl shadow-lg text-[10px] active:scale-95 transition-transform">Contact Us</Link>
               </div>
