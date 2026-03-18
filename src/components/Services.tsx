@@ -353,25 +353,26 @@ const Services = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.95 }}
                             transition={{ duration: 0.3 }}
-                            className="relative bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-6xl shadow-2xl overflow-y-auto hide-scrollbar max-h-[95vh] md:max-h-[90vh] scroll-smooth"
+                            className="relative bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-6xl shadow-2xl overflow-hidden max-h-[95vh] md:max-h-[90vh]"
                         >
-                            {/* Close Button - Sticky to stay visible */}
-                            <button
-                                onClick={() => setSelectedSubservice(null)}
-                                className="sticky top-6 float-right right-6 mr-6 mt-6 w-12 h-12 rounded-full bg-slate-800 hover:bg-primary text-white flex items-center justify-center transition-all z-30 group shadow-lg"
-                            >
-                                <HiX size={24} className="group-hover:rotate-90 transition-transform duration-300" />
-                            </button>
+                            <div className="h-full overflow-y-auto scroll-smooth hide-scrollbar p-6 md:p-12 mb-10 lg:mb-0">
+                                {/* Close Button - Fixed to the top right of the modal */}
+                                <button
+                                    onClick={() => setSelectedSubservice(null)}
+                                    className="absolute top-4 right-4 md:top-8 md:right-8 w-12 h-12 rounded-full bg-slate-800 hover:bg-primary text-white flex items-center justify-center transition-all z-50 group shadow-xl"
+                                >
+                                    <HiX size={24} className="group-hover:rotate-90 transition-transform duration-300" />
+                                </button>
 
-                            <div className="p-6 md:p-12 mt-4 space-y-24">
+                                <div className="mt-12 md:mt-4 space-y-20 md:space-y-24">
                                 {/* SECTION 1: HERO LAYOUT */}
-                                <div className="flex flex-col lg:flex-row gap-10 md:gap-16 lg:items-stretch">
+                                <div className="flex flex-col lg:flex-row gap-10 md:gap-16 items-center">
                                     {/* Left: Image Section */}
                                     <motion.div
                                         initial={{ opacity: 0, x: -20 }}
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
-                                        className="w-full lg:w-1/2 aspect-video lg:aspect-auto bg-slate-950 rounded-2xl relative overflow-hidden group shadow-2xl border border-slate-800"
+                                        className="w-full lg:w-1/2 aspect-video bg-slate-950 rounded-2xl relative overflow-hidden group shadow-2xl border border-slate-800 shrink-0"
                                     >
                                         {selectedSubservice.image ? (
                                             <motion.img
@@ -380,10 +381,10 @@ const Services = () => {
                                                 transition={{ duration: 0.5, ease: "easeOut" }}
                                                 src={selectedSubservice.image}
                                                 alt={selectedSubservice.title}
-                                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 lg:absolute inset-0"
+                                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 absolute inset-0"
                                             />
                                         ) : (
-                                            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 to-slate-950 text-slate-700 p-12 lg:absolute inset-0">
+                                            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 to-slate-950 text-slate-700 p-12 absolute inset-0">
                                                 <selectedSubservice.icon size={120} className="opacity-10 mb-6" />
                                                 <span className="text-xs uppercase tracking-[0.3em] font-black opacity-30">Premium Visual</span>
                                             </div>
@@ -397,7 +398,7 @@ const Services = () => {
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
                                         {...({} as any)}
-                                        className="w-full lg:w-1/2 flex flex-col justify-center py-4 lg:py-8"
+                                        className="w-full lg:w-1/2 flex flex-col justify-center"
                                     >
                                         <div className="flex items-center gap-3 mb-6">
                                             <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
@@ -514,6 +515,7 @@ const Services = () => {
                                         </div>
                                     </div>
                                 </motion.div>
+                            </div>
                             </div>
                         </motion.div>
                     </div>
