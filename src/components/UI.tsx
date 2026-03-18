@@ -46,7 +46,7 @@ export const Card = ({ children, className = '', hover = true }: CardProps) => {
     return (
         <motion.div
             whileHover={hover ? { y: -10, boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)" } : {}}
-            className={`bg-white rounded-2xl border border-gray-100 p-6 transition-all duration-300 ${className}`}
+            className={`rounded-2xl border border-gray-100 p-6 transition-all duration-300 ${className}`}
         >
             {children}
         </motion.div>

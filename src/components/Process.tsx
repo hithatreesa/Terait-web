@@ -54,8 +54,9 @@ const Process = () => {
                                 key={index} 
                                 delay={index * 0.2}
                                 direction="up"
+                                className="h-full"
                             >
-                                <div className="flex flex-col items-center text-center group">
+                                <div className="flex flex-col items-center text-center group h-full">
                                     <div className="w-16 h-16 rounded-full bg-white border-2 border-slate-200 shadow-sm flex items-center justify-center text-primary group-hover:border-primary transition duration-300 ease-in-out mb-6 relative">
                                         <step.icon size={24} />
                                         {/* Step Number Badge */}

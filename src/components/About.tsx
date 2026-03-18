@@ -44,13 +44,13 @@ const About = () => {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {[
+                {([
                   { title: "Network Security", desc: "Robust data protection and monitoring." },
                   { title: "Smart Surveillance", desc: "Expert CCTV & security integration." },
                   { title: "Cloud Solutions", desc: "Scalable and secure cloud infrastructure." },
                   { title: "IT Support", desc: "24/7 managed services and maintenance." }
-                ].map((item, idx) => (
-                  <div key={idx} className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-lg transition duration-300 ease-in-out">
+                ] as const).map((item, idx) => (
+                  <div key={idx} className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm hover:shadow-lg transition duration-300 ease-in-out h-full">
                     <h3 className="font-bold text-slate-900 mb-1 italic tracking-tight">{item.title}</h3>
                     <p className="text-sm text-slate-500 font-medium">{item.desc}</p>
                   </div>

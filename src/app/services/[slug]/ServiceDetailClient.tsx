@@ -3,12 +3,14 @@ import React from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Card } from '@/components/UI';
+import { Card, Button } from '@/components/UI';
 import ScrollReveal from '@/components/ScrollReveal';
 import ServiceCTA from '@/components/ServiceCTA';
-import { FaArrowLeft, FaCheckCircle, FaIndustry, FaRocket } from 'react-icons/fa';
+import { FaArrowLeft, FaCheckCircle, FaIndustry, FaRocket, FaChevronRight } from 'react-icons/fa';
+import { HiArrowNarrowRight, HiCheckCircle } from 'react-icons/hi';
 import Image from 'next/image';
 import { servicesData } from '@/data/servicesData';
+import { motion } from 'framer-motion';
 
 interface ServiceDetailClientProps {
     slug: string;
@@ -20,89 +22,108 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
     const Icon = service.icon;
 
     return (
-        <main className="min-h-screen bg-white">
+        <main className="min-h-screen bg-slate-950 text-slate-300 selection:bg-primary/30">
             <Navbar />
-            
-            {/* Hero Section with H1 Optimization */}
-            <section className="relative pt-24 pb-12 md:pt-32 md:pb-16 overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-full bg-slate-50 -z-10" />
-                <div className="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl -z-10" />
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="mb-8">
-                        <Link href="/#services" className="inline-flex items-center text-sm font-medium text-primary hover:gap-2 transition-all">
-                            <FaArrowLeft className="mr-2" /> Back to Services
+
+            {/* Hero Section */}
+            <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+                {/* Background Glows */}
+                <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10" />
+                <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px] -z-10" />
+
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <div className="mb-12">
+                        <Link href="/#services" className="group inline-flex items-center text-xs font-black uppercase tracking-[0.3em] text-slate-500 hover:text-primary transition-all">
+                            <FaArrowLeft className="mr-3 group-hover:-translate-x-2 transition-transform" /> Back to Solutions
                         </Link>
                     </div>
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
+
+                    <div className="grid lg:grid-cols-2 gap-20 items-center">
                         <ScrollReveal>
-                            <div className="w-16 h-16 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mb-6 shadow-sm">
-                                <Icon size={32} />
+                            <div className="w-20 h-20 rounded-[2rem] bg-slate-900 border border-slate-800 text-primary flex items-center justify-center mb-10 shadow-2xl">
+                                <Icon size={36} />
                             </div>
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-4 leading-tight uppercase tracking-tight">
-                                {service.title} <span className="text-primary italic">in Bangalore</span>
+                            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-[0.9] uppercase tracking-tighter italic font-outfit">
+                                {service.title} <span className="text-primary not-italic inline-block drop-shadow-[0_0_15px_rgba(239,68,68,0.3)]">Expertise</span>
                             </h1>
-                            <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mb-6">{service.description}</p>
-                            
-                            {/* Problem & Solution Sections */}
-                            <div className="grid gap-6 mt-8">
-                                <div className="p-6 bg-red-50/50 border-l-4 border-red-500 rounded-r-2xl">
-                                    <h3 className="text-sm font-black text-red-600 uppercase tracking-widest mb-2">The Challenge</h3>
-                                    <p className="text-slate-700 leading-relaxed italic">&quot;{service.problemStatement}&quot;</p>
-                                </div>
-                                <div className="p-6 bg-blue-50/50 border-l-4 border-primary rounded-r-2xl">
-                                    <h3 className="text-sm font-black text-primary uppercase tracking-widest mb-2">Our Solution</h3>
-                                    <p className="text-slate-700 leading-relaxed font-medium">{service.solutionStatement}</p>
+                            <p className="text-xl md:text-2xl text-slate-400 leading-relaxed max-w-2xl mb-12 font-inter font-medium">
+                                {service.description}
+                            </p>
+
+                            <div className="flex flex-wrap gap-6">
+                                <Button href="#contact" variant="primary" className="px-10 py-5 rounded-2xl text-xs uppercase tracking-[0.2em] font-black italic">
+                                    Consult an Expert
+                                </Button>
+                                <div className="flex items-center gap-4 px-6 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                                    <div className="flex -space-x-3">
+                                        {[1, 2, 3].map(i => (
+                                            <div key={i} className="w-8 h-8 rounded-full bg-slate-800 border-2 border-slate-950 flex items-center justify-center text-[10px] font-bold">
+                                                {String.fromCharCode(64 + i)}
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Trusted by 50+ Enterprises</span>
                                 </div>
                             </div>
                         </ScrollReveal>
-                        
+
                         <ScrollReveal delay={0.2}>
-                            <div className="relative">
-                                <div className="aspect-video bg-slate-200 rounded-3xl overflow-hidden shadow-2xl relative group">
-                                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent z-10" />
+                            <div className="relative group">
+                                <div className="aspect-[4/3] bg-slate-900 rounded-[3rem] overflow-hidden border border-slate-800 shadow-2xl relative">
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-transparent z-10 opacity-50 group-hover:opacity-70 transition-opacity" />
                                     {service.image ? (
-                                        <Image 
-                                            src={service.image} 
-                                            alt={`${service.title} service in Bangalore`} 
-                                            fill 
-                                            className="object-cover group-hover:scale-110 transition-transform duration-700" 
+                                        <Image
+                                            src={service.image}
+                                            alt={service.title}
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-1000"
                                         />
                                     ) : (
-                                        <div className="w-full h-full flex items-center justify-center bg-slate-800">
-                                            <Icon size={120} className="text-white/20 group-hover:scale-110 transition-transform duration-700" />
+                                        <div className="w-full h-full flex items-center justify-center">
+                                            <Icon size={160} className="text-white/5 group-hover:scale-110 transition-transform duration-1000" />
                                         </div>
                                     )}
-                                    <div className="absolute bottom-6 left-6 z-20 bg-white/90 backdrop-blur p-4 rounded-xl shadow-lg border border-white/20">
-                                        <p className="text-sm font-bold text-slate-900 tracking-wide uppercase italic">Premium IT Solutions</p>
-                                        <p className="text-xs text-slate-500 px-1">Expertise you can trust</p>
+
+                                    {/* Stats Badge */}
+                                    <div className="absolute -bottom-8 -left-8 z-20 bg-slate-900 border border-slate-800 p-8 rounded-[2.5rem] shadow-2xl backdrop-blur-xl">
+                                        <p className="text-4xl font-black text-white italic mb-1 font-outfit">99.9%</p>
+                                        <p className="text-[10px] font-bold text-primary uppercase tracking-[0.2em] font-inter">Uptime Guaranteed</p>
                                     </div>
                                 </div>
-                                <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-orange-500/10 rounded-full blur-2xl" />
-                                <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
+                                <div className="absolute -top-12 -right-12 w-48 h-48 bg-primary/10 rounded-full blur-[80px] -z-10" />
                             </div>
                         </ScrollReveal>
                     </div>
                 </div>
             </section>
 
-            {/* Features Section - Standardized Equal Height Tiles */}
-            <section id="features" className="py-20 bg-white">
+            {/* Core Capabilities */}
+            <section className="py-32 bg-slate-900/50 relative">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="text-center mb-16">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
                         <ScrollReveal>
-                            <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4 uppercase italic tracking-tighter">Enterprise Features</h2>
-                            <div className="h-1.5 w-24 bg-primary mx-auto rounded-full" />
+                            <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block font-inter">Inside the Stack</span>
+                            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase italic font-outfit">Core Capabilities</h2>
+                        </ScrollReveal>
+                        <ScrollReveal delay={0.1}>
+                            <p className="text-slate-500 max-w-md text-sm font-medium leading-relaxed font-inter">
+                                Comprehensive service modules designed to handle high-concurrency enterprise workloads.
+                            </p>
                         </ScrollReveal>
                     </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {service.detailedFeatures.map((feature, idx) => (
                             <ScrollReveal key={idx} delay={idx * 0.1}>
-                                <Card className="h-full border-slate-100 hover:border-primary/30 hover:shadow-2xl hover:-translate-y-2 transition-all p-10 flex flex-col items-center text-center">
-                                    <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-8 shrink-0 shadow-inner">
-                                        <feature.icon size={32} />
+                                <Card className="bg-slate-900/80 border-slate-800/80 hover:border-primary/30 p-10 rounded-[2.5rem] group h-full flex flex-col">
+                                    <div className="w-16 h-16 rounded-2xl bg-slate-800 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-all shadow-inner border border-slate-700/50">
+                                        <feature.icon size={26} />
                                     </div>
-                                    <h3 className="text-xl font-black text-slate-900 mb-4 uppercase italic tracking-tight">{feature.title}</h3>
-                                    <p className="text-slate-500 leading-relaxed text-sm flex-grow">{feature.description}</p>
+                                    <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-tight font-outfit">{feature.title}</h3>
+                                    <p className="text-slate-400 text-sm leading-relaxed font-inter mb-8 grow">{feature.description}</p>
+                                    <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                                        Explored Module <HiArrowNarrowRight />
+                                    </div>
                                 </Card>
                             </ScrollReveal>
                         ))}
@@ -110,85 +131,89 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
                 </div>
             </section>
 
-            {/* Benefits Section - Conversion Focused */}
-            <section className="py-20 bg-slate-50 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -z-0" />
-                <div className="max-w-7xl mx-auto px-6 relative z-10">
-                    <div className="grid lg:grid-cols-2 gap-20 items-center">
+            {/* Strategic Workflow */}
+            <section className="py-32 bg-slate-950">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="text-center mb-24">
                         <ScrollReveal>
-                            <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-8 uppercase italic leading-[1.1] tracking-tighter">
-                                Why Choose Our <br /><span className="text-primary">{service.title}</span>?
-                            </h2>
-                            <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-                                We help businesses in <span className="font-bold text-slate-900 underline decoration-primary decoration-4">Bangalore</span> choose the right IT solutions based on their unique operational needs and scalability goals.
-                            </p>
-                            <div className="grid sm:grid-cols-2 gap-6">
-                                {service.benefitTiles.map((benefit, idx) => (
-                                    <div key={idx} className="flex flex-col gap-4 bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-all group">
-                                        <div className="w-12 h-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white transition-colors">
-                                            <benefit.icon size={20} />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-black text-slate-900 uppercase italic tracking-wider mb-1">{benefit.title}</h4>
-                                            <p className="text-sm text-slate-500 leading-relaxed">{benefit.description}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
+                            <h2 className="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter italic font-outfit">Strategic <span className="text-primary not-italic">Workflow</span></h2>
+                            <div className="h-1 w-24 bg-primary mx-auto rounded-full" />
                         </ScrollReveal>
-                        <ScrollReveal delay={0.2}>
-                            <Card className="p-12 bg-slate-900 text-white relative overflow-hidden shadow-2xl rounded-[3rem]">
-                                <div className="absolute top-[-20%] right-[-20%] w-[300px] h-[300px] bg-primary/20 rounded-full blur-[80px]" />
-                                <div className="relative z-10">
-                                    <div className="bg-primary/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-10 shadow-lg border border-white/10">
-                                        <FaIndustry size={28} className="text-primary" />
+                    </div>
+
+                    <div className="relative">
+                        {/* Desktop Connector */}
+                        <div className="hidden lg:block absolute top-12 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent -z-0" />
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                            {service.processFlow.map((step, idx) => (
+                                <ScrollReveal key={idx} delay={idx * 0.1}>
+                                    <div className="relative group">
+                                        <div className="w-24 h-24 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center mb-8 mx-auto lg:mx-0 group-hover:bg-primary group-hover:border-primary transition-all duration-500 relative z-10 shadow-2xl">
+                                            <span className="text-3xl font-black italic text-white">{idx + 1}</span>
+                                        </div>
+                                        <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-tight italic font-outfit text-center lg:text-left">{step.title}</h3>
+                                        <p className="text-slate-500 text-sm leading-relaxed font-inter text-center lg:text-left">{step.description}</p>
                                     </div>
-                                    <h3 className="text-3xl font-black mb-8 uppercase italic tracking-tight">Industries We Serve</h3>
-                                    <div className="flex flex-wrap gap-4 mb-12">
-                                        {service.industries.map((ind: string, idx: number) => (
-                                            <span key={idx} className="px-5 py-2.5 bg-white/10 backdrop-blur-md rounded-xl text-xs font-bold uppercase tracking-widest border border-white/10 hover:bg-primary/20 transition-colors">
-                                                {ind}
-                                            </span>
-                                        ))}
-                                    </div>
-                                    <div className="p-8 bg-white/5 rounded-3xl border border-white/5 italic text-slate-400 text-lg leading-relaxed relative">
-                                        <span className="text-4xl absolute -top-4 -left-2 text-primary opacity-50">&quot;</span>
-                                        Our mission is to deliver enterprise-grade {service.title.toLowerCase()} that empowers Bangalore organizations to scale efficiently and securely.
-                                        <span className="text-4xl absolute -bottom-8 -right-2 text-primary opacity-50">&quot;</span>
-                                    </div>
-                                </div>
-                            </Card>
-                        </ScrollReveal>
+                                </ScrollReveal>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* FAQ Section */}
-            <section className="py-20 bg-white">
-                <div className="max-w-4xl mx-auto px-6">
-                    <div className="text-center mb-16">
+            {/* Tech Stack & Results */}
+            <section className="py-32 bg-slate-900/30">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="grid lg:grid-cols-2 gap-16 items-stretch">
+                        {/* Tech Stack */}
                         <ScrollReveal>
-                            <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4 uppercase italic tracking-tighter">Common Questions</h2>
-                            <div className="h-1.5 w-24 bg-primary mx-auto rounded-full" />
-                        </ScrollReveal>
-                    </div>
-                    <div className="space-y-6">
-                        {service.faqs.map((faq, idx) => (
-                            <ScrollReveal key={idx} delay={idx * 0.1}>
-                                <div className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-primary/20 transition-all">
-                                    <h3 className="text-lg font-black text-slate-900 mb-3 flex items-center gap-4 uppercase italic tracking-tight">
-                                        <span className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-xs not-italic font-bold">Q</span>
-                                        {faq.question}
-                                    </h3>
-                                    <p className="text-slate-600 leading-relaxed pl-12">{faq.answer}</p>
+                            <div className="p-12 bg-slate-900 rounded-[3rem] border border-slate-800 h-full relative overflow-hidden group">
+                                <div className="absolute top-0 right-0 w-48 h-48 bg-primary/5 rounded-full blur-[80px]" />
+                                <h3 className="text-3xl font-black text-white mb-12 uppercase italic tracking-tighter font-outfit">Infrastructure <span className="text-primary not-italic">Stack</span></h3>
+                                <div className="grid grid-cols-2 gap-4">
+                                    {service.techStack.map((tech, idx) => (
+                                        <div key={idx} className="p-6 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-4 hover:border-primary/50 transition-colors">
+                                            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                                                <FaRocket size={18} />
+                                            </div>
+                                            <span className="text-[10px] font-black uppercase tracking-widest text-slate-300 font-inter">{tech}</span>
+                                        </div>
+                                    ))}
                                 </div>
-                            </ScrollReveal>
-                        ))}
+                            </div>
+                        </ScrollReveal>
+
+                        {/* Impact Card */}
+                        <ScrollReveal delay={0.2}>
+                            <div className="p-12 bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 rounded-[3rem] h-full flex flex-col justify-center relative overflow-hidden group">
+                                <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-[100px]" />
+                                <div className="mb-10">
+                                    <span className="px-6 py-2 bg-primary text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-full font-inter">Case Analysis</span>
+                                </div>
+                                <h3 className="text-4xl md:text-5xl font-black text-white mb-8 uppercase tracking-tighter italic leading-tight font-outfit">
+                                    Measurable <br /> Business <span className="text-primary not-italic">Impact</span>
+                                </h3>
+
+                                <div className="p-10 bg-slate-950/80 backdrop-blur-xl rounded-3xl border border-primary/30 shadow-2xl">
+                                    <div className="flex items-center gap-4 mb-6">
+                                        <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                                            <HiCheckCircle size={24} />
+                                        </div>
+                                        <h4 className="text-xs font-black text-primary uppercase tracking-[0.3em] font-inter">Success Benchmark</h4>
+                                    </div>
+                                    <p className="text-2xl font-bold text-white leading-snug font-outfit italic">
+                                        {service.caseStudy?.result || "Engineered for 100% data integrity and zero unplanned downtime."}
+                                    </p>
+                                </div>
+                            </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>
 
             <ServiceCTA serviceName={service.title} />
+
             <Footer />
         </main>
     );

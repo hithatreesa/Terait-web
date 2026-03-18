@@ -80,7 +80,7 @@ const Testimonials = () => {
                     {testimonials.map((testimonial, index) => (
                         <motion.div
                             key={index}
-                            className="min-w-[85vw] sm:min-w-[450px] md:min-w-0 snap-center"
+                            className="min-w-[85vw] sm:min-w-[450px] md:min-w-0 snap-center h-full"
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ delay: index * 0.1 }}
