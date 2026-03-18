@@ -247,17 +247,19 @@ const Services = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.95 }}
                             transition={{ duration: 0.3 }}
-                            className="relative bg-slate-900/60 border border-slate-700/50 rounded-[2.5rem] w-full max-w-6xl max-h-[90vh] shadow-2xl overflow-hidden"
+                            className="relative bg-slate-900/60 border border-slate-700/50 rounded-[2.5rem] w-full max-w-6xl max-h-[90vh] shadow-2xl overflow-y-auto hide-scrollbar"
                             style={{ backdropFilter: "blur(20px)" }}
                         >
-                            <div className="h-full overflow-y-auto p-8 md:p-16 hide-scrollbar">
+                            <div className="sticky top-0 z-50 flex justify-end p-4 md:p-8 pointer-events-none">
                                 <button
                                     onClick={() => setSelectedId(null)}
-                                    className="absolute top-8 right-8 w-12 h-12 rounded-full bg-slate-800/80 text-white flex items-center justify-center hover:bg-primary transition-all z-20 group"
+                                    className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-800 hover:bg-primary text-white flex items-center justify-center transition-all group shadow-lg pointer-events-auto shadow-black/50"
                                 >
-                                    <HiX size={24} className="group-hover:rotate-90 transition-transform" />
+                                    <HiX size={24} className="group-hover:rotate-90 transition-transform duration-300" />
                                 </button>
+                            </div>
 
+                            <div className="p-6 md:p-16 pt-0 md:pt-0">
                                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
                                     <div className="lg:col-span-12">
                                         <motion.div
@@ -353,18 +355,18 @@ const Services = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.95 }}
                             transition={{ duration: 0.3 }}
-                            className="relative bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-6xl shadow-2xl overflow-hidden max-h-[95vh] md:max-h-[90vh]"
+                            className="relative bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-6xl shadow-2xl max-h-[95vh] md:max-h-[90vh] overflow-y-auto scroll-smooth hide-scrollbar"
                         >
-                            <div className="h-full overflow-y-auto scroll-smooth hide-scrollbar p-6 md:p-12 mb-10 lg:mb-0">
-                                {/* Close Button - Fixed to the top right of the modal */}
+                            <div className="sticky top-0 z-50 flex justify-end p-4 md:p-8 pointer-events-none">
                                 <button
                                     onClick={() => setSelectedSubservice(null)}
-                                    className="absolute top-4 right-4 md:top-8 md:right-8 w-12 h-12 rounded-full bg-slate-800 hover:bg-primary text-white flex items-center justify-center transition-all z-50 group shadow-xl"
+                                    className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-800 hover:bg-primary text-white flex items-center justify-center transition-all group shadow-lg pointer-events-auto border border-slate-700 hover:border-primary shadow-black/50"
                                 >
                                     <HiX size={24} className="group-hover:rotate-90 transition-transform duration-300" />
                                 </button>
+                            </div>
 
-                                <div className="mt-12 md:mt-4 space-y-20 md:space-y-24">
+                            <div className="p-6 md:p-12 pt-0 md:pt-0 mb-10 lg:mb-0 space-y-20 md:space-y-24">
                                 {/* SECTION 1: HERO LAYOUT */}
                                 <div className="flex flex-col lg:flex-row gap-10 md:gap-16 items-center">
                                     {/* Left: Image Section */}
@@ -515,7 +517,6 @@ const Services = () => {
                                         </div>
                                     </div>
                                 </motion.div>
-                            </div>
                             </div>
                         </motion.div>
                     </div>
