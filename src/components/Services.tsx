@@ -238,7 +238,7 @@ const Services = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="absolute inset-0 bg-black/90 backdrop-blur-xl"
+                            className="absolute inset-0 bg-black/60 backdrop-blur-md"
                             onClick={() => setSelectedId(null)}
                         />
 
@@ -248,7 +248,7 @@ const Services = () => {
                             exit={{ opacity: 0, scale: 0.95 }}
                             transition={{ duration: 0.3 }}
                             className="relative bg-slate-900/60 border border-slate-700/50 rounded-[2.5rem] w-full max-w-6xl max-h-[90vh] shadow-2xl overflow-y-auto hide-scrollbar"
-                            style={{ backdropFilter: "blur(20px)" }}
+                            style={{ backdropFilter: "blur(16px)" }}
                         >
                             <div className="sticky top-0 z-50 flex justify-end p-4 md:p-8 pointer-events-none">
                                 <button
@@ -345,7 +345,7 @@ const Services = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="absolute inset-0 bg-black/90 backdrop-blur-2xl"
+                            className="absolute inset-0 bg-black/60 backdrop-blur-lg"
                             onClick={() => setSelectedSubservice(null)}
                         />
 
