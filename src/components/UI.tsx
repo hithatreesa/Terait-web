@@ -30,6 +30,20 @@ export const Button = ({ children, href, onClick, variant = 'primary', className
     );
 
     if (href) {
+        const isExternal = href.startsWith('http') || href.startsWith('tel:') || href.startsWith('mailto:');
+        
+        if (isExternal) {
+            return (
+                <a 
+                    href={href} 
+                    target={href.startsWith('http') ? "_blank" : undefined} 
+                    rel={href.startsWith('http') ? "noopener noreferrer" : undefined}
+                    className="contents"
+                >
+                    {content}
+                </a>
+            );
+        }
         return <Link href={href}>{content}</Link>;
     }
 

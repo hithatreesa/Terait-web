@@ -176,12 +176,12 @@ const FinalCTA = () => {
                                         <a 
                                             href="tel:+919964546464" 
                                             onClick={() => (window as any).gtag?.('event', 'call_click')}
-                                            className="flex items-center gap-3 group/link w-fit"
+                                            className="flex items-center gap-3 group/link w-auto cursor-pointer relative z-10"
                                         >
                                             <div className="w-9 h-9 rounded-lg bg-[#1B2C6B] flex items-center justify-center shrink-0 group-hover/link:bg-primary transition-colors duration-300">
                                                 <FaPhoneAlt className="text-white text-sm" />
                                             </div>
-                                            <p className="text-sm font-black text-slate-900 tracking-wider group-hover/link:text-primary transition-colors duration-300">099645 46464</p>
+                                            <p className="text-sm font-black text-slate-900 tracking-wider group-hover/link:text-primary group-hover/link:underline transition-colors duration-300">099645 46464</p>
                                         </a>
                                     </li>
                                     <li>
