@@ -13,7 +13,7 @@ const WhatsAppButton = () => {
     };
 
     const redirectToWhatsApp = () => {
-        const message = "Hi Terait, I'd like to inquire about your IT services.";
+        const message = "Hi Terait, I'd like to enquire about your services.";
         trackEvent("whatsapp_click", { message_preview: message.substring(0, 30) });
         const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(url, "_blank");
