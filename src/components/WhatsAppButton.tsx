@@ -28,14 +28,36 @@ const WhatsAppButton = () => {
         const savedDetails = localStorage.getItem("user_details");
 
         if (savedDetails) {
-            setUserDetails(JSON.parse(savedDetails));
-            setStage("chat");
+            try {
+                const data: unknown = JSON.parse(savedDetails);
+                if (data && typeof data === 'object' && 'name' in data && 'phone' in data) {
+                    // eslint-disable-next-line react-hooks/set-state-in-effect
+                    setUserDetails(data as { name: string; phone: string });
+                    // eslint-disable-next-line react-hooks/set-state-in-effect
+                    setStage("chat");
+                }
+            } catch (error) {
+                console.error("Error parsing user details:", error);
+            }
         }
 
         if (savedChat) {
-            setMessages(JSON.parse(savedChat));
+            try {
+                const data: unknown = JSON.parse(savedChat);
+                if (Array.isArray(data)) {
+                    // eslint-disable-next-line react-hooks/set-state-in-effect
+                    setMessages(data as Message[]);
+                }
+            } catch (error) {
+                console.error("Error parsing chat history:", error);
+            }
         } else {
-            setMessages([{ sender: "bot", text: "Hi 👋 Welcome to Terait! I'm your IT Consultant. How can I help you with your technology needs today?" }]);
+            setMessages([
+                { 
+                    sender: "bot", 
+                    text: "Hi 👋 Welcome to Terait! I'm your IT Consultant. How can I help you with your technology needs today?" 
+                }
+            ]);
         }
     }, []);
 
@@ -52,8 +74,8 @@ const WhatsAppButton = () => {
     }, [messages, isOpen, isTyping]);
 
     const trackEvent = (eventName: string, params = {}) => {
-        if (typeof window !== "undefined" && (window as any).gtag) {
-            (window as any).gtag("event", eventName, params);
+        if (typeof window !== "undefined" && window.gtag) {
+            window.gtag("event", eventName, params);
         }
     };
 

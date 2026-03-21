@@ -10,7 +10,14 @@ import ScrollReveal from "./ScrollReveal";
 import { servicesData, DetailedFeature } from "@/data/servicesData";
 import ServiceModal from "./ServiceModal";
 
-const servicesList = [
+interface ServiceListItem {
+    id: string;
+    category: "Services" | "Products";
+    title?: string;
+    desc?: string;
+}
+
+const servicesList: ServiceListItem[] = [
     { id: "it-infra", category: "Services" },
     { id: "cloud-solutions", category: "Services" },
     { id: "cybersecurity", category: "Services" },
@@ -123,8 +130,8 @@ const Services = () => {
                         {filteredItems.map((item, index) => {
                             const data = servicesData[item.id];
                             if (!data) return null;
-                            const title = (item as any).title || data.title;
-                            const desc = (item as any).desc || data.description;
+                            const title = item.title || data.title;
+                            const desc = item.desc || data.description;
                             const highlights = data.features;
 
                             return (

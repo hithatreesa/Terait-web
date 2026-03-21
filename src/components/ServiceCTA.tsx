@@ -3,7 +3,6 @@ import React from 'react';
 import { Button } from './UI';
 import ScrollReveal from './ScrollReveal';
 import { FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
-import { HiArrowNarrowRight } from 'react-icons/hi';
 
 interface ServiceCTAProps { serviceName: string; }
 

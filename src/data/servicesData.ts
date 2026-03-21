@@ -1,5 +1,5 @@
 import { IconType } from "react-icons";
-import { 
+import {
     FaLaptopCode, FaCamera, FaServer, FaSitemap, FaWifi,
     FaCloud, FaDatabase, FaDesktop, FaHistory, FaCogs, FaShieldAlt, FaLock,
     FaPhoneAlt, FaHeadset, FaNetworkWired, FaRocket, FaCheckCircle, FaBriefcase,
@@ -67,27 +67,27 @@ export interface ServiceCategory {
 
 export const servicesData: Record<string, ServiceDetail> = {
     "it-infra": {
-        slug: "it-infra", title: "Enterprise IT Infrastructure in Bangalore", icon: FaServer,
+        slug: "it-infra", title: "IT Infrastructure", icon: FaServer,
         description: "Enterprise-grade IT design, deployment, and 24/7 managed support in Bangalore.",
         problemStatement: "Fragmented IT systems and poor infrastructure planning leading to frequent downtime.",
         solutionStatement: "Terait provides unified infrastructure design and proactive managed services to ensure business continuity.",
         features: ["IT Consulting", "Infrastructure Deployment", "Managed IT Services", "24/7 IT Support"],
         detailedFeatures: [
-            { 
-                title: "IT Consulting", 
-                description: "Strategic IT planning designed to align your technology infrastructure with your long-term business goals. We provide comprehensive roadmaps for scalable, secure, and cost-effective IT growth.", 
+            {
+                title: "IT Consulting",
+                description: "Strategic IT planning designed to align your technology infrastructure with your long-term business goals. We provide comprehensive roadmaps for scalable, secure, and cost-effective IT growth.",
                 icon: FaBriefcase,
                 impact: "Reduce IT spend by 25% while improving operational efficiency."
             },
-            { 
-                title: "Managed Services", 
-                description: "Proactive, 24/7 monitoring and comprehensive maintenance of your entire IT stack. We anticipate and resolve issues before they can impact your daily operations.", 
+            {
+                title: "Managed Services",
+                description: "Proactive, 24/7 monitoring and comprehensive maintenance of your entire IT stack. We anticipate and resolve issues before they can impact your daily operations.",
                 icon: FaCogs,
                 impact: "Achieve 99.99% infrastructure uptime with zero unplanned disruptions."
             },
-            { 
-                title: "IT Support", 
-                description: "Responsive on-site and remote helpdesk support tailored for enterprise needs. Our certified engineers guarantee rapid resolution times to keep your workforce productive.", 
+            {
+                title: "IT Support",
+                description: "Responsive on-site and remote helpdesk support tailored for enterprise needs. Our certified engineers guarantee rapid resolution times to keep your workforce productive.",
                 icon: FaHeadset,
                 impact: "Decrease average ticket resolution time by over 60%."
             }
@@ -110,27 +110,27 @@ export const servicesData: Record<string, ServiceDetail> = {
         benefits: ["Proactive Management", "Cost Optimization", "Expert Support"]
     },
     "cloud-solutions": {
-        slug: "cloud-solutions", title: "Cloud & Data Center Solutions Bangalore", icon: FaCloud,
+        slug: "cloud-solutions", title: "Cloud & Data", icon: FaCloud,
         description: "Scalable cloud migrations and high-performance data center architecture in Bangalore.",
         problemStatement: "High costs and scalability limits of on-premise legacy hardware.",
         solutionStatement: "Public, Private, and Hybrid cloud solutions using AWS, Azure, and Google Cloud.",
         features: ["AWS / Azure / GCP", "Cloud Migration", "Virtualization", "Hosting Services"],
         detailedFeatures: [
-            { 
-                title: "Cloud Migration", 
-                description: "Seamless, risk-free transition of your legacy workloads to modern cloud architectures. Our expert engineers ensure zero data loss and minimal downtime during the entire migration process.", 
+            {
+                title: "Cloud Migration",
+                description: "Seamless, risk-free transition of your legacy workloads to modern cloud architectures. Our expert engineers ensure zero data loss and minimal downtime during the entire migration process.",
                 icon: FaCloud,
                 impact: "Accelerate deployment times by 40% with automated cloud provisioning."
             },
-            { 
-                title: "Data Center", 
-                description: "Modern, secure, and energy-efficient data center design and deployment. We build highly resilient physical infrastructures to support your most critical enterprise applications.", 
+            {
+                title: "Data Center",
+                description: "Modern, secure, and energy-efficient data center design and deployment. We build highly resilient physical infrastructures to support your most critical enterprise applications.",
                 icon: FaServer,
                 impact: "Reduce power and cooling costs by up to 30% with optimized layouts."
             },
-            { 
-                title: "Virtualization", 
-                description: "Advanced hardware consolidation integrating VMware and Hyper-V solutions. Optimize your physical server resources for maximum efficiency, easier backups, and rapid disaster recovery.", 
+            {
+                title: "Virtualization",
+                description: "Advanced hardware consolidation integrating VMware and Hyper-V solutions. Optimize your physical server resources for maximum efficiency, easier backups, and rapid disaster recovery.",
                 icon: FaCogs,
                 impact: "Consolidate hardware footprint by 70% while boosting performance."
             }
@@ -153,27 +153,27 @@ export const servicesData: Record<string, ServiceDetail> = {
         benefits: ["Global Scale", "Disaster Recovery", "Reduced Capex"]
     },
     "cybersecurity": {
-        slug: "cybersecurity", title: "Cybersecurity Services in Bangalore", icon: FaLock,
+        slug: "cybersecurity", title: "Cybersecurity Services", icon: FaLock,
         description: "Multi-layered defense against evolving digital threats and data breaches for Bangalore businesses.",
         problemStatement: "Increasing frequency of ransomware and sophisticated cyber-attacks.",
         solutionStatement: "Next-gen firewalls, endpoint security, and robust disaster recovery plans.",
         features: ["Firewalls & EDR", "Endpoint Security", "Backup Solutions", "Disaster Recovery"],
         detailedFeatures: [
-            { 
-                title: "Firewalls", 
-                description: "Next-generation perimeter defense equipped with AI-driven threat intelligence. We actively filter and block malicious traffic before it ever reaches your internal enterprise network.", 
+            {
+                title: "Firewalls",
+                description: "Next-generation perimeter defense equipped with AI-driven threat intelligence. We actively filter and block malicious traffic before it ever reaches your internal enterprise network.",
                 icon: FaShieldAlt,
                 impact: "Block 99.9% of unauthorized access attempts automatically."
             },
-            { 
-                title: "DR Planning", 
-                description: "Comprehensive Disaster Recovery protocols to guarantee business continuity. Our automated backup systems ensure rapid restoration of your critical data after any unexpected incident or outage.", 
+            {
+                title: "DR Planning",
+                description: "Comprehensive Disaster Recovery protocols to guarantee business continuity. Our automated backup systems ensure rapid restoration of your critical data after any unexpected incident or outage.",
                 icon: FaHistory,
                 impact: "Achieve a Recovery Time Objective (RTO) of less than 15 minutes."
             },
-            { 
-                title: "Endpoint Security", 
-                description: "Advanced malware protection covering every device on your corporate network. We secure laptops, mobile phones, and servers against zero-day exploits and sophisticated ransomware attacks.", 
+            {
+                title: "Endpoint Security",
+                description: "Advanced malware protection covering every device on your corporate network. We secure laptops, mobile phones, and servers against zero-day exploits and sophisticated ransomware attacks.",
                 icon: FaLaptopCode,
                 impact: "Eliminate endpoint vulnerabilities with 24/7 active threat hunting."
             }
@@ -196,30 +196,30 @@ export const servicesData: Record<string, ServiceDetail> = {
         benefits: ["Peace of Mind", "Data Integrity", "Brand Trust"]
     },
     "networking": {
-        slug: "networking", title: "Enterprise Networking Solutions Bangalore", icon: FaNetworkWired,
+        slug: "networking", title: "Networking Solutions", icon: FaNetworkWired,
         description: "High-speed, redundant network architecture for seamless communication in Bangalore.",
         problemStatement: "Network latency and dead zones impacting office productivity.",
         solutionStatement: "Fiber optic backbones, SD-WAN, and enterprise-grade WiFi 6/7.",
         features: ["Routers & Switches", "Enterprise Wireless", "SD-WAN", "Structured Cabling"],
         detailedFeatures: [
-            { 
-                title: "Routers & Switches", 
-                description: "Enterprise-grade networking hardware specifically optimized for high-capacity branch and core deployments. We establish secure, resilient transit paths to ensure seamless and rapid data flow.", 
-                icon: FaNetworkWired, 
+            {
+                title: "Routers & Switches",
+                description: "Enterprise-grade networking hardware specifically optimized for high-capacity branch and core deployments. We establish secure, resilient transit paths to ensure seamless and rapid data flow.",
+                icon: FaNetworkWired,
                 image: "/images/services/router.jpg",
-                impact: "Reduced overall network latency by 60% with edge-optimized routing." 
+                impact: "Reduced overall network latency by 60% with edge-optimized routing."
             },
-            { 
-                title: "SD-WAN", 
-                description: "Centralized network control and intelligent traffic steering across multiple corporate locations. Eliminate bandwidth constraints while ensuring priority routing for critical VoIP and video applications.", 
-                icon: FaSitemap, 
+            {
+                title: "SD-WAN",
+                description: "Centralized network control and intelligent traffic steering across multiple corporate locations. Eliminate bandwidth constraints while ensuring priority routing for critical VoIP and video applications.",
+                icon: FaSitemap,
                 image: "/images/services/sdwan.jpg",
                 impact: "Saved 30% on annual bandwidth costs utilizing smart path selection."
             },
-            { 
-                title: "Wireless", 
-                description: "High-density WiFi 6/7 solutions built for high-performance, mobile-first workplaces. We perform rigorous predictive RF surveys to guarantee uninterrupted connection speeds and total campus coverage.", 
-                icon: FaWifi, 
+            {
+                title: "Wireless",
+                description: "High-density WiFi 6/7 solutions built for high-performance, mobile-first workplaces. We perform rigorous predictive RF surveys to guarantee uninterrupted connection speeds and total campus coverage.",
+                icon: FaWifi,
                 image: "/images/services/wireless.jpg",
                 impact: "Eliminated 95% of WiFi coverage dead zones in large office campus."
             }
@@ -248,21 +248,21 @@ export const servicesData: Record<string, ServiceDetail> = {
         solutionStatement: "Unified platforms for managing customers, resources, and documentation.",
         features: ["CRM & ERP", "Digital Signatures", "Document Management", "Custom Workflows"],
         detailedFeatures: [
-            { 
-                title: "ERP Systems", 
-                description: "Centralized operational management integrating your finance, HR, and supply chain into a single pane of glass. Maximize resource visibility and eliminate frustrating departmental data silos.", 
+            {
+                title: "ERP Systems",
+                description: "Centralized operational management integrating your finance, HR, and supply chain into a single pane of glass. Maximize resource visibility and eliminate frustrating departmental data silos.",
                 icon: FaCogs,
                 impact: "Increase gross operational efficiency by 35% through centralized data."
             },
-            { 
-                title: "Digital Docs", 
-                description: "Secure, fully compliant paperless document workflows and e-signing platforms. We automate your tedious approval cycles and guarantee strict regulatory audit trails.", 
+            {
+                title: "Digital Docs",
+                description: "Secure, fully compliant paperless document workflows and e-signing platforms. We automate your tedious approval cycles and guarantee strict regulatory audit trails.",
                 icon: FaCheckCircle,
                 impact: "Accelerate contract turnaround times from weeks to mere hours."
             },
-            { 
-                title: "Custom Apps", 
-                description: "Tailored software applications built exclusively for your unique business logic and requirements. We develop highly scalable web and mobile infrastructure to give you a true competitive advantage.", 
+            {
+                title: "Custom Apps",
+                description: "Tailored software applications built exclusively for your unique business logic and requirements. We develop highly scalable web and mobile infrastructure to give you a true competitive advantage.",
                 icon: FaLaptopCode,
                 impact: "Automate 100% of legacy manual data-entry workflows."
             }
@@ -291,21 +291,21 @@ export const servicesData: Record<string, ServiceDetail> = {
         solutionStatement: "Unified communication platforms that bridge the gap between remote and on-site teams.",
         features: ["Email Solutions", "Video Conferencing", "Team Collaboration", "Secure File Sharing"],
         detailedFeatures: [
-            { 
-                title: "Unified Comms", 
-                description: "Combining enterprise voice, HD video conferencing, and instant chat into a single resilient platform. We break down corporate communication silos and empower rapid decision making across regions.", 
+            {
+                title: "Unified Comms",
+                description: "Combining enterprise voice, HD video conferencing, and instant chat into a single resilient platform. We break down corporate communication silos and empower rapid decision making across regions.",
                 icon: FaPhoneAlt,
                 impact: "Reduce internal communication friction by 50% across departments."
             },
-            { 
-                title: "Cloud Email", 
-                description: "Professional, encrypted cloud email suites protected by advanced ML-driven spam and phishing filters. Guarantee total data sovereignty and 99.9% uptime for your most critical business communications.", 
+            {
+                title: "Cloud Email",
+                description: "Professional, encrypted cloud email suites protected by advanced ML-driven spam and phishing filters. Guarantee total data sovereignty and 99.9% uptime for your most critical business communications.",
                 icon: FaCloud,
                 impact: "Prevent 99.9% of targeted phishing attempts with proactive filters."
             },
-            { 
-                title: "File Sync", 
-                description: "Secure, granular access to corporate documentation from any device, anywhere in the world. Enforce strict data-loss prevention policies while empowering your remote workforce seamlessly.", 
+            {
+                title: "File Sync",
+                description: "Secure, granular access to corporate documentation from any device, anywhere in the world. Enforce strict data-loss prevention policies while empowering your remote workforce seamlessly.",
                 icon: FaSitemap,
                 impact: "Enable 100% secure resource access for hybrid and remote teams."
             }
@@ -334,21 +334,21 @@ export const servicesData: Record<string, ServiceDetail> = {
         solutionStatement: "Implementing robotic automation and modern DevOps practices.",
         features: ["RPA / Automation", "Workflow Design", "CI/CD Pipelines", "Version Control"],
         detailedFeatures: [
-            { 
-                title: "RPA", 
-                description: "Robotic Process Automation deploying intelligent software 'bots' to handle your high-volume, rules-based office tasks. We liberate your human workforce to focus on high-value, creative problem-solving.", 
+            {
+                title: "RPA",
+                description: "Robotic Process Automation deploying intelligent software 'bots' to handle your high-volume, rules-based office tasks. We liberate your human workforce to focus on high-value, creative problem-solving.",
                 icon: FaCogs,
                 impact: "Save over 1,000 manual administrative hours per quarter."
             },
-            { 
-                title: "Pipeline Setup", 
-                description: "Automating rigorous code builds, regression testing, and production deployments via modern CI/CD. Ship robust software faster and drastically reduce the risk of critical downtime.", 
+            {
+                title: "Pipeline Setup",
+                description: "Automating rigorous code builds, regression testing, and production deployments via modern CI/CD. Ship robust software faster and drastically reduce the risk of critical downtime.",
                 icon: FaSitemap,
                 impact: "Accelerate software release velocity by an incredible 400%."
             },
-            { 
-                title: "GitOps", 
-                description: "Managing entire infrastructure fleets through declarative version control methodologies. Enforce strict configuration standards and immediately roll back failing environments with a single click.", 
+            {
+                title: "GitOps",
+                description: "Managing entire infrastructure fleets through declarative version control methodologies. Enforce strict configuration standards and immediately roll back failing environments with a single click.",
                 icon: FaShieldAlt,
                 impact: "Eliminate configuration drift and achieve 100% infrastructure parity."
             }
@@ -377,21 +377,21 @@ export const servicesData: Record<string, ServiceDetail> = {
         solutionStatement: "End-to-end procurement and integration of smart devices and core hardware.",
         features: ["Computers & Printers", "CCTV & Surveillance", "POS / RFID", "IoT & Smart Devices"],
         detailedFeatures: [
-            { 
-                title: "Computing", 
-                description: "Provisioning high-performance laptops, powerful desktops, and intensive graphical workstations. We meticulously match optimal hardware specifications to your team's specific demanding workloads.", 
+            {
+                title: "Computing",
+                description: "Provisioning high-performance laptops, powerful desktops, and intensive graphical workstations. We meticulously match optimal hardware specifications to your team's specific demanding workloads.",
                 icon: FaDesktop,
                 impact: "Boost individual workstation performance and speed by 40%."
             },
-            { 
-                title: "Surveillance", 
-                description: "AI-powered, ultra-HD IP camera arrays featuring deep physical analytics and biometric access controls. Monitor, record, and secure your expansive facilities from anywhere in the world, in real-time.", 
+            {
+                title: "Surveillance",
+                description: "AI-powered, ultra-HD IP camera arrays featuring deep physical analytics and biometric access controls. Monitor, record, and secure your expansive facilities from anywhere in the world, in real-time.",
                 icon: FaCamera,
                 impact: "Provide 360-degree verifiable campus security around the clock."
             },
-            { 
-                title: "Smart IoT", 
-                description: "Deploying integrated industrial sensors and smart office automation across diverse environments. Harvest continuous real-time telemetry to drastically optimize your facility's energy utilization.", 
+            {
+                title: "Smart IoT",
+                description: "Deploying integrated industrial sensors and smart office automation across diverse environments. Harvest continuous real-time telemetry to drastically optimize your facility's energy utilization.",
                 icon: FaCogs,
                 impact: "Decrease annual commercial facility power consumption by 25%."
             }

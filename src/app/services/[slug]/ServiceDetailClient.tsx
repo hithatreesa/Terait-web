@@ -6,11 +6,10 @@ import Footer from '@/components/Footer';
 import { Card, Button } from '@/components/UI';
 import ScrollReveal from '@/components/ScrollReveal';
 import ServiceCTA from '@/components/ServiceCTA';
-import { FaArrowLeft, FaCheckCircle, FaIndustry, FaRocket, FaChevronRight } from 'react-icons/fa';
+import { FaArrowLeft, FaRocket } from 'react-icons/fa';
 import { HiArrowNarrowRight, HiCheckCircle } from 'react-icons/hi';
 import Image from 'next/image';
 import { servicesData } from '@/data/servicesData';
-import { motion } from 'framer-motion';
 
 interface ServiceDetailClientProps {
     slug: string;

@@ -23,7 +23,7 @@ const FinalCTA = () => {
         setIsSubmitting(false);
         setIsSubmitted(true);
         if (typeof window !== 'undefined') {
-            (window as any).gtag?.('event', 'form_submission', {
+            window.gtag?.('event', 'form_submission', {
                 event_category: 'contact',
                 event_label: 'lead_form'
             });
@@ -158,7 +158,7 @@ const FinalCTA = () => {
                                             href="https://maps.app.goo.gl/PbATD2xT4BDe8op1A" 
                                             target="_blank" 
                                             rel="noopener noreferrer"
-                                            onClick={() => (window as any).gtag?.('event', 'location_click')}
+                                            onClick={() => window.gtag?.('event', 'location_click')}
                                             className="flex items-start gap-3 group/link"
                                         >
                                             <div className="w-9 h-9 rounded-lg bg-[#1B2C6B] flex items-center justify-center shrink-0 group-hover/link:bg-primary transition-colors duration-300">
@@ -175,7 +175,7 @@ const FinalCTA = () => {
                                     <li>
                                         <a 
                                             href="tel:+919964546464" 
-                                            onClick={() => (window as any).gtag?.('event', 'call_click')}
+                                            onClick={() => window.gtag?.('event', 'call_click')}
                                             className="flex items-center gap-3 group/link w-auto cursor-pointer relative z-10"
                                         >
                                             <div className="w-9 h-9 rounded-lg bg-[#1B2C6B] flex items-center justify-center shrink-0 group-hover/link:bg-primary transition-colors duration-300">

@@ -104,15 +104,7 @@ const ServiceModal: React.FC<ServiceModalProps> = ({
                                 </div>
                             </div>
 
-                            {/* Bottom Strip */}
-                            <div className="px-12 py-6 border-t border-slate-800 bg-slate-900/30 backdrop-blur-md flex justify-between items-center">
-                                <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] font-inter">Explore our {service.detailedFeatures.length} specialized sub-services</span>
-                                <div className="flex gap-4">
-                                    {service.techStack.slice(0, 3).map((tech, i) => (
-                                        <span key={i} className="text-[9px] font-bold text-slate-600 border border-slate-800 px-3 py-1 rounded-full uppercase tracking-widest">{tech}</span>
-                                    ))}
-                                </div>
-                            </div>
+
                         </motion.div>
                     </div>
                 )}
@@ -122,6 +114,7 @@ const ServiceModal: React.FC<ServiceModalProps> = ({
                 isOpen={!!selectedSubservice}
                 onClose={() => setSelectedSubservice(null)}
                 subservice={selectedSubservice}
+                processFlow={service.processFlow}
             />
         </>
     );

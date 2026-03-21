@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
     const trackSocial = (platform: string) => {
         if (typeof window !== "undefined") {
-            (window as any).gtag?.('event', 'social_click', { platform });
+            window.gtag?.('event', 'social_click', { platform });
         }
     };
 
