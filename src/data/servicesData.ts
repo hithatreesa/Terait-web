@@ -68,10 +68,10 @@ export interface ServiceCategory {
 export const servicesData: Record<string, ServiceDetail> = {
     "it-infra": {
         slug: "it-infra", title: "IT Infrastructure", icon: FaServer,
-        description: "Enterprise-grade IT design, deployment, and 24/7 managed support in Bangalore.",
+        description: "Enterprise-grade IT design, deployment, and managed support in Bangalore.",
         problemStatement: "Fragmented IT systems and poor infrastructure planning leading to frequent downtime.",
         solutionStatement: "Terait provides unified infrastructure design and proactive managed services to ensure business continuity.",
-        features: ["IT Consulting", "Infrastructure Deployment", "Managed IT Services", "24/7 IT Support"],
+        features: ["IT Consulting", "Infrastructure Deployment", "Managed IT Services", "Professional IT Support"],
         detailedFeatures: [
             {
                 title: "IT Consulting",
@@ -81,7 +81,7 @@ export const servicesData: Record<string, ServiceDetail> = {
             },
             {
                 title: "Managed Services",
-                description: "Proactive, 24/7 monitoring and comprehensive maintenance of your entire IT stack. We anticipate and resolve issues before they can impact your daily operations.",
+                description: "Proactive, comprehensive monitoring and maintenance of your entire IT stack. We anticipate and resolve issues before they can impact your daily operations.",
                 icon: FaCogs,
                 impact: "Achieve 99.99% infrastructure uptime with zero unplanned disruptions."
             },
@@ -97,7 +97,7 @@ export const servicesData: Record<string, ServiceDetail> = {
             { title: "Reliability", description: "99.9% uptime for all managed systems.", icon: FaShieldAlt }
         ],
         faqs: [
-            { question: "Do you offer 24/7 support?", answer: "Yes, we provide round-the-clock monitoring and emergency on-site support." }
+            { question: "What level of support do you offer?", answer: "We provide comprehensive monitoring and emergency on-site support during business hours and for critical incidents." }
         ],
         industries: ["Corporate", "Healthcare", "Manufacturing"],
         processFlow: [
@@ -175,7 +175,7 @@ export const servicesData: Record<string, ServiceDetail> = {
                 title: "Endpoint Security",
                 description: "Advanced malware protection covering every device on your corporate network. We secure laptops, mobile phones, and servers against zero-day exploits and sophisticated ransomware attacks.",
                 icon: FaLaptopCode,
-                impact: "Eliminate endpoint vulnerabilities with 24/7 active threat hunting."
+                impact: "Eliminate endpoint vulnerabilities with active threat hunting."
             }
         ],
         benefitTiles: [
@@ -190,7 +190,7 @@ export const servicesData: Record<string, ServiceDetail> = {
             { title: "Scanning", description: "Identifying vulnerabilities across your network." },
             { title: "Hardening", description: "Applying patches and security policies." },
             { title: "Protection", description: "Deploying active defense layers." },
-            { title: "Monitoring", description: "24/7 threat detection and response." }
+            { title: "Monitoring", description: "Proactive threat detection and response." }
         ],
         techStack: ["Sophos", "Fortinet", "CrowdStrike", "Veeam"],
         benefits: ["Peace of Mind", "Data Integrity", "Brand Trust"]

@@ -178,7 +178,7 @@ const WhatsAppButton = () => {
             }
             // AMC
             else if (lowerInput.includes("amc") || lowerInput.includes("maintenance") || lowerInput.includes("support")) {
-                botReply = "Our AMC packages ensure your business IT stays up and running 24/7 with preventive maintenance. How many systems do you need covered? I can have our team share our standard packages with you.";
+                botReply = "Our AMC packages ensure your business IT stays up and running with preventive maintenance. How many systems do you need covered? I can have our team share our standard packages with you.";
             }
             // Hardware
             else if (lowerInput.includes("laptop") || lowerInput.includes("desktop") || lowerInput.includes("printer") || lowerInput.includes("server")) {

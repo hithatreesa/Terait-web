@@ -15,7 +15,7 @@ const faqs = [
     },
     {
         question: 'Do you provide after-installation support?',
-        answer: 'Yes, we provide 24/7 reliable after-support and maintenance services to ensure your IT infrastructure operates without interruptions.'
+        answer: 'Yes, we provide reliable after-support and maintenance services to ensure your IT infrastructure operates without interruptions.'
     },
     {
         question: 'Can you help with new office IT setups?',

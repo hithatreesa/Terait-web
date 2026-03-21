@@ -38,7 +38,7 @@ const ServiceCTA = ({ serviceName }: ServiceCTAProps) => {
                     <div className="mt-20 pt-10 border-t border-white/5 flex flex-wrap justify-center gap-12 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
                         <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">ISO 27001 Certified</span>
                         <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">SLA Guaranteed</span>
-                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">24/7 Monitoring</span>
+                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Proactive Monitoring</span>
                     </div>
                 </ScrollReveal>
             </div>

@@ -7,7 +7,7 @@ const reasons = [
     { title: 'Certified IT Engineers', description: 'Our team consists of highly skilled and certified professionals.' },
     { title: 'Fast Installation', description: 'We prioritize quick and efficient setup to minimize downtime.' },
     { title: 'Affordable Solutions', description: 'Providing high-quality IT services at competitive prices.' },
-    { title: 'Reliable After-Support', description: '24/7 support to ensure your business operations never stop.' },
+    { title: 'Reliable After-Support', description: 'Expert support to ensure your business operations continue smoothly.' },
     { title: 'Complete IT Provider', description: 'One-stop shop for all your IT infrastructure needs.' },
 ];
 
