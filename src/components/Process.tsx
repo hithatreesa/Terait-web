@@ -31,7 +31,7 @@ const Process = () => {
         <section className="py-16 md:py-20 relative overflow-hidden bg-[#F4F6F8]">
             {/* Texture Overlay */}
             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] [background-size:20px_20px]"></div>
-            
+
             <div className="relative max-w-7xl mx-auto px-6">
                 <div className="text-center mb-12">
                     <ScrollReveal>
@@ -50,8 +50,8 @@ const Process = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10 justify-center">
                         {steps.map((step, index) => (
-                            <ScrollReveal 
-                                key={index} 
+                            <ScrollReveal
+                                key={index}
                                 delay={index * 0.2}
                                 direction="up"
                                 className="h-full"
@@ -64,7 +64,7 @@ const Process = () => {
                                             {index + 1}
                                         </div>
                                     </div>
-                                    <h3 className="text-lg font-bold text-slate-900 mb-3 italic tracking-tight uppercase tracking-wider">{step.title}</h3>
+                                    <h3 className="text-lg font-bold text-slate-900 mb-2 italic tracking-tight uppercase tracking-wider">{step.title}</h3>
                                     <p className="text-sm text-slate-500 leading-relaxed font-medium">
                                         {step.description}
                                     </p>

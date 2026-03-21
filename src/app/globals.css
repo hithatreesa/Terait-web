@@ -101,3 +101,10 @@ body {
     color: #243C8F;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

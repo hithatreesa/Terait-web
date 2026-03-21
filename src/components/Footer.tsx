@@ -1,7 +1,15 @@
+"use client";
+
 import React from "react";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
+    const trackSocial = (platform: string) => {
+        if (typeof window !== "undefined") {
+            (window as any).gtag?.('event', 'social_click', { platform });
+        }
+    };
+
     return (
         <footer className="bg-[#1B2C6B] py-8 border-t border-white/5">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,7 +19,10 @@ const Footer = () => {
                     <div className="flex space-x-6">
 
                         <a
-                            href="#"
+                            href="https://www.facebook.com/teraittechnologies"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => trackSocial('facebook')}
                             aria-label="Follow us on Facebook"
                             className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:bg-blue-600 hover:text-white transition"
                         >
@@ -19,15 +30,10 @@ const Footer = () => {
                         </a>
 
                         <a
-                            href="#"
-                            aria-label="Follow us on Twitter"
-                            className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:bg-sky-500 hover:text-white transition"
-                        >
-                            <FaTwitter size={16} />
-                        </a>
-
-                        <a
-                            href="#"
+                            href="https://www.linkedin.com/company/terait-technologies-pvt-ltd"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => trackSocial('linkedin')}
                             aria-label="Follow us on LinkedIn"
                             className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:bg-blue-700 hover:text-white transition"
                         >
@@ -35,7 +41,10 @@ const Footer = () => {
                         </a>
 
                         <a
-                            href="#"
+                            href="https://www.instagram.com/teraittechnologies?igsh=MXFudGswdzFwa3piZQ=="
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => trackSocial('instagram')}
                             aria-label="Follow us on Instagram"
                             className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:bg-pink-500 hover:text-white transition"
                         >

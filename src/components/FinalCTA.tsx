@@ -22,6 +22,12 @@ const FinalCTA = () => {
         await new Promise(resolve => setTimeout(resolve, 1500));
         setIsSubmitting(false);
         setIsSubmitted(true);
+        if (typeof window !== 'undefined') {
+            (window as any).gtag?.('event', 'form_submission', {
+                event_category: 'contact',
+                event_label: 'lead_form'
+            });
+        }
         setFormData({ name: '', email: '', phone: '', message: '' });
     };
 
@@ -108,6 +114,7 @@ const FinalCTA = () => {
                                                 ></textarea>
                                             </div>
                                             <button 
+                                                type="submit"
                                                 disabled={isSubmitting}
                                                 className="inline-flex items-center justify-center gap-2 bg-[#E63946] hover:bg-red-700 text-white font-bold text-[10px] uppercase tracking-widest px-6 py-3.5 rounded-lg shadow-lg shadow-red-500/10 transition-all active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
                                             >
@@ -130,6 +137,7 @@ const FinalCTA = () => {
                                         <h3 className="text-2xl font-black text-slate-900 mb-2 uppercase tracking-tight">Message Sent!</h3>
                                         <p className="text-slate-500 text-sm font-medium mb-8">Thank you for reaching out. Our team will contact you shortly.</p>
                                         <button 
+                                            type="button"
                                             onClick={() => setIsSubmitted(false)}
                                             className="text-[10px] font-black uppercase tracking-widest text-primary hover:text-red-700 transition-colors"
                                         >
@@ -144,29 +152,48 @@ const FinalCTA = () => {
                         <div className="lg:w-5/12 bg-slate-50/50 p-8 md:p-10 space-y-8">
                             <div>
                                 <h3 className="text-[9px] font-black text-[#1B2C6B] uppercase tracking-[0.2em] mb-6">Contact Information</h3>
-                                <ul className="space-y-4">
-                                    <li className="flex items-start gap-3">
-                                        <div className="w-8 h-8 rounded-lg bg-[#1B2C6B] flex items-center justify-center shrink-0">
-                                            <FaMapMarkerAlt className="text-white text-xs" />
-                                        </div>
-                                        <div>
-                                            <p className="text-[10px] font-bold text-slate-900 leading-tight uppercase tracking-tight">
-                                                #24, 100 Feet Rd, HRBR Layout 1st Block,<br />
-                                                Balaji Layout, Subbaiahnapalya, Banaswadi, Bengaluru, Karnataka 560043
-                                            </p>
-                                        </div>
+                                <ul className="space-y-5">
+                                    <li>
+                                        <a 
+                                            href="https://maps.app.goo.gl/PbATD2xT4BDe8op1A" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            onClick={() => (window as any).gtag?.('event', 'location_click')}
+                                            className="flex items-start gap-3 group/link"
+                                        >
+                                            <div className="w-9 h-9 rounded-lg bg-[#1B2C6B] flex items-center justify-center shrink-0 group-hover/link:bg-primary transition-colors duration-300">
+                                                <FaMapMarkerAlt className="text-white text-sm" />
+                                            </div>
+                                            <div>
+                                                <p className="text-[12px] font-bold text-slate-900 leading-snug uppercase tracking-tight group-hover/link:text-primary transition-colors duration-300">
+                                                    #24, 100 Feet Rd, HRBR Layout 1st Block,<br />
+                                                    Balaji Layout, Subbaiahnapalya, Banaswadi, Bengaluru, Karnataka 560043
+                                                </p>
+                                            </div>
+                                        </a>
                                     </li>
-                                    <li className="flex items-center gap-3">
-                                        <div className="w-8 h-8 rounded-lg bg-[#1B2C6B] flex items-center justify-center shrink-0">
-                                            <FaPhoneAlt className="text-white text-xs" />
-                                        </div>
-                                        <p className="text-[10px] font-bold text-slate-900">099645 46464</p>
+                                    <li>
+                                        <a 
+                                            href="tel:+919964546464" 
+                                            onClick={() => (window as any).gtag?.('event', 'call_click')}
+                                            className="flex items-center gap-3 group/link w-fit"
+                                        >
+                                            <div className="w-9 h-9 rounded-lg bg-[#1B2C6B] flex items-center justify-center shrink-0 group-hover/link:bg-primary transition-colors duration-300">
+                                                <FaPhoneAlt className="text-white text-sm" />
+                                            </div>
+                                            <p className="text-sm font-black text-slate-900 tracking-wider group-hover/link:text-primary transition-colors duration-300">099645 46464</p>
+                                        </a>
                                     </li>
-                                    <li className="flex items-center gap-3">
-                                        <div className="w-8 h-8 rounded-lg bg-[#1B2C6B] flex items-center justify-center shrink-0">
-                                            <FaEnvelope className="text-white text-xs" />
-                                        </div>
-                                        <p className="text-[10px] font-bold text-slate-900">terait.sales@gmail.com</p>
+                                    <li>
+                                        <a 
+                                            href="mailto:terait.sales@gmail.com" 
+                                            className="flex items-center gap-3 group/link w-fit"
+                                        >
+                                            <div className="w-9 h-9 rounded-lg bg-[#1B2C6B] flex items-center justify-center shrink-0 group-hover/link:bg-primary transition-colors duration-300">
+                                                <FaEnvelope className="text-white text-sm" />
+                                            </div>
+                                            <p className="text-sm font-bold text-slate-900 lower-case group-hover/link:text-primary transition-colors duration-300">terait.sales@gmail.com</p>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -191,7 +218,7 @@ const FinalCTA = () => {
 
                             <div className="relative rounded-xl overflow-hidden h-32 bg-slate-200 border border-slate-100 group/map shadow-inner">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3887.3402877137105!2d77.64857099999999!3d13.013988999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDAwJzUwLjQiTiA3N8KwMzgnNTQuOSJF!5e0!3m2!1sen!2sin!4v1773643348674!5m2!1sen!2sin"
+                                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3887.341918545567!2d77.64852499999999!3d13.013885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDAwJzUwLjAiTiA3N8KwMzgnNTQuNyJF!5e0!3m2!1sen!2sin!4v1774002491600!5m2!1sen!2sin"
                                     width="100%"
                                     height="100%"
                                     style={{ border: 0 }}

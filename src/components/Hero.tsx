@@ -39,7 +39,7 @@ const Hero = () => {
           <div className="flex items-center justify-center gap-3">
             <div className="h-[1px] w-12 bg-white/30"></div>
             <span className="text-white/80 font-bold text-xs uppercase tracking-[0.3em]">
-              Next-Gen IT Infrastructure
+              Enterprise IT Infrastructure Bangalore
             </span>
             <div className="h-[1px] w-12 bg-white/30"></div>
           </div>

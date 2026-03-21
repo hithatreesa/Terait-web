@@ -1,15 +1,25 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://terait.com'),
+  metadataBase: new URL('https://terait-web.vercel.app'),
   title: {
-    default: "Terait Technologies | IT Infrastructure & Security Solutions Bangalore",
+    default: "Terait Technologies | IT Services & Security Solutions in Bangalore",
     template: "%s | Terait Technologies"
   },
-  description: "Terait Technologies provides complete IT Infrastructure Solutions in Bangalore: Networking, CCTV Installation, Server Setup, and Managed Cloud Services.",
-  keywords: ["IT Infrastructure Bangalore", "CCTV Installation Bangalore", "Networking Services", "Server Management", "Cloud Solutions", "IT Support Bangalore", "Enterprise IT Solutions"],
+  description: "Terait Technologies provides enterprise IT solutions in Bangalore: Networking, Cloud Services (AWS/Azure), CCTV Installation, and Cybersecurity.",
+  keywords: [
+    "IT services Bangalore", 
+    "CCTV installation Bangalore", 
+    "Cloud services Bangalore", 
+    "Networking solutions Bangalore",
+    "IT Infrastructure Bangalore",
+    "Cybersecurity services Bangalore",
+    "Enterprise IT Solutions"
+  ],
   authors: [{ name: "Terait Technologies" }],
   creator: "Terait Technologies",
   publisher: "Terait Technologies",
@@ -21,22 +31,22 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://terait.com",
+    url: "https://terait-web.vercel.app",
     siteName: "Terait Technologies",
-    title: "Terait Technologies | IT Infrastructure & Security Solutions",
-    description: "Expert IT networking, CCTV installation, and managed services in Bangalore.",
+    title: "Terait Technologies | IT Services & Security Solutions in Bangalore",
+    description: "Expert IT networking, CCTV installation, and managed cloud services in Bangalore.",
     images: [
       {
         url: "/images/hero_bg.png",
         width: 1200,
         height: 630,
-        alt: "Terait Technologies Infrastructure Solutions",
+        alt: "Terait Technologies IT Solutions Bangalore",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terait Technologies | IT Infrastructure Solutions",
+    title: "Terait Technologies | IT Services & Infrastructure",
     description: "Complete IT infrastructure and surveillance solutions in Bangalore.",
     images: ["/images/hero_bg.png"],
   },
@@ -51,20 +61,63 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Terait Technologies",
+    "image": "https://terait-web.vercel.app/images/hero_bg.png",
+    "@id": "https://terait-web.vercel.app",
+    "url": "https://terait-web.vercel.app",
+    "telephone": "+919964546464",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "#24, 100 Feet Rd, HRBR Layout",
+      "addressLocality": "Bangalore",
+      "postalCode": "560043",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 13.013885,
+      "longitude": 77.648525
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      }
+    ]
+  };
+
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className="antialiased"
-        suppressHydrationWarning
-      >
+      <head>
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
+          `}
+        </Script>
+      </head>
+      <body className="antialiased" suppressHydrationWarning>
         <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-slate-100">
           {children}
-          {/* 
-            Production Analytics:
-            Add Google Analytics or other scripts here using next/script 
-            example: <Script src="..." strategy="afterInteractive" />
-          */}
           <WhatsAppButton />
+          <Analytics />
         </div>
       </body>
     </html>

@@ -55,6 +55,8 @@ export interface ServiceDetail {
     techStack: string[];
 }
 
+export type ServiceData = ServiceDetail;
+
 export interface ServiceCategory {
     title: string;
     icon: IconType;
@@ -65,8 +67,8 @@ export interface ServiceCategory {
 
 export const servicesData: Record<string, ServiceDetail> = {
     "it-infra": {
-        slug: "it-infra", title: "IT Infrastructure & Managed Services", icon: FaServer,
-        description: "Enterprise-grade IT design, deployment, and 24/7 managed support.",
+        slug: "it-infra", title: "Enterprise IT Infrastructure in Bangalore", icon: FaServer,
+        description: "Enterprise-grade IT design, deployment, and 24/7 managed support in Bangalore.",
         problemStatement: "Fragmented IT systems and poor infrastructure planning leading to frequent downtime.",
         solutionStatement: "Terait provides unified infrastructure design and proactive managed services to ensure business continuity.",
         features: ["IT Consulting", "Infrastructure Deployment", "Managed IT Services", "24/7 IT Support"],
@@ -108,8 +110,8 @@ export const servicesData: Record<string, ServiceDetail> = {
         benefits: ["Proactive Management", "Cost Optimization", "Expert Support"]
     },
     "cloud-solutions": {
-        slug: "cloud-solutions", title: "Cloud & Data Center Solutions", icon: FaCloud,
-        description: "Scalable cloud migrations and high-performance data center architecture.",
+        slug: "cloud-solutions", title: "Cloud & Data Center Solutions Bangalore", icon: FaCloud,
+        description: "Scalable cloud migrations and high-performance data center architecture in Bangalore.",
         problemStatement: "High costs and scalability limits of on-premise legacy hardware.",
         solutionStatement: "Public, Private, and Hybrid cloud solutions using AWS, Azure, and Google Cloud.",
         features: ["AWS / Azure / GCP", "Cloud Migration", "Virtualization", "Hosting Services"],
@@ -151,8 +153,8 @@ export const servicesData: Record<string, ServiceDetail> = {
         benefits: ["Global Scale", "Disaster Recovery", "Reduced Capex"]
     },
     "cybersecurity": {
-        slug: "cybersecurity", title: "Cybersecurity & Data Protection", icon: FaLock,
-        description: "Multi-layered defense against evolving digital threats and data breaches.",
+        slug: "cybersecurity", title: "Cybersecurity Services in Bangalore", icon: FaLock,
+        description: "Multi-layered defense against evolving digital threats and data breaches for Bangalore businesses.",
         problemStatement: "Increasing frequency of ransomware and sophisticated cyber-attacks.",
         solutionStatement: "Next-gen firewalls, endpoint security, and robust disaster recovery plans.",
         features: ["Firewalls & EDR", "Endpoint Security", "Backup Solutions", "Disaster Recovery"],
@@ -194,8 +196,8 @@ export const servicesData: Record<string, ServiceDetail> = {
         benefits: ["Peace of Mind", "Data Integrity", "Brand Trust"]
     },
     "networking": {
-        slug: "networking", title: "Networking & Connectivity", icon: FaNetworkWired,
-        description: "High-speed, redundant network architecture for seamless communication.",
+        slug: "networking", title: "Enterprise Networking Solutions Bangalore", icon: FaNetworkWired,
+        description: "High-speed, redundant network architecture for seamless communication in Bangalore.",
         problemStatement: "Network latency and dead zones impacting office productivity.",
         solutionStatement: "Fiber optic backbones, SD-WAN, and enterprise-grade WiFi 6/7.",
         features: ["Routers & Switches", "Enterprise Wireless", "SD-WAN", "Structured Cabling"],
@@ -283,7 +285,7 @@ export const servicesData: Record<string, ServiceDetail> = {
         benefits: ["Automation", "Efficiency", "Process Control"]
     },
     "collaboration": {
-        slug: "collaboration", title: "Collaboration & Communication", icon: FaUsers,
+        slug: "collaboration", title: "Collaboration", icon: FaUsers,
         description: "Empowering teams with secure email, video, and file sharing tools.",
         problemStatement: "Poor communication silos and insecure file sharing habits.",
         solutionStatement: "Unified communication platforms that bridge the gap between remote and on-site teams.",
@@ -326,7 +328,7 @@ export const servicesData: Record<string, ServiceDetail> = {
         benefits: ["Modern Workplace", "Secure Sharing", "Better Teamwork"]
     },
     "automation": {
-        slug: "automation", title: "Automation & DevOps", icon: FaRocket,
+        slug: "automation", title: "Automation", icon: FaRocket,
         description: "Accelerating innovation with RPA, CI/CD, and streamlined workflows.",
         problemStatement: "Slow software release cycles and repetitive manual tasks.",
         solutionStatement: "Implementing robotic automation and modern DevOps practices.",
@@ -369,8 +371,8 @@ export const servicesData: Record<string, ServiceDetail> = {
         benefits: ["Speed to Market", "Error Reduction", "Developer Joy"]
     },
     "smart-solutions": {
-        slug: "smart-solutions", title: "Hardware & Smart Solutions", icon: FaDesktop,
-        description: "Premium IT hardware and IoT systems for the modern smart workplace.",
+        slug: "smart-solutions", title: "CCTV & Smart IT Solutions Bangalore", icon: FaDesktop,
+        description: "Premium IT hardware and AI-powered surveillance systems in Bangalore.",
         problemStatement: "Dealing with multiple hardware vendors and outdated IoT systems.",
         solutionStatement: "End-to-end procurement and integration of smart devices and core hardware.",
         features: ["Computers & Printers", "CCTV & Surveillance", "POS / RFID", "IoT & Smart Devices"],

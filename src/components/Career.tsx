@@ -52,7 +52,7 @@ export default function CareersSection() {
                                         whileTap={{ scale: 0.98 }}
                                         className="w-full sm:w-auto inline-block bg-primary hover:bg-primary-dark text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-[0_10px_20px_-5px_rgba(15,118,110,0.3)] hover:shadow-[0_20px_40px_-10px_rgba(15,118,110,0.4)]"
                                     >
-                                        Contact Us
+                                        Get Started
                                     </motion.a>
 
                                     <motion.a
