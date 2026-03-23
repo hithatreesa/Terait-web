@@ -14,15 +14,15 @@ const About = () => {
           {/* Image Side */}
           <ScrollReveal direction="right" distance={80}>
             <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
                 <Image
-                  src="/images/cctv-install.png"
-                  alt="Expert CCTV Installation"
+                  src="/images/about_it_solutions.jpg"
+                  alt="Terait Technologies Enterprise IT Control Center"
                   width={800}
                   height={600}
-                  className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+                  className="w-full h-auto object-cover transform scale-100 group-hover:scale-110 transition-transform duration-1000 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-700" />
               </div>
             </div>
           </ScrollReveal>

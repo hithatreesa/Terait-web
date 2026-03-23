@@ -64,7 +64,7 @@ const Process = () => {
                                             {index + 1}
                                         </div>
                                     </div>
-                                    <h3 className="text-lg font-bold text-slate-900 mb-2 italic tracking-tight uppercase tracking-wider">{step.title}</h3>
+                                    <h3 className="text-lg font-bold text-slate-900 mb-3 italic tracking-tight uppercase tracking-wider">{step.title}</h3>
                                     <p className="text-sm text-slate-500 leading-relaxed font-medium">
                                         {step.description}
                                     </p>

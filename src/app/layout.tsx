@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description: "Expert IT networking, CCTV installation, and managed cloud services in Bangalore.",
     images: [
       {
-        url: "/images/hero_bg.png",
+        url: "/images/hero_enterprise_it.jpg",
         width: 1200,
         height: 630,
         alt: "Terait Technologies IT Solutions Bangalore",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Terait Technologies | IT Services & Infrastructure",
     description: "Complete IT infrastructure and surveillance solutions in Bangalore.",
-    images: ["/images/hero_bg.png"],
+    images: ["/images/hero_enterprise_it.jpg"],
   },
   robots: {
     index: true,
@@ -65,7 +65,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Terait Technologies",
-    "image": "https://terait-web.vercel.app/images/hero_bg.png",
+    "image": "https://terait-web.vercel.app/images/hero_enterprise_it.jpg",
     "@id": "https://terait-web.vercel.app",
     "url": "https://terait-web.vercel.app",
     "telephone": "+919964546464",
@@ -85,8 +85,8 @@ export default function RootLayout({
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "opens": "09:00",
-        "closes": "19:00"
+        "opens": "09:30",
+        "closes": "18:30"
       }
     ]
   };

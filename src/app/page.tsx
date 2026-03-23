@@ -30,7 +30,7 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Terait Technologies",
-            "image": "https://terait.com/images/hero_bg.png",
+            "image": "https://terait.com/images/hero_enterprise_it.jpg",
             "@id": "https://terait.com",
             "url": "https://terait.com",
             "telephone": "+919964546464",
@@ -57,8 +57,8 @@ export default function Home() {
                 "Friday",
                 "Saturday"
               ],
-              "opens": "09:00",
-              "closes": "18:00"
+              "opens": "09:30",
+              "closes": "18:30"
             },
             "sameAs": [
               "https://www.facebook.com/TeraitTechnologies/",

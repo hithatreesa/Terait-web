@@ -113,7 +113,7 @@ const FinalCTA = () => {
                                                     className="w-full px-4 py-3 bg-slate-50 border border-slate-100 rounded-lg focus:ring-2 focus:ring-red-500/10 focus:border-red-500 outline-none transition text-xs font-medium resize-none"
                                                 ></textarea>
                                             </div>
-                                            <button 
+                                            <button
                                                 type="submit"
                                                 disabled={isSubmitting}
                                                 className="inline-flex items-center justify-center gap-2 bg-[#E63946] hover:bg-red-700 text-white font-bold text-[10px] uppercase tracking-widest px-6 py-3.5 rounded-lg shadow-lg shadow-red-500/10 transition-all active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
@@ -136,7 +136,7 @@ const FinalCTA = () => {
                                         </div>
                                         <h3 className="text-2xl font-black text-slate-900 mb-2 uppercase tracking-tight">Message Sent!</h3>
                                         <p className="text-slate-500 text-sm font-medium mb-8">Thank you for reaching out. Our team will contact you shortly.</p>
-                                        <button 
+                                        <button
                                             type="button"
                                             onClick={() => setIsSubmitted(false)}
                                             className="text-[10px] font-black uppercase tracking-widest text-primary hover:text-red-700 transition-colors"
@@ -154,9 +154,9 @@ const FinalCTA = () => {
                                 <h3 className="text-[9px] font-black text-[#1B2C6B] uppercase tracking-[0.2em] mb-6">Contact Information</h3>
                                 <ul className="space-y-5">
                                     <li>
-                                        <a 
-                                            href="https://maps.app.goo.gl/PbATD2xT4BDe8op1A" 
-                                            target="_blank" 
+                                        <a
+                                            href="https://maps.app.goo.gl/PbATD2xT4BDe8op1A"
+                                            target="_blank"
                                             rel="noopener noreferrer"
                                             onClick={() => window.gtag?.('event', 'location_click')}
                                             className="flex items-start gap-3 group/link"
@@ -173,8 +173,8 @@ const FinalCTA = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a 
-                                            href="tel:+919964546464" 
+                                        <a
+                                            href="tel:+919964546464"
                                             onClick={() => window.gtag?.('event', 'call_click')}
                                             className="flex items-center gap-3 group/link w-auto cursor-pointer relative z-10"
                                         >
@@ -185,8 +185,8 @@ const FinalCTA = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a 
-                                            href="mailto:terait.sales@gmail.com" 
+                                        <a
+                                            href="mailto:terait.sales@gmail.com"
                                             className="flex items-center gap-3 group/link w-fit"
                                         >
                                             <div className="w-9 h-9 rounded-lg bg-[#1B2C6B] flex items-center justify-center shrink-0 group-hover/link:bg-primary transition-colors duration-300">
@@ -202,7 +202,7 @@ const FinalCTA = () => {
                                 <h3 className="text-[9px] font-black text-[#1B2C6B] uppercase tracking-[0.2em] mb-6">Operational Hours</h3>
                                 <div className="space-y-3">
                                     {[
-                                        { day: "Mon - Sat", hours: "09:00 - 19:00" },
+                                        { day: "Mon - Sat", hours: "09:30 am - 06:30 pm" },
                                         { day: "Sunday", hours: "CLOSED", color: "text-red-500" },
                                     ].map((item, idx) => (
                                         <div key={idx} className="flex justify-between items-center text-[9px] font-bold border-b border-slate-100 pb-1.5">

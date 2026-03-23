@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
             url: `https://terait.com/services/${slug}`,
             images: [
                 {
-                    url: service.image || '/images/hero_bg.png',
+                    url: service.image || '/images/hero_enterprise_it.jpg',
                     width: 1200,
                     height: 630,
                     alt: service.title,
