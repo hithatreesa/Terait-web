@@ -64,7 +64,7 @@ const FinalCTA = () => {
                                         <form className="space-y-4 max-w-4xl mx-auto" onSubmit={handleSubmit}>
                                             <div className="grid md:grid-cols-2 gap-4">
                                                 <div className="space-y-2">
-                                                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Full Name</label>
+                                                    <label className="text-[10px] font-black text-[#1B2C6B] uppercase tracking-widest ml-1">Full Name</label>
                                                     <input
                                                         type="text"
                                                         name="name"
@@ -76,7 +76,7 @@ const FinalCTA = () => {
                                                     />
                                                 </div>
                                                 <div className="space-y-2">
-                                                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Email Address</label>
+                                                    <label className="text-[10px] font-black text-[#1B2C6B] uppercase tracking-widest ml-1">Email Address</label>
                                                     <input
                                                         type="email"
                                                         name="email"
@@ -89,7 +89,7 @@ const FinalCTA = () => {
                                                 </div>
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Phone Number</label>
+                                                <label className="text-[10px] font-black text-[#1B2C6B] uppercase tracking-widest ml-1">Phone Number</label>
                                                 <input
                                                     type="tel"
                                                     name="phone"
@@ -101,7 +101,7 @@ const FinalCTA = () => {
                                                 />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Your Message</label>
+                                                <label className="text-[10px] font-black text-[#1B2C6B] uppercase tracking-widest ml-1">Your Message</label>
                                                 <textarea
                                                     rows={3}
                                                     name="message"
@@ -150,8 +150,9 @@ const FinalCTA = () => {
                                 )}
                             </AnimatePresence>
                         </div>
+
                         {/* Bottom Section: Contacts, Hours & Map */}
-                            <div className="p-6 md:p-10 lg:p-12 space-y-6">
+                        <div className="p-4 md:p-6 lg:p-8 space-y-3">
                                 {/* Row 1: Plain Address */}
                                 <div className="flex flex-row flex-nowrap items-center justify-center gap-4 group">
                                     <div className="w-10 h-10 rounded-xl bg-[#1B2C6B] flex items-center justify-center shrink-0 shadow-lg group-hover:bg-primary transition-colors">
@@ -163,7 +164,7 @@ const FinalCTA = () => {
                                 </div>
 
                                 {/* Row 2: Contact Details (Pipe Separated with Logo) */}
-                                <div className="flex flex-col md:flex-row flex-nowrap items-center justify-center gap-4 md:gap-8 text-base md:text-lg lg:text-xl font-black text-slate-900 px-4 whitespace-nowrap border-t border-slate-50 pt-6 group">
+                                <div className="flex flex-col md:flex-row flex-nowrap items-center justify-center gap-4 md:gap-8 text-base md:text-lg lg:text-xl font-black text-slate-900 px-4 whitespace-nowrap group">
                                     <div className="w-10 h-10 rounded-xl bg-[#1B2C6B] flex items-center justify-center shrink-0 shadow-lg group-hover:bg-primary transition-colors">
                                         <FaPhoneAlt className="text-white text-base" />
                                     </div>
@@ -177,9 +178,9 @@ const FinalCTA = () => {
                                 </div>
 
                                 {/* Row 3: Operational Hours */}
-                                <div className="flex flex-col items-center justify-center space-y-4 pt-4 border-t border-slate-50">
+                                <div className="flex flex-col items-center justify-center space-y-3">
                                     <div className="flex flex-col md:flex-row items-center gap-4 group">
-                                        <div className="w-10 h-10 rounded-2xl bg-[#1B2C6B] flex items-center justify-center shrink-0 shadow-md group-hover:bg-primary transition-colors">
+                                        <div className="w-10 h-10 rounded-xl bg-[#1B2C6B] flex items-center justify-center shrink-0 shadow-md group-hover:bg-primary transition-colors">
                                             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                             </svg>
@@ -204,12 +205,13 @@ const FinalCTA = () => {
                                         className="transition-all duration-700 contrast-110"
                                     ></iframe>
                                 </div>
-                            </div>
                         </div>
-                    </ScrollReveal>
-                </div>
-            </section>
-        );
-    };
+                    </div>
+                </ScrollReveal>
+            </div>
+        </section>
+    );
+};
 
 export default FinalCTA;
+
