@@ -12,9 +12,9 @@ export const metadata: Metadata = {
   },
   description: "Terait Technologies provides enterprise IT solutions in Bangalore: Networking, Cloud Services (AWS/Azure), CCTV Installation, and Cybersecurity.",
   keywords: [
-    "IT services Bangalore", 
-    "CCTV installation Bangalore", 
-    "Cloud services Bangalore", 
+    "IT services Bangalore",
+    "CCTV installation Bangalore",
+    "Cloud services Bangalore",
     "Networking solutions Bangalore",
     "IT Infrastructure Bangalore",
     "Cybersecurity services Bangalore",
@@ -68,7 +68,7 @@ export default function RootLayout({
     "image": "https://terait-web.vercel.app/images/hero_enterprise_it.jpg",
     "@id": "https://terait-web.vercel.app",
     "url": "https://terait-web.vercel.app",
-    "telephone": "+919964546464",
+    "telephone": ["+919964546464", "+91843364331"],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "#24, 100 Feet Rd, HRBR Layout",

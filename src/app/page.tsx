@@ -33,7 +33,7 @@ export default function Home() {
             "image": "https://terait.com/images/hero_enterprise_it.jpg",
             "@id": "https://terait.com",
             "url": "https://terait.com",
-            "telephone": "+919964546464",
+            "telephone": ["+919964546464", "+910843364331"],
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "#24, 100 Feet Rd, HRBR Layout 1st Block, Balaji Layout, Subbaiahnapalya, Banaswadi",

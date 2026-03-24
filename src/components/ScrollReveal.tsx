@@ -16,28 +16,29 @@ interface ScrollRevealProps {
 const ScrollReveal: React.FC<ScrollRevealProps> = ({
   children,
   direction = 'up',
-  duration = 0.8,
+  duration = 0.6,
   delay = 0,
-  distance = 50,
+  distance = 12,
   className = "",
   once = true,
 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once, amount: 0.2 });
+  const isInView = useInView(ref, { once, margin: "-10%" });
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   const getVariants = (): Variants => {
-    const initialPos = {
+    const offsets = {
       up: { y: distance },
       down: { y: -distance },
       left: { x: distance },
       right: { x: -distance },
-      none: { x: 0, y: 0 },
+      none: {},
     };
 
     return {
       hidden: {
         opacity: 0,
-        ...initialPos[direction],
+        ...offsets[direction],
       },
       visible: {
         opacity: 1,
@@ -46,7 +47,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
         transition: {
           duration,
           delay,
-          ease: [0.22, 1, 0.36, 1], // Custom cubic-bezier for smooth reveal
+          ease: [0.16, 1, 0.3, 1],
         },
       },
     };
@@ -56,9 +57,10 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
     <div ref={ref} className={className}>
       <motion.div
         variants={getVariants()}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        initial={isMobile ? false : "hidden"}
+        animate={isInView ? "visible" : (isMobile ? "visible" : "hidden")}
         className={className.includes('h-full') ? 'h-full' : ''}
+        style={{ willChange: 'transform, opacity' }}
       >
         {children}
       </motion.div>

@@ -12,7 +12,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center justify-center">
 
           {/* Image Side */}
-          <ScrollReveal direction="right" distance={80}>
+          <ScrollReveal direction="right" distance={30}>
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
                 <Image
@@ -28,7 +28,7 @@ const About = () => {
           </ScrollReveal>
 
           {/* Content Side */}
-          <ScrollReveal direction="left" distance={80} delay={0.2}>
+          <ScrollReveal direction="left" distance={30} delay={0.2}>
             <div className="space-y-8 flex flex-col items-center text-center">
               <div className="space-y-4 flex flex-col items-center">
                 <div className="flex items-center justify-center gap-3">
