@@ -14,7 +14,7 @@ export default function CareersSection() {
                 <div className="text-center mb-12">
                     <ScrollReveal>
                         <div className="space-y-4">
-                            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight uppercase">
+                            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight uppercase">
                                 Work With <span className="text-primary tracking-tight">Us</span>
                             </h2>
                             <div className="h-1.5 w-20 bg-primary-light mx-auto rounded-full" />

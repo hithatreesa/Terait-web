@@ -35,7 +35,7 @@ const About = () => {
                   <div className="h-[2px] w-10 bg-primary" />
                   <span className="text-primary font-bold text-sm uppercase tracking-widest">About Terait Technologies</span>
                 </div>
-                <h2 className="text-4xl font-bold text-center text-slate-900 mb-6 leading-tight">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-slate-900 mb-6 leading-tight">
                   Empowering Businesses through <span className="text-primary tracking-tight">Technical Excellence</span>
                 </h2>
                 <p className="text-slate-600 text-center max-w-2xl mx-auto leading-relaxed font-medium">

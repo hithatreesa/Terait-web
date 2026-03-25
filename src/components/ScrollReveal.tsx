@@ -24,7 +24,16 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once, margin: "-10%" });
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const [mounted, setMounted] = React.useState(false);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const getVariants = (): Variants => {
     const offsets = {
@@ -53,12 +62,16 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
     };
   };
 
+  // Skip animations on server and during first client render to avoid hydration mismatch
+  const initial = !mounted || isMobile ? false : "hidden";
+  const animate = mounted && (isInView || isMobile) ? "visible" : (mounted ? "hidden" : "visible");
+
   return (
     <div ref={ref} className={className}>
       <motion.div
         variants={getVariants()}
-        initial={isMobile ? false : "hidden"}
-        animate={isInView ? "visible" : (isMobile ? "visible" : "hidden")}
+        initial={initial}
+        animate={animate}
         className={className.includes('h-full') ? 'h-full' : ''}
         style={{ willChange: 'transform, opacity' }}
       >

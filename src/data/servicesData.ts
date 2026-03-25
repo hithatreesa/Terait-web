@@ -3,7 +3,7 @@ import {
     FaLaptopCode, FaCamera, FaServer, FaSitemap, FaWifi,
     FaCloud, FaDatabase, FaDesktop, FaHistory, FaCogs, FaShieldAlt, FaLock,
     FaPhoneAlt, FaHeadset, FaNetworkWired, FaRocket, FaCheckCircle, FaBriefcase,
-    FaHandshake, FaUsers
+    FaUsers, FaPrint, FaEnvelope, FaGamepad, FaVolumeUp, FaMobileAlt, FaIdCard
 } from "react-icons/fa";
 
 export interface FAQ {
@@ -43,9 +43,9 @@ export interface ServiceDetail {
     description: string;
     problemStatement: string;
     solutionStatement: string;
-    features: string[]; // Legacy
-    detailedFeatures: DetailedFeature[];
-    benefits: string[]; // Legacy
+    features: string[]; // High-level highlights
+    detailedFeatures: DetailedFeature[]; // Modal subservices
+    benefits: string[];
     benefitTiles: BenefitTile[];
     faqs: FAQ[];
     industries: string[];
@@ -55,363 +55,257 @@ export interface ServiceDetail {
     techStack: string[];
 }
 
-export type ServiceData = ServiceDetail;
-
-export interface ServiceCategory {
-    title: string;
-    icon: IconType;
-    color: string;
-    description: string;
-    items: string[];
-}
-
 export const servicesData: Record<string, ServiceDetail> = {
-    "it-infra": {
-        slug: "it-infra", title: "IT Infrastructure", icon: FaServer,
-        description: "Enterprise-grade IT design, deployment, and managed support in Bangalore.",
-        problemStatement: "Fragmented IT systems and poor infrastructure planning leading to frequent downtime.",
-        solutionStatement: "Terait provides unified infrastructure design and proactive managed services to ensure business continuity.",
-        features: ["IT Consulting", "Infrastructure Deployment", "Managed IT Services", "Professional IT Support"],
+    // Services (6)
+    "prof-it-services": {
+        slug: "prof-it-services", title: "Professional IT Services", icon: FaBriefcase,
+        description: "IT consulting, deployment, support, and managed services to help businesses implement and maintain IT infrastructure.",
+        problemStatement: "Organizations need robust infrastructure support to facilitate seamless cloud enablement and growth.",
+        solutionStatement: "Strategic consulting and proactive managed services to ensure operational excellence and scalability.",
+        features: ["IT Consulting & Roadmap", "Managed Support Services", "Cloud Enablement"],
         detailedFeatures: [
-            {
-                title: "IT Consulting",
-                description: "Strategic IT planning designed to align your technology infrastructure with your long-term business goals. We provide comprehensive roadmaps for scalable, secure, and cost-effective IT growth.",
-                icon: FaBriefcase,
-                impact: "Reduce IT spend by 25% while improving operational efficiency."
-            },
-            {
-                title: "Managed Services",
-                description: "Proactive, comprehensive monitoring and maintenance of your entire IT stack. We anticipate and resolve issues before they can impact your daily operations.",
-                icon: FaCogs,
-                impact: "Achieve 99.99% infrastructure uptime with zero unplanned disruptions."
-            },
-            {
-                title: "IT Support",
-                description: "Responsive on-site and remote helpdesk support tailored for enterprise needs. Our certified engineers guarantee rapid resolution times to keep your workforce productive.",
-                icon: FaHeadset,
-                impact: "Decrease average ticket resolution time by over 60%."
-            }
+            { title: "IT Consulting", description: "Strategic technology planning and roadmaps.", icon: FaBriefcase },
+            { title: "Deployment", description: "Seamless implementation of enterprise IT stacks.", icon: FaCheckCircle },
+            { title: "IT Support", description: "Responsive maintenance and managed services.", icon: FaHeadset },
+            { title: "Cloud Enablement", description: "Facilitating your journey to the cloud.", icon: FaCloud }
         ],
-        benefitTiles: [
-            { title: "Scalability", description: "Infrastructure that grows with your business needs.", icon: FaRocket },
-            { title: "Reliability", description: "99.9% uptime for all managed systems.", icon: FaShieldAlt }
-        ],
-        faqs: [
-            { question: "What level of support do you offer?", answer: "We provide comprehensive monitoring and emergency on-site support during business hours and for critical incidents." }
-        ],
-        industries: ["Corporate", "Healthcare", "Manufacturing"],
-        processFlow: [
-            { title: "Audit", description: "Comprehensive assessment of current infrastructure." },
-            { title: "Plan", description: "Designing a robust and scalable roadmap." },
-            { title: "Deploy", description: "Professional setup and configuration." },
-            { title: "Manage", description: "Continuous monitoring and priority support." }
-        ],
-        techStack: ["Dell EMC", "HPE", "VMware", "APC"],
-        benefits: ["Proactive Management", "Cost Optimization", "Expert Support"]
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Enterprise", "SME"], processFlow: [], benefits: []
     },
-    "cloud-solutions": {
-        slug: "cloud-solutions", title: "Cloud & Data", icon: FaCloud,
-        description: "Scalable cloud migrations and high-performance data center architecture in Bangalore.",
-        problemStatement: "High costs and scalability limits of on-premise legacy hardware.",
-        solutionStatement: "Public, Private, and Hybrid cloud solutions using AWS, Azure, and Google Cloud.",
-        features: ["AWS / Azure / GCP", "Cloud Migration", "Virtualization", "Hosting Services"],
+    "cloud-enablement": {
+        slug: "cloud-enablement", title: "Cloud Enablement Services", icon: FaCloud,
+        description: "Specialized cloud migration, security, and automation to leverage the full power of the cloud.",
+        problemStatement: "Complexity in cloud migration and security gaps hindering transformation.",
+        solutionStatement: "Secure, automated frameworks for a cloud-first organization.",
+        features: ["Cloud Migration", "Cloud Security", "Cloud Automation"],
         detailedFeatures: [
-            {
-                title: "Cloud Migration",
-                description: "Seamless, risk-free transition of your legacy workloads to modern cloud architectures. Our expert engineers ensure zero data loss and minimal downtime during the entire migration process.",
-                icon: FaCloud,
-                impact: "Accelerate deployment times by 40% with automated cloud provisioning."
-            },
-            {
-                title: "Data Center",
-                description: "Modern, secure, and energy-efficient data center design and deployment. We build highly resilient physical infrastructures to support your most critical enterprise applications.",
-                icon: FaServer,
-                impact: "Reduce power and cooling costs by up to 30% with optimized layouts."
-            },
-            {
-                title: "Virtualization",
-                description: "Advanced hardware consolidation integrating VMware and Hyper-V solutions. Optimize your physical server resources for maximum efficiency, easier backups, and rapid disaster recovery.",
-                icon: FaCogs,
-                impact: "Consolidate hardware footprint by 70% while boosting performance."
-            }
+            { title: "Migration", description: "Seamless transition of workloads to cloud platforms.", icon: FaCloud },
+            { title: "Security", description: "Advanced protection for cloud-based assets.", icon: FaShieldAlt },
+            { title: "Automation", description: "Automating cloud operations for efficiency.", icon: FaRocket }
         ],
-        benefitTiles: [
-            { title: "Agility", description: "Deploy resources instantly to meet market demands.", icon: FaRocket },
-            { title: "Security", description: "Enterprise-grade encryption and access controls.", icon: FaLock }
-        ],
-        faqs: [
-            { question: "Which cloud provider do you recommend?", answer: "We evaluate your specific needs to recommend AWS, Azure, or GCP." }
-        ],
-        industries: ["Startups", "E-commerce", "Finance"],
-        processFlow: [
-            { title: "Assessment", description: "Workload analysis and cloud readiness check." },
-            { title: "Strategy", description: "Choosing the right cloud model (Public/Hybrid)." },
-            { title: "Migration", description: "Secure transfer of data and applications." },
-            { title: "Optimization", description: "Right-sizing resources for cost efficiency." }
-        ],
-        techStack: ["AWS", "Azure", "GCP", "VMware"],
-        benefits: ["Global Scale", "Disaster Recovery", "Reduced Capex"]
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Tech", "Finance"], processFlow: [], benefits: []
     },
-    "cybersecurity": {
-        slug: "cybersecurity", title: "Cybersecurity Services", icon: FaLock,
-        description: "Multi-layered defense against evolving digital threats and data breaches for Bangalore businesses.",
-        problemStatement: "Increasing frequency of ransomware and sophisticated cyber-attacks.",
-        solutionStatement: "Next-gen firewalls, endpoint security, and robust disaster recovery plans.",
-        features: ["Firewalls & EDR", "Endpoint Security", "Backup Solutions", "Disaster Recovery"],
+    "backup-recovery": {
+        slug: "backup-recovery", title: "Backup & Disaster Recovery", icon: FaHistory,
+        description: "Comprehensive backup solutions and disaster recovery strategies to safeguard against data loss.",
+        problemStatement: "Risk of data loss due to unforeseen outages or cyber threats.",
+        solutionStatement: "Automated data protection and rapid recovery protocols.",
+        features: ["Data Backup", "Disaster Recovery", "Data Protection"],
         detailedFeatures: [
-            {
-                title: "Firewalls",
-                description: "Next-generation perimeter defense equipped with AI-driven threat intelligence. We actively filter and block malicious traffic before it ever reaches your internal enterprise network.",
-                icon: FaShieldAlt,
-                impact: "Block 99.9% of unauthorized access attempts automatically."
-            },
-            {
-                title: "DR Planning",
-                description: "Comprehensive Disaster Recovery protocols to guarantee business continuity. Our automated backup systems ensure rapid restoration of your critical data after any unexpected incident or outage.",
-                icon: FaHistory,
-                impact: "Achieve a Recovery Time Objective (RTO) of less than 15 minutes."
-            },
-            {
-                title: "Endpoint Security",
-                description: "Advanced malware protection covering every device on your corporate network. We secure laptops, mobile phones, and servers against zero-day exploits and sophisticated ransomware attacks.",
-                icon: FaLaptopCode,
-                impact: "Eliminate endpoint vulnerabilities with active threat hunting."
-            }
+            { title: "Data Backup", description: "Secure on-premise and cloud data redundancy.", icon: FaDatabase },
+            { title: "Disaster Recovery", description: "Rapid restoration and failover strategies.", icon: FaHistory },
+            { title: "Data Protection", description: "Advanced security for sensitive business data.", icon: FaShieldAlt }
         ],
-        benefitTiles: [
-            { title: "Protection", description: "Zero-trust architecture for total digital safety.", icon: FaShieldAlt },
-            { title: "Compliance", description: "Meeting global standards like GDPR and ISO 27001.", icon: FaCheckCircle }
-        ],
-        faqs: [
-            { question: "How often should we backup?", answer: "We implement real-time or daily backups based on your RPO/RTO." }
-        ],
-        industries: ["Legal", "Finance", "Government"],
-        processFlow: [
-            { title: "Scanning", description: "Identifying vulnerabilities across your network." },
-            { title: "Hardening", description: "Applying patches and security policies." },
-            { title: "Protection", description: "Deploying active defense layers." },
-            { title: "Monitoring", description: "Proactive threat detection and response." }
-        ],
-        techStack: ["Sophos", "Fortinet", "CrowdStrike", "Veeam"],
-        benefits: ["Peace of Mind", "Data Integrity", "Brand Trust"]
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Legal", "Healthcare"], processFlow: [], benefits: []
     },
-    "networking": {
-        slug: "networking", title: "Networking Solutions", icon: FaNetworkWired,
-        description: "High-speed, redundant network architecture for seamless communication in Bangalore.",
-        problemStatement: "Network latency and dead zones impacting office productivity.",
-        solutionStatement: "Fiber optic backbones, SD-WAN, and enterprise-grade WiFi 6/7.",
-        features: ["Routers & Switches", "Enterprise Wireless", "SD-WAN", "Structured Cabling"],
+    "collaboration-productivity": {
+        slug: "collaboration-productivity", title: "Collaboration & Productivity", icon: FaUsers,
+        description: "Unified communication and collaboration tools for efficient in-office or remote work.",
+        problemStatement: "Communication barriers in hybrid work environments.",
+        solutionStatement: "Integrated platforms that bridge silos and boost team efficiency.",
+        features: ["Communication Tools", "Collaboration Suits", "Secure File Sharing"],
         detailedFeatures: [
-            {
-                title: "Routers & Switches",
-                description: "Enterprise-grade networking hardware specifically optimized for high-capacity branch and core deployments. We establish secure, resilient transit paths to ensure seamless and rapid data flow.",
-                icon: FaNetworkWired,
-                image: "/images/services/router.jpg",
-                impact: "Reduced overall network latency by 60% with edge-optimized routing."
-            },
-            {
-                title: "SD-WAN",
-                description: "Centralized network control and intelligent traffic steering across multiple corporate locations. Eliminate bandwidth constraints while ensuring priority routing for critical VoIP and video applications.",
-                icon: FaSitemap,
-                image: "/images/services/sdwan.jpg",
-                impact: "Saved 30% on annual bandwidth costs utilizing smart path selection."
-            },
-            {
-                title: "Wireless",
-                description: "High-density WiFi 6/7 solutions built for high-performance, mobile-first workplaces. We perform rigorous predictive RF surveys to guarantee uninterrupted connection speeds and total campus coverage.",
-                icon: FaWifi,
-                image: "/images/services/wireless.jpg",
-                impact: "Eliminated 95% of WiFi coverage dead zones in large office campus."
-            }
+            { title: "Communication", description: "HD conferencing and team chat systems.", icon: FaPhoneAlt },
+            { title: "Productivity", description: "Unified collaboration tools for teams.", icon: FaUsers },
+            { title: "File Sharing", description: "Secure, compliant document sharing solutions.", icon: FaCheckCircle }
         ],
-        benefitTiles: [
-            { title: "Speed", description: "10Gbps+ ready backbones for lag-free work.", icon: FaRocket },
-            { title: "Stability", description: "Redundant links to eliminate single points of failure.", icon: FaShieldAlt }
-        ],
-        faqs: [
-            { question: "Can you fix our slow WiFi?", answer: "Yes, we perform heatmap audits to eliminate dead zones." }
-        ],
-        industries: ["Hospitality", "Education", "Retail"],
-        processFlow: [
-            { title: "Survey", description: "Physical and logical site audit." },
-            { title: "Topology", description: "Designing secure and fast network maps." },
-            { title: "Installation", description: "Certified cabling and hardware setup." },
-            { title: "Testing", description: "Signal strength and throughput validation." }
-        ],
-        techStack: ["Cisco", "Aruba", "Ubiquiti", "CommScope"],
-        benefits: ["Seamless Roaming", "Traffic Shaping", "Future-ready"]
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Remote-first", "Corporate"], processFlow: [], benefits: []
     },
     "business-apps": {
         slug: "business-apps", title: "Business Applications", icon: FaLaptopCode,
-        description: "Streamlining operations with integrated CRM, ERP, and digital workflows.",
-        problemStatement: "Disconnected business processes and manual data entry errors.",
-        solutionStatement: "Unified platforms for managing customers, resources, and documentation.",
-        features: ["CRM & ERP", "Digital Signatures", "Document Management", "Custom Workflows"],
+        description: "Integrated CRM, ERP, and digital signature services to streamline operations and document management.",
+        problemStatement: "Disconnected business logic and manual document workflows.",
+        solutionStatement: "Centralized platforms for customer management and resource planning.",
+        features: ["CRM & ERP Systems", "Digital Signatures", "Document Management"],
         detailedFeatures: [
-            {
-                title: "ERP Systems",
-                description: "Centralized operational management integrating your finance, HR, and supply chain into a single pane of glass. Maximize resource visibility and eliminate frustrating departmental data silos.",
-                icon: FaCogs,
-                impact: "Increase gross operational efficiency by 35% through centralized data."
-            },
-            {
-                title: "Digital Docs",
-                description: "Secure, fully compliant paperless document workflows and e-signing platforms. We automate your tedious approval cycles and guarantee strict regulatory audit trails.",
-                icon: FaCheckCircle,
-                impact: "Accelerate contract turnaround times from weeks to mere hours."
-            },
-            {
-                title: "Custom Apps",
-                description: "Tailored software applications built exclusively for your unique business logic and requirements. We develop highly scalable web and mobile infrastructure to give you a true competitive advantage.",
-                icon: FaLaptopCode,
-                impact: "Automate 100% of legacy manual data-entry workflows."
-            }
+            { title: "CRM/ERP", description: "Customer relations and resource planning platforms.", icon: FaCogs },
+            { title: "eSignatures", description: "Compliant digital signature workflows.", icon: FaCheckCircle },
+            { title: "Doc Management", description: "Streamlined storage and retrieval of files.", icon: FaSitemap }
         ],
-        benefitTiles: [
-            { title: "Integrity", description: "Single source of truth for all business data.", icon: FaDatabase },
-            { title: "Visibility", description: "Real-time dashboards for better decision making.", icon: FaDesktop }
-        ],
-        faqs: [
-            { question: "Can we integrate with existing apps?", answer: "Yes, we specialize in API-led integrations for seamless data flow." }
-        ],
-        industries: ["Logistics", "Real Estate", "Professional Services"],
-        processFlow: [
-            { title: "Logic Audit", description: "Mapping your current business processes." },
-            { title: "Selection", description: "Choosing the right platform or custom build." },
-            { title: "Development", description: "Integration and customization of tools." },
-            { title: "Training", description: "Ensuring high adoption rates across your team." }
-        ],
-        techStack: ["Microsoft Dynamics", "Odoo", "Docusign", "SharePoint"],
-        benefits: ["Automation", "Efficiency", "Process Control"]
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Real Estate", "Professional Services"], processFlow: [], benefits: []
     },
-    "collaboration": {
-        slug: "collaboration", title: "Collaboration", icon: FaUsers,
-        description: "Empowering teams with secure email, video, and file sharing tools.",
-        problemStatement: "Poor communication silos and insecure file sharing habits.",
-        solutionStatement: "Unified communication platforms that bridge the gap between remote and on-site teams.",
-        features: ["Email Solutions", "Video Conferencing", "Team Collaboration", "Secure File Sharing"],
+    "automation-devops": {
+        slug: "automation-devops", title: "Automation & DevOps", icon: FaRocket,
+        description: "RPA and workflow automation to optimize processes, with CI/CD platforms for smooth software development.",
+        problemStatement: "Inefficient manual processes and slow software release cycles.",
+        solutionStatement: "Modern DevOps pipelines and robotic process automation.",
+        features: ["RPA & Workflow Automation", "CI/CD Platforms", "Version Control Tools"],
         detailedFeatures: [
-            {
-                title: "Unified Comms",
-                description: "Combining enterprise voice, HD video conferencing, and instant chat into a single resilient platform. We break down corporate communication silos and empower rapid decision making across regions.",
-                icon: FaPhoneAlt,
-                impact: "Reduce internal communication friction by 50% across departments."
-            },
-            {
-                title: "Cloud Email",
-                description: "Professional, encrypted cloud email suites protected by advanced ML-driven spam and phishing filters. Guarantee total data sovereignty and 99.9% uptime for your most critical business communications.",
-                icon: FaCloud,
-                impact: "Prevent 99.9% of targeted phishing attempts with proactive filters."
-            },
-            {
-                title: "File Sync",
-                description: "Secure, granular access to corporate documentation from any device, anywhere in the world. Enforce strict data-loss prevention policies while empowering your remote workforce seamlessly.",
-                icon: FaSitemap,
-                impact: "Enable 100% secure resource access for hybrid and remote teams."
-            }
+            { title: "RPA", description: "Automating repetitive tasks with intelligent bots.", icon: FaCogs },
+            { title: "CI/CD", description: "Automated development and deployment pipelines.", icon: FaSitemap },
+            { title: "Version Control", description: "Secure and scalable code management tools.", icon: FaRocket }
         ],
-        benefitTiles: [
-            { title: "Productivity", description: "Reducing meeting friction and email clutter.", icon: FaRocket },
-            { title: "Unity", description: "Keeping hybrid teams connected and aligned.", icon: FaHandshake }
-        ],
-        faqs: [
-            { question: "Is Google Workspace or M365 better?", answer: "We analyze your usage patterns to suggest the best fit." }
-        ],
-        industries: ["Marketing", "HR", "Remote-first Companies"],
-        processFlow: [
-            { title: "Audit", description: "Analyzing current communication gaps." },
-            { title: "Deployment", description: "Setting up tenant and security policies." },
-            { title: "Migration", description: "Moving legacy mailboxes to the cloud." },
-            { title: "Onboarding", description: "Training staff on collaboration features." }
-        ],
-        techStack: ["Google Workspace", "Microsoft 365", "Zoom", "Slack"],
-        benefits: ["Modern Workplace", "Secure Sharing", "Better Teamwork"]
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Software Dev", "Banking"], processFlow: [], benefits: []
     },
-    "automation": {
-        slug: "automation", title: "Automation", icon: FaRocket,
-        description: "Accelerating innovation with RPA, CI/CD, and streamlined workflows.",
-        problemStatement: "Slow software release cycles and repetitive manual tasks.",
-        solutionStatement: "Implementing robotic automation and modern DevOps practices.",
-        features: ["RPA / Automation", "Workflow Design", "CI/CD Pipelines", "Version Control"],
+
+    // Products (14)
+    "office-equipment": {
+        slug: "office-equipment", title: "Office Equipment & Peripherals", icon: FaIdCard,
+        description: "Workplace efficiency and security through specialized shredders, laminators, and attendance systems.",
+        problemStatement: "Need for better facility security and document hygiene in modern offices.",
+        solutionStatement: "Providing safes, paper shredders, and biometrics to enhance the office environment.",
+        features: ["Attendance Machines", "Paper Shredders", "Binding & Laminators", "Safes"],
         detailedFeatures: [
-            {
-                title: "RPA",
-                description: "Robotic Process Automation deploying intelligent software 'bots' to handle your high-volume, rules-based office tasks. We liberate your human workforce to focus on high-value, creative problem-solving.",
-                icon: FaCogs,
-                impact: "Save over 1,000 manual administrative hours per quarter."
-            },
-            {
-                title: "Pipeline Setup",
-                description: "Automating rigorous code builds, regression testing, and production deployments via modern CI/CD. Ship robust software faster and drastically reduce the risk of critical downtime.",
-                icon: FaSitemap,
-                impact: "Accelerate software release velocity by an incredible 400%."
-            },
-            {
-                title: "GitOps",
-                description: "Managing entire infrastructure fleets through declarative version control methodologies. Enforce strict configuration standards and immediately roll back failing environments with a single click.",
-                icon: FaShieldAlt,
-                impact: "Eliminate configuration drift and achieve 100% infrastructure parity."
-            }
+            { title: "Attendance", description: "Biometric and RFID attendance systems.", icon: FaIdCard },
+            { title: "Security", description: "Safes and secure document disposal tools.", icon: FaLock },
+            { title: "Efficiency", description: "Laminators and binding for pro documents.", icon: FaDesktop }
         ],
-        benefitTiles: [
-            { title: "Velocity", description: "Releasing features faster with fewer errors.", icon: FaRocket },
-            { title: "Efficiency", description: "Freeing up humans for creative, high-value work.", icon: FaUsers }
-        ],
-        faqs: [
-            { question: "What is RPA?", answer: "Robotic Process Automation uses 'bots' to handle repetitive UI tasks." }
-        ],
-        industries: ["Software Dev", "BPO", "Banking"],
-        processFlow: [
-            { title: "Logic Mapping", description: "Finding bottlenecks in dev/ops cycles." },
-            { title: "Pilot", description: "Testing automation on a small use case." },
-            { title: "Scaling", description: "Rolling out automation across departments." },
-            { title: "Refining", description: "Continuous improvements to the pipelines." }
-        ],
-        techStack: ["Jenkins", "UiPath", "Docker", "Terraform"],
-        benefits: ["Speed to Market", "Error Reduction", "Developer Joy"]
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Corporate", "Education"], processFlow: [], benefits: []
     },
-    "smart-solutions": {
-        slug: "smart-solutions", title: "CCTV & Smart IT Solutions Bangalore", icon: FaDesktop,
-        description: "Premium IT hardware and AI-powered surveillance systems in Bangalore.",
-        problemStatement: "Dealing with multiple hardware vendors and outdated IoT systems.",
-        solutionStatement: "End-to-end procurement and integration of smart devices and core hardware.",
-        features: ["Computers & Printers", "CCTV & Surveillance", "POS / RFID", "IoT & Smart Devices"],
+    "printing-imaging": {
+        slug: "printing-imaging", title: "Printers & Imaging", icon: FaPrint,
+        description: "A selection of inkjet, laser, and 3D printers for home, office, or industrial applications.",
+        problemStatement: "Finding the balance between high-volume needs and precision quality.",
+        solutionStatement: "Enterprise-grade laser, 3D, and large-format printing solutions.",
+        features: ["Inkjet & Laser Printers", "Large Format Printers", "Multifunction Printers", "3D Printers"],
         detailedFeatures: [
-            {
-                title: "Computing",
-                description: "Provisioning high-performance laptops, powerful desktops, and intensive graphical workstations. We meticulously match optimal hardware specifications to your team's specific demanding workloads.",
-                icon: FaDesktop,
-                impact: "Boost individual workstation performance and speed by 40%."
-            },
-            {
-                title: "Surveillance",
-                description: "AI-powered, ultra-HD IP camera arrays featuring deep physical analytics and biometric access controls. Monitor, record, and secure your expansive facilities from anywhere in the world, in real-time.",
-                icon: FaCamera,
-                impact: "Provide 360-degree verifiable campus security around the clock."
-            },
-            {
-                title: "Smart IoT",
-                description: "Deploying integrated industrial sensors and smart office automation across diverse environments. Harvest continuous real-time telemetry to drastically optimize your facility's energy utilization.",
-                icon: FaCogs,
-                impact: "Decrease annual commercial facility power consumption by 25%."
-            }
+            { title: "Laser & Inkjet", description: "Standard-setting home and office printers.", icon: FaPrint },
+            { title: "3D Printing", description: "Advanced 3D printers for industrial needs.", icon: FaCogs },
+            { title: "MFP", description: "Scanning and printing in a single device.", icon: FaDesktop }
         ],
-        benefitTiles: [
-            { title: "Authorized", description: "Genuine products with priority warranty support.", icon: FaShieldAlt },
-            { title: "Integrated", description: "Hardware that 'talks' to your software ecosystem.", icon: FaSitemap }
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Architects", "Designers"], processFlow: [], benefits: []
+    },
+    "mailing-solutions": {
+        slug: "mailing-solutions", title: "Mailing Solutions", icon: FaEnvelope,
+        description: "Email hosting and marketing automation to streamline email communication and marketing efforts.",
+        problemStatement: "Unreliable email hosting and unmanaged marketing campaigns.",
+        solutionStatement: "Secure email servers and mass email marketing automation platforms.",
+        features: ["Email Hosting", "Mailing Lists", "Mass Email Services", "Marketing Automation"],
+        detailedFeatures: [
+            { title: "Hosting", description: "Secure, reliable email for your business.", icon: FaEnvelope },
+            { title: "Marketing", description: "Mass email and marketing automation tools.", icon: FaRocket }
         ],
-        faqs: [
-            { question: "Do you offer hardware leasing?", answer: "Yes, we provide flexible leasing for corporate equipment fleets." }
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Retail", "Services"], processFlow: [], benefits: []
+    },
+    "audio-video": {
+        slug: "audio-video", title: "Audio & Video Solutions", icon: FaVolumeUp,
+        description: "Displays, IP phones, and conferencing systems to foster communication and collaboration.",
+        problemStatement: "Sub-par AV quality in meeting spaces hindering global team work.",
+        solutionStatement: "Professional HD displays, projectors, and video conferencing suites.",
+        features: ["Displays & Projectors", "IP Phones", "Video Conferencing Systems"],
+        detailedFeatures: [
+            { title: "Visuals", description: "HD displays and boardroom projectors.", icon: FaDesktop },
+            { title: "Audio", description: "IP phones and specialized team conferencing.", icon: FaPhoneAlt }
         ],
-        industries: ["Logistics", "Retail", "Residential Estates"],
-        processFlow: [
-            { title: "Selection", description: "Helping you choose the right specs for your team." },
-            { title: "Procurement", description: "Authorized sourcing at competitive prices." },
-            { title: "Setup", description: "On-site imaging, installation, and testing." },
-            { title: "Lifecycle", description: "Maintenance, upgrades, and secure disposal." }
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Hotels", "Corporate"], processFlow: [], benefits: []
+    },
+    "computer-systems": {
+        slug: "computer-systems", title: "Computer Components & Systems", icon: FaLaptopCode,
+        description: "CPUs, SSDs, and complete systems from laptops to high-end workstations.",
+        problemStatement: "Sourcing reliable, high-performance computing for critical workflows.",
+        solutionStatement: "Authorized supply of top-tier PCs, components, and workstations.",
+        features: ["Desktops & Laptops", "Workstations & Gaming PCs", "Critical Components (CPU/SSD)"],
+        detailedFeatures: [
+            { title: "Systems", description: "Desktops, notebooks, and workstations.", icon: FaLaptopCode },
+            { title: "Components", description: "CPUs, SSDs, GPUs, and Motherboards.", icon: FaDatabase }
         ],
-        techStack: ["Dell", "Hikvision", "Honeywell", "Zebra"],
-        benefits: ["Unified Fleet", "Smart Security", "Fast Deployment"]
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Tech", "Individuals"], processFlow: [], benefits: []
+    },
+    "networking-solutions": {
+        slug: "networking-solutions", title: "Networking Solutions", icon: FaNetworkWired,
+        description: "Smooth and reliable connectivity with enterprise-grade routers, switches, and WAN optimization.",
+        problemStatement: "Network bottlenecks and unreliable wireless coverage.",
+        solutionStatement: "High-performance access points and industrial networking.",
+        features: ["Routers & Switches", "Access Points", "WAN Optimization", "Industrial Networking"],
+        detailedFeatures: [
+            { title: "Connectivity", description: "Enterprise routers and L3 switches.", icon: FaNetworkWired },
+            { title: "Optimization", description: "WAN and structured cabling solutions.", icon: FaSitemap }
+        ],
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Healthcare", "Logistics"], processFlow: [], benefits: []
+    },
+    "cloud-products": {
+        slug: "cloud-products", title: "Cloud Solutions & Apps", icon: FaCloud,
+        description: "Scalable and secure cloud hosting, SaaS, and business applications.",
+        problemStatement: "Managing multiple disconnected cloud systems and high infrastructure costs.",
+        solutionStatement: "Integrated IaaS, PaaS, and business productivity suites in the cloud.",
+        features: ["Cloud Hosting & IaaS", "Global SaaS Apps", "Cloud Backup & DR"],
+        detailedFeatures: [
+            { title: "Solutions", description: "Hosting, IaaS, and PaaS architectures.", icon: FaServer },
+            { title: "Biz Apps", description: "CRM, ERP, and doc management SaaS.", icon: FaCheckCircle }
+        ],
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Startups", "Enterprise"], processFlow: [], benefits: []
+    },
+    "aidc-pos": {
+        slug: "aidc-pos", title: "AIDC / POS Solutions", icon: FaSitemap,
+        description: "Barcode devices, RFID scanners, and POS terminals for seamless tracking and inventory.",
+        problemStatement: "Inaccurate tracking and outdated point-of-sale systems.",
+        solutionStatement: "State-of-the-art RFID and thermal printer solutions.",
+        features: ["Barcode Devices", "RFID Printers & Scanners", "POS Terminals", "Thermal Printers"],
+        detailedFeatures: [
+            { title: "Retail", description: "POS terminals and fast thermal printers.", icon: FaDesktop },
+            { title: "Tracking", description: "RFID scanners and barcode devices.", icon: FaSitemap }
+        ],
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Warehouse", "Retail"], processFlow: [], benefits: []
+    },
+    "security-surveillance": {
+        slug: "security-surveillance", title: "Security & Surveillance", icon: FaCamera,
+        description: "CCTV, IP cameras, and access control for robust premises and asset security.",
+        problemStatement: "Physical safety concerns and lack of real-time monitoring.",
+        solutionStatement: "Integrated IP camera networks and biometric management.",
+        features: ["CCTV & IP Cameras", "Access Control Systems", "Video Management Systems"],
+        detailedFeatures: [
+            { title: "Monitoring", description: "CCTV and VMS cloud-based systems.", icon: FaCamera },
+            { title: "Access", description: "Access control and biometric security.", icon: FaLock }
+        ],
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Pharma", "Logistics"], processFlow: [], benefits: []
+    },
+    "cybersecurity-products": {
+        slug: "cybersecurity-products", title: "Cybersecurity Solutions", icon: FaShieldAlt,
+        description: "Multi-layered protection with firewalls, antivirus, and identity management.",
+        problemStatement: "Increasing cyber threats and risk of data breaches.",
+        solutionStatement: "Advanced UTM, endpoint protection, and encryption gateways.",
+        features: ["Firewalls & UTM", "Antivirus & EDR", "Identity Management"],
+        detailedFeatures: [
+            { title: "Defense", description: "Next-gen firewalls and identity management.", icon: FaShieldAlt },
+            { title: "End-point", description: "Advanced antivirus and EDR solutions.", icon: FaLaptopCode }
+        ],
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Finance", "Legal"], processFlow: [], benefits: []
+    },
+    "power-backup": {
+        slug: "power-backup", title: "Power & Backup Solutions", icon: FaLock,
+        description: "Business continuity with reliable UPS systems, power management, and racks.",
+        problemStatement: "Downtime caused by power fluctuations and facility cooling issues.",
+        solutionStatement: "Online UPS, racks, cabinets, and precision cooling.",
+        features: ["UPS Systems", "Power Management", "Cooling & Racks", "Precision Cooling"],
+        detailedFeatures: [
+            { title: "Critical Power", description: "Zero-latency UPS and power management.", icon: FaLock },
+            { title: "Infrastructure", description: "Racks, cabinets, and cooling systems.", icon: FaServer }
+        ],
+        benefitTiles: [], faqs: [], techStack: [], industries: ["IT", "Healthcare"], processFlow: [], benefits: []
+    },
+    "mobility-smart": {
+        slug: "mobility-smart", title: "Mobility & Smart Devices", icon: FaMobileAlt,
+        description: "Connecting businesses with smartphones, tablets, and wearables for on-the-go productivity.",
+        problemStatement: "Need for securely managed mobile devices in a hybrid workforce.",
+        solutionStatement: "High-spec smartphones and fitness/smart trackers for business.",
+        features: ["Smartphones & Tablets", "Wearables & Trackers", "Mobile Productivity"],
+        detailedFeatures: [
+            { title: "Mobility", description: "Smartphones and tablets for enterprise.", icon: FaMobileAlt },
+            { title: "Smart Gear", description: "Wearables and smartwatches.", icon: FaCheckCircle }
+        ],
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Sales", "Individuals"], processFlow: [], benefits: []
+    },
+    "iot-solutions": {
+        slug: "iot-solutions", title: "IoT & Smart Solutions", icon: FaCogs,
+        description: "Industrial IoT, plant monitoring, and AI automation for advanced operational efficiency.",
+        problemStatement: "Inefficient facility monitoring and lack of real-time telemetry.",
+        solutionStatement: "Smart city technologies and industrial plant monitoring IoT.",
+        features: ["Smart Cities & Automation", "Industrial IoT (IIoT)", "AI Video Analytics"],
+        detailedFeatures: [
+            { title: "Industrial", description: "IIoT and video analytics for plants.", icon: FaCogs },
+            { title: "Automation", description: "Smart city and AI-based automation.", icon: FaSitemap }
+        ],
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Manufacturing", "Gov"], processFlow: [], benefits: []
+    },
+    "gaming-electronics": {
+        slug: "gaming-electronics", title: "Gaming & Consumer Electronics", icon: FaGamepad,
+        description: "High-performance gaming laptops, peripherals, and consoles for modern entertainment.",
+        problemStatement: "General hardware failing to meet elite gaming performance standards.",
+        solutionStatement: "Specialized ROG gaming PCs, AR/VR devices, and high-spec monitors.",
+        features: ["Gaming Laptops & Monitors", "Consoles & AR/VR Gear", "High-End Peripherals"],
+        detailedFeatures: [
+            { title: "Gaming", description: "High-spec laptops and elite monitors.", icon: FaGamepad },
+            { title: "Immersive", description: "AR/VR and immersive audio devices.", icon: FaDesktop }
+        ],
+        benefitTiles: [], faqs: [], techStack: [], industries: ["Individuals", "Creators"], processFlow: [], benefits: []
     }
 };
-

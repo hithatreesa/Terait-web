@@ -10,25 +10,33 @@ interface ServiceListItem {
     category: "Services" | "Products";
     title?: string;
     desc?: string;
+    features?: string[];
 }
 
 const servicesList: ServiceListItem[] = [
-    { id: "it-infra", category: "Services" },
-    { id: "cloud-solutions", category: "Services" },
-    { id: "cybersecurity", category: "Services" },
-    { id: "networking", category: "Services" },
+    // Services (10) - Software & Service based
+    { id: "prof-it-services", category: "Services" },
+    { id: "cloud-products", category: "Services" },
+    { id: "cloud-enablement", category: "Services" },
+    { id: "cybersecurity-products", category: "Services" },
+    { id: "backup-recovery", category: "Services" },
     { id: "business-apps", category: "Services" },
-    { id: "collaboration", category: "Services" },
-    { id: "automation", category: "Services" },
-    { id: "smart-solutions", category: "Services" },
-    { id: "it-infra", category: "Products", title: "Enterprise IT & Data Centers", desc: "Servers, Racks, and Cooling" },
-    { id: "networking", category: "Products", title: "Networking Equipment", desc: "Routers, Switches, and Fiber" },
-    { id: "smart-solutions", category: "Products", title: "Security Systems", desc: "CCTV, Biometrics, and Access" },
-    { id: "smart-solutions", category: "Products", title: "Printers & Imaging", desc: "MFPs and Industrial Scanners" },
-    { id: "it-infra", category: "Products", title: "Power & Backup", desc: "UPS and Solar Solutions" },
-    { id: "smart-solutions", category: "Products", title: "Mobility Devices", desc: "Laptops, Tablets, and Handhelds" },
-    { id: "smart-solutions", category: "Products", title: "IoT & Smart Systems", desc: "Sensors and Industrial IoT" },
-    { id: "cybersecurity", category: "Products", title: "Security Software", desc: "AV, EDR, and Firewalls" },
+    { id: "collaboration-productivity", category: "Services" },
+    { id: "mailing-solutions", category: "Services" },
+    { id: "automation-devops", category: "Services" },
+    { id: "iot-solutions", category: "Services" },
+
+    // Products (10) - Hardware based
+    { id: "computer-systems", category: "Products" },
+    { id: "networking-solutions", category: "Products" },
+    { id: "security-surveillance", category: "Products" },
+    { id: "power-backup", category: "Products" },
+    { id: "printing-imaging", category: "Products" },
+    { id: "office-equipment", category: "Products" },
+    { id: "audio-video", category: "Products" },
+    { id: "mobility-smart", category: "Products" },
+    { id: "aidc-pos", category: "Products" },
+    { id: "gaming-electronics", category: "Products" },
 ];
 
 const Services = () => {
@@ -59,7 +67,7 @@ const Services = () => {
     }, [selectedId, selectedSubservice]);
 
     const filteredItems = useMemo(() => {
-        return servicesList.filter(item => item.category === view).slice(0, 8);
+        return servicesList.filter(item => item.category === view);
     }, [view]);
 
     const selectedService = selectedId ? servicesData[selectedId] : null;
@@ -79,7 +87,7 @@ const Services = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="max-w-7xl mx-auto px-6 relative z-10"
+                className="max-w-[1500px] mx-auto px-6 relative z-10"
             >
 
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
@@ -87,7 +95,7 @@ const Services = () => {
                         <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block font-inter">
                             Our Expertise
                         </span>
-                        <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight leading-none italic uppercase font-outfit md:whitespace-nowrap">
+                        <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tight leading-none italic uppercase font-outfit md:whitespace-nowrap">
                             Enterprise<span className="text-primary not-italic"> Solutions</span>
                         </h2>
                         <p className="text-slate-400 text-lg font-medium leading-relaxed font-inter">
@@ -115,7 +123,7 @@ const Services = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.3, ease: "easeOut" }}
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20"
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-20"
                     >
                         {filteredItems.map((item, index) => {
                             const data = servicesData[item.id];
@@ -123,7 +131,7 @@ const Services = () => {
 
                             const title = item.title || data.title;
                             const desc = item.desc || data.description;
-                            const highlights = data.features;
+                            const highlights = item.features || data.features;
 
                             return (
                                 <div key={`${view}-${index}`} className="w-full h-full">
@@ -132,8 +140,8 @@ const Services = () => {
                                         className="group cursor-pointer h-full w-full text-left"
                                     >
 
-                                        {/* ✅ OPTIMIZED CARD */}
-                                        <div className="h-full min-h-[220px] bg-slate-900/40 border border-slate-800/50 p-6 flex flex-col xl:flex-row gap-6 rounded-2xl transition-all duration-300 ease-out transform-gpu will-change-transform hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_10px_30px_rgba(59,130,246,0.15)] group/card">
+                                        {/* ✅ OPTIMIZED CARD - BIG TILES */}
+                                        <div className="h-full min-h-[280px] bg-slate-900/40 border border-slate-800/50 p-8 flex flex-col gap-6 rounded-3xl transition-all duration-300 ease-out transform-gpu will-change-transform hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] group/card">
 
                                             {/* ICON */}
                                             <div className="w-14 h-14 min-w-[56px] rounded-xl bg-slate-800/50 flex items-center justify-center text-primary border border-slate-700/50 transition-all duration-300 transform-gpu group-hover/card:scale-105 group-hover/card:bg-primary group-hover/card:text-white">

@@ -42,7 +42,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
                             <div className="w-20 h-20 rounded-[2rem] bg-slate-900 border border-slate-800 text-primary flex items-center justify-center mb-10 shadow-2xl">
                                 <Icon size={36} />
                             </div>
-                            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-[0.9] uppercase tracking-tighter italic font-outfit">
+                            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-[0.9] uppercase tracking-tighter italic font-outfit">
                                 {service.title} <span className="text-primary not-italic inline-block drop-shadow-[0_0_15px_rgba(239,68,68,0.3)]">Expertise</span>
                             </h1>
                             <p className="text-xl md:text-2xl text-slate-400 leading-relaxed max-w-2xl mb-12 font-inter font-medium">
@@ -102,7 +102,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
                     <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
                         <ScrollReveal>
                             <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block font-inter">Inside the Stack</span>
-                            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase italic font-outfit">Core Capabilities</h2>
+                            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase italic font-outfit">Core Capabilities</h2>
                         </ScrollReveal>
                         <ScrollReveal delay={0.1}>
                             <p className="text-slate-500 max-w-md text-sm font-medium leading-relaxed font-inter">
@@ -135,7 +135,7 @@ const ServiceDetailClient = ({ slug }: ServiceDetailClientProps) => {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-24">
                         <ScrollReveal>
-                            <h2 className="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter italic font-outfit">Strategic <span className="text-primary not-italic">Workflow</span></h2>
+                            <h2 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-tighter italic font-outfit">Strategic <span className="text-primary not-italic">Workflow</span></h2>
                             <div className="h-1 w-24 bg-primary mx-auto rounded-full" />
                         </ScrollReveal>
                     </div>
