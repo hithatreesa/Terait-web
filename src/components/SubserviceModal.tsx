@@ -56,23 +56,23 @@ const SubserviceModal: React.FC<SubserviceModalProps> = ({
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="relative w-full max-w-md bg-slate-900 border border-slate-800 rounded-[2rem] overflow-hidden shadow-2xl"
+                        className="relative w-full max-w-7xl bg-slate-950 border border-slate-800 rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col max-h-[90vh]"
                     >
-                            {/* Unified Scrollable Content Area */}
-                            <div className="flex-1 overflow-y-auto no-scrollbar relative">
-                                <SubserviceContent 
-                                    subservice={subservice}
-                                    processFlow={processFlow}
-                                    onBack={onClose}
-                                    showBack={false}
-                                />
-                                <button
-                                    onClick={onClose}
-                                    className="absolute top-4 right-4 p-2 rounded-xl bg-slate-800/80 text-white hover:bg-primary transition-all backdrop-blur-md shadow-2xl group border border-white/10 z-[110]"
-                                >
-                                    <HiX size={20} className="group-hover:rotate-90 transition-transform duration-300" />
-                                </button>
-                            </div>
+                        {/* Unified Scrollable Content Area */}
+                        <div className="flex-1 overflow-y-auto no-scrollbar relative">
+                            <SubserviceContent
+                                subservice={subservice}
+                                processFlow={processFlow}
+                                onBack={onClose}
+                                showBack={false}
+                            />
+                            <button
+                                onClick={onClose}
+                                className="absolute top-4 right-4 p-2 rounded-xl bg-slate-800/80 text-white hover:bg-primary transition-all backdrop-blur-md shadow-2xl group border border-white/10 z-[110]"
+                            >
+                                <HiX size={20} className="group-hover:rotate-90 transition-transform duration-300" />
+                            </button>
+                        </div>
                     </motion.div>
                 </div>
             )}

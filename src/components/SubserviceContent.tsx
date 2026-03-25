@@ -20,7 +20,7 @@ const SubserviceContent: React.FC<SubserviceContentProps> = ({
     return (
         <div className="flex-1 flex flex-col min-h-0">
             {/* Header: Visual & Identity Overlay */}
-            <div className="relative w-full h-[80px] md:h-[100px] border-b border-white/5">
+            <div className="relative w-full h-[160px] md:h-[250px] border-b border-white/5">
                 <Image
                     src={subservice.image || "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"}
                     alt={subservice.title}
