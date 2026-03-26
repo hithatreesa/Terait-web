@@ -42,15 +42,28 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <div className={`fixed z-[110] transition-all duration-500 w-full ${scrolled ? "top-2 md:top-3" : "top-0 md:top-4"} flex justify-center px-3 md:px-4`}>
-      <nav ref={navRef} className={`transition-all duration-500 flex items-center justify-between w-full max-w-5xl mx-auto ${scrolled ? "bg-white/95 backdrop-blur-xl px-6 py-1.5 shadow-xl rounded-2xl md:rounded-full border border-slate-100" : "bg-white/90 backdrop-blur-2xl px-6 py-1.5 rounded-full border border-slate-100 shadow-2xl"}`}>
-        <Link href="/" className="flex items-center gap-1 group shrink-0">
+    <>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsOpen(false)}
+            className="fixed inset-0 bg-slate-950/80 backdrop-blur-xl z-[100] md:hidden"
+          />
+        )}
+      </AnimatePresence>
+
+      <div className={`fixed z-[110] transition-all duration-500 w-full ${scrolled ? "top-2 md:top-3" : "top-0 md:top-4"} flex justify-center px-3 md:px-4 pointer-events-none`}>
+        <nav ref={navRef} className={`pointer-events-auto relative transition-all duration-500 flex items-center justify-between w-full max-w-5xl mx-auto ${scrolled ? "bg-white/95 backdrop-blur-xl px-6 py-1.5 shadow-xl rounded-2xl md:rounded-full border border-slate-100" : "bg-white/90 backdrop-blur-2xl px-6 py-1.5 rounded-full border border-slate-100 shadow-2xl"}`}>
+          <Link href="/" className="flex items-center gap-1 group shrink-0">
           <img src="/images/logo.png" alt="Terait Technologies Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
           <span className="text-xl md:text-2xl font-black tracking-tighter uppercase transition-colors duration-500 text-slate-900">
             Terait<span className="text-red-500">.</span>
           </span>
         </Link>
-        <div className="hidden md:flex items-center space-x-8 px-8">
+        <div className="hidden md:flex items-center space-x-5 px-4">
           {navLinks.map((link) => (
             <Link key={link.name} href={link.href} className={`text-xs font-bold uppercase tracking-[0.2em] transition-all duration-500 relative group text-slate-500 hover:text-red-500`}>
               {link.name}
@@ -72,15 +85,6 @@ const Navbar = () => {
         </div>
         <AnimatePresence>
           {isOpen && (
-            <>
-              {/* Full screen backdrop for mobile menu */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setIsOpen(false)}
-                className="fixed inset-0 bg-slate-950/80 backdrop-blur-xl z-[100] md:hidden"
-              />
               <motion.div 
                 initial={{ opacity: 0, y: -20, scale: 0.95 }} 
                 animate={{ opacity: 1, y: 0, scale: 1 }} 
@@ -88,14 +92,14 @@ const Navbar = () => {
                 transition={{ type: "spring", damping: 25, stiffness: 200 }}
                 className="absolute top-full mt-4 left-0 right-0 bg-white/95 backdrop-blur-2xl border border-slate-200 md:hidden overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-[2rem] z-[110] max-h-[80vh] overflow-y-auto"
               >
-                <div className="p-10 space-y-6 flex flex-col items-center">
+                <div className="p-8 space-y-2 flex flex-col items-center">
                   <div className="w-12 h-1.5 bg-slate-200 rounded-full mb-4" />
                   {navLinks.map((link) => (
                     <Link 
                       key={link.name} 
                       href={link.href} 
                       onClick={() => setIsOpen(false)} 
-                      className="w-full text-center py-5 text-sm font-black text-slate-500 uppercase tracking-[0.4em] hover:text-slate-900 hover:bg-slate-50 rounded-2xl transition-all font-inter border border-transparent hover:border-slate-100 active:scale-95"
+                      className="w-full text-center py-3 text-sm font-black text-slate-500 uppercase tracking-[0.4em] hover:text-slate-900 hover:bg-slate-50 rounded-2xl transition-all font-inter border border-transparent hover:border-slate-100 active:scale-95"
                     >
                       {link.name}
                     </Link>
@@ -111,11 +115,11 @@ const Navbar = () => {
                   </div>
                 </div>
               </motion.div>
-            </>
           )}
         </AnimatePresence>
       </nav>
     </div>
+    </>
   );
 };
 export default Navbar;
