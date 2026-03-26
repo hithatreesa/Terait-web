@@ -43,8 +43,8 @@ const FinalCTA = () => {
                     <div className="bg-white border border-slate-100 rounded-[1.25rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)] overflow-hidden flex flex-col">
                         {/* Top Section: Heading */}
                         <div className="p-8 md:p-12 text-center">
-                            <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-[0.9] mb-6">
-                                <span className="text-[#1B2C6B] block">GET IN TOUCH <span className="text-primary tracking-tight">WITH US</span></span>
+                            <h2 className="text-3xl md:text-4xl font-black tracking-tighter leading-[0.9] mb-6 text-slate-900">
+                                GET IN TOUCH <span className="text-primary tracking-tight">WITH US</span>
                             </h2>
                             <p className="max-w-lg mx-auto text-slate-500 text-xs font-medium leading-relaxed">
                                 We provide high-level enterprise solutions. Connect with our experts today to scale your infrastructure and secure your digital assets.
@@ -152,65 +152,46 @@ const FinalCTA = () => {
                         </div>                        {/* Bottom Section: Contacts, Hours & Map */}
                         <div className="p-6 md:p-10 lg:p-12 space-y-8 bg-slate-50/50">
                             {/* Section Header */}
-                            <div className="flex items-center justify-start md:justify-center gap-4 mb-8 text-center">
-                                <div className="w-12 h-[2px] bg-primary"></div>
-                                <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-[#1B2C6B] font-inter">Contact Information</h3>
-                            </div>                            {/* Centered, Left-Aligned Block for Address and Phone/Email */}
+                            <div className="flex items-center justify-center gap-3 md:gap-4 mb-8 w-full max-w-sm mx-auto">
+                                <div className="w-8 md:w-12 h-[2px] bg-primary shrink-0"></div>
+                                <h3 className="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[#1B2C6B] font-inter text-center shrink-0">Contact Information</h3>
+                                <div className="w-8 md:w-12 h-[2px] bg-primary shrink-0"></div>
+                            </div>                            {/* Centered Alignment for Address, Phone/Email, and Hours */}
                             <div className="w-full flex justify-center">
-                                <div className="inline-flex flex-col items-start gap-6 md:gap-8">
+                                <div className="flex flex-col items-center gap-5 md:gap-8 w-full text-center">
 
-                                    {/* Row 1: Address */}
-                                    <div className="flex flex-row items-center gap-4 md:gap-6 group">
-                                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#1B2C6B] flex items-center justify-center shrink-0 shadow-xl group-hover:bg-primary transition-all duration-300">
-                                            <FaMapMarkerAlt className="text-white text-base md:text-lg" />
-                                        </div>
-                                        <p className="text-sm md:text-lg font-bold text-slate-900 uppercase tracking-tight text-left md:whitespace-nowrap leading-relaxed">
+                                    {/* Address */}
+                                    <div className="flex flex-col items-center gap-4 group w-full">
+                                        <p className="text-[11px] sm:text-xs font-bold text-slate-900 uppercase tracking-tight leading-relaxed max-w-xl px-2 text-center">
                                             #24, 100 FEET RD, HRBR LAYOUT 1ST BLOCK, BANASWADI, BENGALURU, KARNATAKA 560043
                                         </p>
                                     </div>
 
-                                    {/* Row 2: Phone & Email (Combined on Desktop) */}
-                                    <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-10 group">
-                                        {/* Phone Part */}
-                                        <div className="flex flex-row items-center gap-4 md:gap-6">
-                                            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#1B2C6B] flex items-center justify-center shrink-0 shadow-xl group-hover:bg-primary transition-all duration-300">
-                                                <FaPhoneAlt className="text-white text-base md:text-lg" />
-                                            </div>
-                                            <div className="flex flex-row items-center gap-4 md:gap-6 text-sm md:text-lg font-bold text-slate-900 tracking-tight whitespace-nowrap">
-                                                <a href="tel:+919964546464" onClick={() => window.gtag?.('event', 'call_click')} className="hover:text-primary transition-colors">+91 99645 46464</a>
-                                                <span className="text-slate-200 text-xl font-light mx-4 md:mx-8">|</span>
-                                                <a href="tel:+91843364331" onClick={() => window.gtag?.('event', 'call_click')} className="hover:text-primary transition-colors">+91 08 4336 4331</a>
-                                            </div>
+                                    {/* Phone & Email */}
+                                    <div className="flex flex-col items-center gap-3 group">
+                                        <div className="w-12 h-12 rounded-full bg-[#1B2C6B] flex items-center justify-center shrink-0 shadow-xl group-hover:bg-primary transition-all duration-300">
+                                            <FaPhoneAlt className="text-white text-lg" />
                                         </div>
-
-                                        {/* Divider (Desktop Only) */}
-                                        <span className="hidden md:block text-slate-200 text-2xl font-light">|</span>
-
-                                        {/* Email Part */}
-                                        <div className="flex flex-row items-center gap-4 md:gap-6">
-                                            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#1B2C6B] flex items-center justify-center shrink-0 shadow-xl group-hover:bg-primary transition-all duration-300">
-                                                <FaEnvelope className="text-white text-base md:text-lg" />
-                                            </div>
-                                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@teraittech.com" target="_blank" rel="noopener noreferrer" className="text-sm md:text-lg font-bold text-slate-900 hover:text-primary transition-colors tracking-tight text-left">
-                                                teraittech.com
-                                            </a>
+                                        <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-[11px] sm:text-xs font-bold text-slate-900 tracking-tight text-center w-full px-2">
+                                            <a href="tel:+919964546464" onClick={() => window.gtag?.('event', 'call_click')} className="hover:text-primary transition-colors">+91 99645 46464</a>
+                                            <a href="tel:+91843364331" onClick={() => window.gtag?.('event', 'call_click')} className="hover:text-primary transition-colors">+91 08433 64331</a>
+                                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@teraittech.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors break-words">sales@teraittech.com</a>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
 
-                            {/* Centered Working Hours Section */}
-                            <div className="w-full flex justify-center pt-4">
-                                <div className="flex flex-row items-center gap-4 md:gap-6 group">
-                                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#1B2C6B] flex items-center justify-center shrink-0 shadow-md group-hover:bg-primary transition-all duration-300">
-                                        <svg className="w-5 h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </div>
-                                    <div className="flex flex-row items-center text-[#1B2C6B] text-sm md:text-lg font-bold tracking-wide">
-                                        <span className="whitespace-nowrap">MON - SAT</span>
-                                        <span className="text-slate-200 text-xl font-light px-8 md:px-12">|</span>
-                                        <span className="whitespace-nowrap">09:30 AM - 06:30 PM</span>
+                                    {/* Working Hours */}
+                                    <div className="flex flex-col items-center gap-4 group">
+                                        <div className="w-12 h-12 rounded-full bg-[#1B2C6B] flex items-center justify-center shrink-0 shadow-md group-hover:bg-primary transition-all duration-300">
+                                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <div className="flex flex-col items-center gap-2 text-center">
+                                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Working Hours</span>
+                                            <div className="text-[#1B2C6B] text-[11px] sm:text-xs font-bold tracking-wide uppercase px-2 text-center">
+                                                MON - SAT | 09:30 AM - 06:30 PM
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

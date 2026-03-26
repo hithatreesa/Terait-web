@@ -37,7 +37,7 @@ const Testimonials = () => {
             if (window.innerWidth < 768 && scrollRef.current) {
                 const nextIndex = (currentIndex + 1) % testimonials.length;
                 setCurrentIndex(nextIndex);
-                
+
                 const container = scrollRef.current;
                 const slide = container.children[nextIndex] as HTMLElement;
                 if (slide) {
@@ -53,7 +53,7 @@ const Testimonials = () => {
     }, [currentIndex]);
 
     return (
-        <section className="py-16 relative overflow-hidden bg-[#243C8F] text-white">
+        <section className="py-16 relative overflow-hidden bg-slate-950 text-white">
             {/* Texture Overlay */}
             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] [background-size:20px_20px]"></div>
 
@@ -73,7 +73,7 @@ const Testimonials = () => {
                     </motion.div>
                 </div>
 
-                <div 
+                <div
                     ref={scrollRef}
                     className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scrollbar md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0 justify-center"
                 >
@@ -86,7 +86,7 @@ const Testimonials = () => {
                             transition={{ delay: index * 0.1 }}
                             viewport={{ once: true }}
                         >
-                            <div className="h-full relative overflow-hidden group bg-blue-800 text-white shadow-sm hover:shadow-lg transition duration-300 ease-in-out rounded-lg p-6">
+                            <div className="h-full relative overflow-hidden group bg-slate-900 border border-slate-800 text-white shadow-sm hover:shadow-lg transition duration-300 ease-in-out rounded-2xl p-6">
                                 <FaQuoteRight className="absolute top-6 right-6 text-white/5 text-6xl group-hover:scale-110 transition-transform duration-500" />
                                 <div className="flex text-orange-400 mb-6 font-bold">
                                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -96,8 +96,8 @@ const Testimonials = () => {
                                 <p className="text-white/90 italic mb-8 relative z-10 leading-relaxed font-medium text-center">
                                     &quot;{testimonial.text}&quot;
                                 </p>
-                                <div className="flex flex-col items-center gap-4 border-t border-slate-100 pt-6 mt-auto text-center">
-                                    <div className="w-12 h-12 rounded-full bg-[#243C8F] border-2 border-white flex items-center justify-center text-white font-bold text-lg shadow-sm">
+                                <div className="flex flex-col items-center gap-4 border-t border-slate-800 pt-6 mt-auto text-center">
+                                    <div className="w-12 h-12 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-white font-bold text-lg shadow-sm">
                                         {testimonial.name[0]}
                                     </div>
                                     <div>

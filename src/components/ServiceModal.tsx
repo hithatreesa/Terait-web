@@ -64,14 +64,14 @@ const ServiceModal: React.FC<ServiceModalProps> = ({
                             className="relative w-full max-w-7xl bg-slate-950 border border-slate-800 rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col max-h-[90vh]"
                         >
                             {/* Unified Scrollable Content Area */}
-                            <div 
+                            <div
                                 ref={scrollContainerRef}
                                 className="flex-1 overflow-y-auto no-scrollbar"
                             >
                                 {/* Desktop/Grid View or Unified Mobile View */}
                                 {isMobile && selectedSubservice ? (
                                     <div className="min-h-0 relative">
-                                        <SubserviceContent 
+                                        <SubserviceContent
                                             subservice={selectedSubservice}
                                             processFlow={service.processFlow}
                                             onBack={() => setSelectedSubservice(null)}
@@ -99,7 +99,7 @@ const ServiceModal: React.FC<ServiceModalProps> = ({
                                                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-[1.5rem] bg-primary/20 flex items-center justify-center text-primary border border-primary/20 shadow-lg shadow-primary/10">
                                                     <service.icon size={40} />
                                                 </div>
-                                                
+
                                                 {(() => {
                                                     const words = service.title.split(" ");
                                                     const lastWord = words.pop();

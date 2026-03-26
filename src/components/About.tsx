@@ -34,6 +34,7 @@ const About = () => {
                 <div className="flex items-center justify-center gap-3">
                   <div className="h-[2px] w-10 bg-primary" />
                   <span className="text-primary font-bold text-sm uppercase tracking-widest">About Terait Technologies</span>
+                  <div className="h-[2px] w-10 bg-primary" />
                 </div>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-slate-900 mb-6 leading-tight">
                   Empowering Businesses through <span className="text-primary tracking-tight">Technical Excellence</span>

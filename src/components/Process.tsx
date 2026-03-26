@@ -36,7 +36,7 @@ const Process = () => {
                 <div className="text-center mb-12">
                     <ScrollReveal>
                         <h2 className="text-4xl font-bold text-center text-slate-900 mb-6 uppercase">
-                            Our <span className="text-gradient">Professional Process</span>
+                            Our <span className="text-primary tracking-tight">Professional Process</span>
                         </h2>
                         <p className="text-slate-500 max-w-2xl mx-auto font-medium">
                             How we deliver top-tier IT infrastructure and security solutions to your business.
