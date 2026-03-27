@@ -169,9 +169,9 @@ const FinalCTA = () => {
 
                                     {/* Phone & Email */}
                                     <div className="flex flex-col items-center gap-3 group">
-                                        <div className="w-12 h-12 rounded-full bg-[#1B2C6B] flex items-center justify-center shrink-0 shadow-xl group-hover:bg-primary transition-all duration-300">
+                                        <a href="tel:9964546464" onClick={() => window.gtag?.('event', 'call_click_icon')} className="w-12 h-12 rounded-full bg-[#1B2C6B] flex items-center justify-center shrink-0 shadow-xl hover:bg-primary hover:scale-110 transition-all duration-300 cursor-pointer">
                                             <FaPhoneAlt className="text-white text-lg" />
-                                        </div>
+                                        </a>
                                         <div className="flex flex-row flex-wrap items-center justify-center gap-x-3 gap-y-2 md:gap-x-6 text-[10px] sm:text-xs font-bold text-slate-900 tracking-tight text-center w-full px-2">
                                             <a href="tel:+919964546464" onClick={() => window.gtag?.('event', 'call_click')} className="hover:text-primary transition-colors whitespace-nowrap">099645 46464</a>
                                             <span className="text-slate-200 text-lg font-light">|</span>
