@@ -172,19 +172,12 @@ const FinalCTA = () => {
                                         <div className="w-12 h-12 rounded-full bg-[#1B2C6B] flex items-center justify-center shrink-0 shadow-xl group-hover:bg-primary transition-all duration-300">
                                             <FaPhoneAlt className="text-white text-lg" />
                                         </div>
-                                        <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-[10px] sm:text-xs font-bold text-slate-900 tracking-tight text-center w-full px-2">
-                                            {/* Phone Numbers Group */}
-                                            <div className="flex flex-row items-center justify-center gap-3 md:gap-6">
-                                                <a href="tel:+919964546464" onClick={() => window.gtag?.('event', 'call_click')} className="hover:text-primary transition-colors">+91 99645 46464</a>
-                                                <span className="text-slate-200 text-lg font-light">|</span>
-                                                <a href="tel:+91843364331" onClick={() => window.gtag?.('event', 'call_click')} className="hover:text-primary transition-colors">+91 08433 64331</a>
-                                            </div>
-                                            
-                                            {/* Email Group */}
-                                            <div className="flex flex-row items-center justify-center gap-3 md:gap-6">
-                                                <span className="hidden md:block text-slate-200 text-lg font-light">|</span>
-                                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@teraittech.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors break-words">sales@teraittech.com</a>
-                                            </div>
+                                        <div className="flex flex-row flex-wrap items-center justify-center gap-x-3 gap-y-2 md:gap-x-6 text-[10px] sm:text-xs font-bold text-slate-900 tracking-tight text-center w-full px-2">
+                                            <a href="tel:+919964546464" onClick={() => window.gtag?.('event', 'call_click')} className="hover:text-primary transition-colors whitespace-nowrap">099645 46464</a>
+                                            <span className="text-slate-200 text-lg font-light">|</span>
+                                            <a href="tel:08043364331" onClick={() => window.gtag?.('event', 'call_click')} className="hover:text-primary transition-colors whitespace-nowrap">080 4336 4331</a>
+                                            <span className="text-slate-200 text-lg font-light">|</span>
+                                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@teraittech.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors break-words whitespace-nowrap">sales@teraittech.com</a>
                                         </div>
                                     </div>
 

@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -16,6 +17,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -64,12 +66,21 @@ const Navbar = () => {
           </span>
         </Link>
         <div className="hidden md:flex items-center space-x-5 px-4">
-          {navLinks.map((link) => (
-            <Link key={link.name} href={link.href} className={`text-xs font-bold uppercase tracking-[0.2em] transition-all duration-500 relative group text-slate-500 hover:text-red-500`}>
-              {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-600 transition-all duration-500 group-hover:w-full" />
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isHashLink = link.href.startsWith('/#');
+            const href = isHashLink && pathname === '/' ? link.href.substring(1) : link.href;
+            
+            return (
+              <Link 
+                key={link.name} 
+                href={href} 
+                className={`text-xs font-bold uppercase tracking-[0.2em] transition-all duration-500 relative group text-slate-500 hover:text-red-500`}
+              >
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-600 transition-all duration-500 group-hover:w-full" />
+              </Link>
+            );
+          })}
         </div>
         <div className="flex items-center gap-4">
           <Link 
@@ -94,19 +105,24 @@ const Navbar = () => {
               >
                 <div className="p-8 space-y-2 flex flex-col items-center">
                   <div className="w-12 h-1.5 bg-slate-200 rounded-full mb-4" />
-                  {navLinks.map((link) => (
-                    <Link 
-                      key={link.name} 
-                      href={link.href} 
-                      onClick={() => setIsOpen(false)} 
-                      className="w-full text-center py-3 text-sm font-black text-slate-500 uppercase tracking-[0.4em] hover:text-slate-900 hover:bg-slate-50 rounded-2xl transition-all font-inter border border-transparent hover:border-slate-100 active:scale-95"
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
+                   {navLinks.map((link) => {
+                    const isHashLink = link.href.startsWith('/#');
+                    const href = isHashLink && pathname === '/' ? link.href.substring(1) : link.href;
+                    
+                    return (
+                      <Link 
+                        key={link.name} 
+                        href={href} 
+                        onClick={() => setIsOpen(false)} 
+                        className="w-full text-center py-3 text-sm font-black text-slate-500 uppercase tracking-[0.4em] hover:text-slate-900 hover:bg-slate-50 rounded-2xl transition-all font-inter border border-transparent hover:border-slate-100 active:scale-95"
+                      >
+                        {link.name}
+                      </Link>
+                    );
+                  })}
                   <div className="pt-6 w-full">
                     <Link 
-                      href="/#contact" 
+                      href={pathname === '/' ? '#contact' : '/#contact'} 
                       onClick={() => setIsOpen(false)} 
                       className="w-full inline-flex items-center justify-center bg-red-600 text-white font-black uppercase tracking-[0.4em] py-6 rounded-2xl shadow-2xl shadow-red-500/30 text-[10px] active:scale-95 transition-all hover:bg-red-700"
                     >
